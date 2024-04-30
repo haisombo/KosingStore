@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Rubik-Italic-VariableFont_wght.ttfRubik-VariableFont_wght.ttfstaticRubik-Black.ttfRubik-BlackItalic.ttfRubik-Bold.ttfRubik-BoldItalic.ttfRubik-ExtraBold.ttfRubik-ExtraBoldItalic.ttfRubik-Italic.ttfRubik-Light.ttfRubik-LightItalic.ttfRubik-Medium.ttfRubik-MediumItalic.ttfRubik-Regular.ttfRubik-SemiBold.ttfRubik-SemiBoldItalic.ttf</string>
+		<string>Rubik-VariableFont_wght.ttf</string>
+		<string>Rubik-Black.ttf</string>
+		<string>Rubik-BlackItalic.ttf</string>
+		<string>Rubik-Bold.ttf</string>
+		<string>Rubik-BoldItalic.ttf</string>
+		<string>Rubik-ExtraBold.ttf</string>
+		<string>Rubik-ExtraBoldItalic.ttf</string>
+		<string>Rubik-Italic.ttf</string>
+		<string>Rubik-Light.ttf</string>
+		<string>Rubik-LightItalic.ttf</string>
+		<string>Rubik-Medium.ttf</string>
+		<string>Rubik-MediumItalic.ttf</string>
+		<string>Rubik-Regular.ttf</string>
+		<string>Rubik-SemiBold.ttf</string>
+		<string>Rubik-SemiBoldItalic.ttf</string>
+	</array>
+</dict>
+</plist>
