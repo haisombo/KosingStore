@@ -38,6 +38,7 @@ enum CustomFontSize: CGFloat {
         case h9     = 12.0
         case h10    = 10.0
         case h11    = 8.0
+    
 }
 
 extension Font {
