@@ -11,7 +11,8 @@ import SwiftUI
 struct KOSIGNSTORE__iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            HomeVC()
+            HomeDetailVC()
         }
     }
 }
