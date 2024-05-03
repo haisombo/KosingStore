@@ -32,9 +32,11 @@ struct ProfileListCell: View {
                     
                     Spacer()
                     Image("chevron-right")
-                } .padding(.horizontal ,40)
+                }
              
             }
+            .padding(.horizontal ,40)
+
         }
     }
 }

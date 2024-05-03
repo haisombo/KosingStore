@@ -60,6 +60,14 @@
 		834B707E2BE0E914006FB95C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 834B706C2BE0E914006FB95C /* README.txt */; };
 		834B70802BE0ED5C006FB95C /* KOSIGNSTORE--iOS-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 834B707F2BE0EC58006FB95C /* KOSIGNSTORE--iOS-Info.plist */; };
 		834B70822BE0ED89006FB95C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B70812BE0ED89006FB95C /* Fonts.swift */; };
+		839E3EFC2BE47F7200455220 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3EFB2BE47F7200455220 /* View.swift */; };
+		839E3EFE2BE4BDAA00455220 /* AnyCodableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3EFD2BE4BDAA00455220 /* AnyCodableValue.swift */; };
+		839E3F002BE4BDD200455220 /* MG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3EFF2BE4BDD200455220 /* MG.swift */; };
+		839E3F022BE4BE0800455220 /* MgVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F012BE4BE0800455220 /* MgVM.swift */; };
+		839E3F042BE4C01400455220 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F032BE4C01400455220 /* AccountCell.swift */; };
+		839E3F062BE4D7BA00455220 /* AboutCompanyCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F052BE4D7BA00455220 /* AboutCompanyCV.swift */; };
+		839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F072BE4DE5B00455220 /* AccountViewVC.swift */; };
+		839E3F0A2BE4E59500455220 /* ProfileUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +125,14 @@
 		834B706C2BE0E914006FB95C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		834B707F2BE0EC58006FB95C /* KOSIGNSTORE--iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KOSIGNSTORE--iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
 		834B70812BE0ED89006FB95C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		839E3EFB2BE47F7200455220 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		839E3EFD2BE4BDAA00455220 /* AnyCodableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodableValue.swift; sourceTree = "<group>"; };
+		839E3EFF2BE4BDD200455220 /* MG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MG.swift; sourceTree = "<group>"; };
+		839E3F012BE4BE0800455220 /* MgVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MgVM.swift; sourceTree = "<group>"; };
+		839E3F032BE4C01400455220 /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		839E3F052BE4D7BA00455220 /* AboutCompanyCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyCV.swift; sourceTree = "<group>"; };
+		839E3F072BE4DE5B00455220 /* AccountViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewVC.swift; sourceTree = "<group>"; };
+		839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				834875F02BE33326008A50CB /* LoginVM.swift */,
+				839E3F012BE4BE0800455220 /* MgVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -158,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				834875EE2BE33314008A50CB /* LoginModel.swift */,
+				839E3EFF2BE4BDD200455220 /* MG.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +185,9 @@
 			children = (
 				834876162BE38D98008A50CB /* Cell */,
 				834876102BE38C82008A50CB /* ProfileDetailViewVC.swift */,
+				839E3F052BE4D7BA00455220 /* AboutCompanyCV.swift */,
+				839E3F072BE4DE5B00455220 /* AccountViewVC.swift */,
+				839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +298,7 @@
 			children = (
 				834876172BE38DC9008A50CB /* ProfileMoreDetailCell.swift */,
 				834876192BE38DE3008A50CB /* ProfileListCell.swift */,
+				839E3F032BE4C01400455220 /* AccountCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -364,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				834B70512BE0E05D006FB95C /* String.swift */,
+				839E3EFB2BE47F7200455220 /* View.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -399,6 +422,7 @@
 		834B70392BE0D7A5006FB95C /* MapingMultiTypeData */ = {
 			isa = PBXGroup;
 			children = (
+				839E3EFD2BE4BDAA00455220 /* AnyCodableValue.swift */,
 			);
 			path = MapingMultiTypeData;
 			sourceTree = "<group>";
@@ -615,6 +639,7 @@
 				834B70572BE0E6D6006FB95C /* LaunchScreen.swift in Sources */,
 				834B703F2BE0DA89006FB95C /* Shared.swift in Sources */,
 				834B70522BE0E05D006FB95C /* String.swift in Sources */,
+				839E3F002BE4BDD200455220 /* MG.swift in Sources */,
 				834B703B2BE0D80D006FB95C /* Encodable.swift in Sources */,
 				834876022BE33C0D008A50CB /* StatusView.swift in Sources */,
 				834875FF2BE33B2C008A50CB /* LessDetailHomeCell.swift in Sources */,
@@ -626,17 +651,24 @@
 				834876152BE38C9F008A50CB /* ProfileModel.swift in Sources */,
 				834875EF2BE33314008A50CB /* LoginModel.swift in Sources */,
 				834B70412BE0DA9C006FB95C /* MyJson.swift in Sources */,
+				839E3F042BE4C01400455220 /* AccountCell.swift in Sources */,
 				8348760F2BE34E9D008A50CB /* AppVersionDetailViewCell.swift in Sources */,
+				839E3EFC2BE47F7200455220 /* View.swift in Sources */,
 				834875F82BE33516008A50CB /* HomeDetailVC.swift in Sources */,
 				834B70502BE0E02F006FB95C /* Model.swift in Sources */,
 				834B704E2BE0DFF2006FB95C /* Content.swift in Sources */,
 				8348760B2BE343BB008A50CB /* ReuseStatusUpdateView.swift in Sources */,
 				834875EB2BE33281008A50CB /* LoginScreen.swift in Sources */,
 				834B703D2BE0DA7C006FB95C /* Log.swift in Sources */,
+				839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */,
 				834B70542BE0E58E006FB95C /* HomeVC.swift in Sources */,
 				834B70242BE0C4A2006FB95C /* KOSIGNSTORE__iOSApp.swift in Sources */,
+				839E3EFE2BE4BDAA00455220 /* AnyCodableValue.swift in Sources */,
 				834B704C2BE0DF80006FB95C /* Data.swift in Sources */,
+				839E3F022BE4BE0800455220 /* MgVM.swift in Sources */,
+				839E3F062BE4D7BA00455220 /* AboutCompanyCV.swift in Sources */,
 				8348761A2BE38DE3008A50CB /* ProfileListCell.swift in Sources */,
+				839E3F0A2BE4E59500455220 /* ProfileUpdateUser.swift in Sources */,
 				834875F52BE3338D008A50CB /* HomeVM.swift in Sources */,
 				834875F12BE33326008A50CB /* LoginVM.swift in Sources */,
 			);

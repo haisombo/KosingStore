@@ -11,21 +11,31 @@ struct ProfileDetailViewVC: View {
     var body: some View {
         VStack {
             NavigationView {
-                NavigationLink(destination :    ProfileDetailViewVC() )  {
-                    VStack {
-                        List {
+                VStack {
+                    
+                    List {
+                        
+                        NavigationLink (destination : HomeVC() )   {
                             ProfileListCell()
-                            Section("More") {
-                                ProfileMoreDetailCell()
-                                ProfileMoreDetailCell()
-                            }
-                            Section("Setting") {
-                                ProfileMoreDetailCell()
-                            }
-                           
                         }
                         
-                        
+                        Section("More") {
+                            NavigationLink (destination : AboutCompanyCV() )   {
+                                AccountCell()
+                            }
+                            
+                            NavigationLink (destination : AccountViewVC()  ) {
+                                AccountCell()
+                            }
+                        }
+                        Section("Setting") {
+                            NavigationLink (destination : HomeVC() )   {
+                                AccountCell()
+                            }
+                        }
+                    }
+                    .listStyle(.insetGrouped)
+                    VStack {
                         Button(action: {
                             
                         }, label: {
@@ -33,17 +43,16 @@ struct ProfileDetailViewVC: View {
                                 .font(.customFont(font: .Rubik, style: .bold , size: .h4))
                                 .foregroundColor(Color.white)
                                 .frame(width: 310, height: 45)
-//                                .frame(maxWidth: .infinity)
                                 .background(Color ("MianColor"))
                                 .cornerRadius(8.0)
                             
-                            //                                    .shadow(color: Color.blue.opacity(0.3), radius: 10, x: 0.0, y: 10)
+                                .shadow(color: Color.blue.opacity(0.3), radius: 10, x: 0.0, y: 10)
                         })
                         .buttonStyle(PressableButtonStyle())
-
                     }
                 }
-            }/*.navigationTitle("More").toolbarTitleDisplayMode(.inline)*/
+
+            }
         }
     }
 }
