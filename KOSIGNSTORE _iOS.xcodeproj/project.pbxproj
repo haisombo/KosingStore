@@ -26,7 +26,7 @@
 		834876152BE38C9F008A50CB /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834876142BE38C9F008A50CB /* ProfileModel.swift */; };
 		834876182BE38DC9008A50CB /* ProfileMoreDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834876172BE38DC9008A50CB /* ProfileMoreDetailCell.swift */; };
 		8348761A2BE38DE3008A50CB /* ProfileListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834876192BE38DE3008A50CB /* ProfileListCell.swift */; };
-		834B70242BE0C4A2006FB95C /* KOSIGNSTORE__iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B70232BE0C4A2006FB95C /* KOSIGNSTORE__iOSApp.swift */; };
+		834B70242BE0C4A2006FB95C /* KOSIGNSTORE_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B70232BE0C4A2006FB95C /* KOSIGNSTORE_iOSApp.swift */; };
 		834B70282BE0C4A5006FB95C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834B70272BE0C4A5006FB95C /* Assets.xcassets */; };
 		834B702B2BE0C4A5006FB95C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 834B702A2BE0C4A5006FB95C /* Preview Assets.xcassets */; };
 		834B703B2BE0D80D006FB95C /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834B703A2BE0D80D006FB95C /* Encodable.swift */; };
@@ -91,7 +91,7 @@
 		834876172BE38DC9008A50CB /* ProfileMoreDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMoreDetailCell.swift; sourceTree = "<group>"; };
 		834876192BE38DE3008A50CB /* ProfileListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListCell.swift; sourceTree = "<group>"; };
 		834B70202BE0C4A2006FB95C /* KOSIGNSTORE _iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KOSIGNSTORE _iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		834B70232BE0C4A2006FB95C /* KOSIGNSTORE__iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOSIGNSTORE__iOSApp.swift; sourceTree = "<group>"; };
+		834B70232BE0C4A2006FB95C /* KOSIGNSTORE_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOSIGNSTORE_iOSApp.swift; sourceTree = "<group>"; };
 		834B70272BE0C4A5006FB95C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		834B702A2BE0C4A5006FB95C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		834B703A2BE0D80D006FB95C /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
@@ -403,7 +403,7 @@
 		834B70372BE0D722006FB95C /* Lifecycle */ = {
 			isa = PBXGroup;
 			children = (
-				834B70232BE0C4A2006FB95C /* KOSIGNSTORE__iOSApp.swift */,
+				834B70232BE0C4A2006FB95C /* KOSIGNSTORE_iOSApp.swift */,
 			);
 			path = Lifecycle;
 			sourceTree = "<group>";
@@ -662,7 +662,7 @@
 				834B703D2BE0DA7C006FB95C /* Log.swift in Sources */,
 				839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */,
 				834B70542BE0E58E006FB95C /* HomeVC.swift in Sources */,
-				834B70242BE0C4A2006FB95C /* KOSIGNSTORE__iOSApp.swift in Sources */,
+				834B70242BE0C4A2006FB95C /* KOSIGNSTORE_iOSApp.swift in Sources */,
 				839E3EFE2BE4BDAA00455220 /* AnyCodableValue.swift in Sources */,
 				834B704C2BE0DF80006FB95C /* Data.swift in Sources */,
 				839E3F022BE4BE0800455220 /* MgVM.swift in Sources */,
@@ -811,6 +811,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -818,7 +819,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosign.wegarden.KOSIGNSTORE--iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosign.wegarden.KOSIGNSTORE--OS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -841,6 +842,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -848,7 +850,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosign.wegarden.KOSIGNSTORE--iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosign.wegarden.KOSIGNSTORE--OS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

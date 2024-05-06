@@ -10,24 +10,22 @@ import SwiftUI
 
 struct HomeVC: View {
     
+    //property
+    @StateObject var homeViewModel  = HomeViewModel()
     @State var showSheetView        = false
     @State var searchText           = ""
     @State private var presentPopup = false
+
     
     var body: some View {
         ZStack {
             NavigationView {
                 VStack (alignment : .center )  {
+                
                     List {
                         Section (content: {
-                            HomeCell()
-//                            HomeCell()
-                            // show when search no data
-//                            GeometryReader { geometry in
-//                                VStack {
-//                                    NotFoundCell()
-//                                }.frame(width: geometry.size.width)
-//                            }
+                            HomeCell(homeVM: homeViewModel)
+                            
                         }, header: {
                          
                         }, footer:  {
@@ -40,23 +38,27 @@ struct HomeVC: View {
                     }
                     .listStyle(InsetGroupedListStyle())
                 }
+                .onAppear {
+                    self.listApp()
+                }
                 .navigationBarLargeTitleItems(trailing:
-                                                Button(action: {
+                        Button(action: {
                     withAnimation(.linear(duration: 0.3)) {
                         presentPopup = true
                     }
                 }) {
-                    Image("profile")
+                    Image("defaultIMG")
                         .resizable()
-                        .frame(width: 55, height: 55)
-                        .cornerRadius(55)
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(50)
                 }
-                    .offset(x: -20, y: 10)
+                    .offset(x: -20, y: 8)
                     .background(Color("BackGoundColor"))
                 )
+               
                 .navigationBarTitle("My App")
                 
- 
+              
             }
             
             .searchable(text: $searchText)
@@ -75,6 +77,47 @@ struct HomeVC: View {
         
     }
     
+    func listApp ( ) {
+        self.homeViewModel.fetchListApp(userID: 0, companyID: 0, type: .Public) { result in
+            switch result {
+            case .success(let data):
+                self.homeViewModel.listApp   = data
+                print("data user \(data)")
+                
+                print("""
+                             🎉🤩
+                              ===> Fetch Sucess ✅ 👏🥳
+                              🎉🤩
+                          """)
+                
+            case .failure(let error):
+                print("""
+                         😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
+                      """)
+            }
+        }
+    }
+    // MARK: - Get Data Home --> Public
+    func getDataHomePublic () {
+        self.homeViewModel.fetchListPublicAppVersion(id: 308 ) { result in
+               switch result {
+               case .success(let data):
+                   self.homeViewModel.homePublicApp   = data
+                   print("data user \(data)")
+                   
+                   print("""
+                                🎉🤩
+                                 ===> Fetch Sucess ✅ 👏🥳
+                                 🎉🤩
+                             """)
+                   
+               case .failure(let error):
+                   print("""
+                            😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
+                         """)
+               }
+        }
+    }
     struct NavigationConfigurator: UIViewControllerRepresentable {
         var configure: (UINavigationController) -> Void = { _ in }
 

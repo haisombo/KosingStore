@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeCell: View {
+    @StateObject var homeVM = HomeViewModel()
     @State var showSheetView = false
     
     var body: some View {
@@ -24,13 +25,16 @@ struct HomeCell: View {
                 
                 HStack (spacing : 10 ) {
                     
-                    Text ("@KOSIGN")
+//                    Text ("@KOSIGN")
+                    Text(homeVM.listApp?.data.first?.name?.stringValue ?? "" )
                         .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                         .foregroundColor(Color("MianColor"))
                     HStack {
-                        ReuseStatusUpdateView()
-                        ReuseStatusUpdateView()
-                        ReuseStatusUpdateView()
+                        
+//                        if let data = homeVM.listApp?.data.first.
+                        ReuseStatusUpdateViewPublic()
+                        ReuseStatusUpdateViewUpdate()
+                        ReuseStatusUpdateViewNew()
                     }
                 }
                 

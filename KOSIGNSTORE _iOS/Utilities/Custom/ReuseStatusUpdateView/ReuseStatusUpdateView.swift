@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ReuseStatusUpdateView: View {
+struct ReuseStatusUpdateViewNew : View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius:0, style: .continuous)
@@ -19,7 +19,34 @@ struct ReuseStatusUpdateView: View {
         }
     }
 }
+struct ReuseStatusUpdateViewUpdate : View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius:0, style: .continuous)
+                .fill(Color("DevelopTextColor"))
+                .frame(width: 50 , height: 12)
+            Text ("UPDATE")
+                .font(.customFont(font: .Rubik, style: .bold , size: .h11))
+                .foregroundColor(Color(.white))
+        }
+    }
+}
+struct ReuseStatusUpdateViewPublic : View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius:0, style: .continuous)
+                .fill(Color("PublicColor"))
+                .frame(width: 50 , height: 12)
+            Text ("PUBLIC")
+                .font(.customFont(font: .Rubik, style: .bold , size: .h11))
+                .foregroundColor(Color(.white))
+        }
+    }
+}
+
 
 #Preview {
-    ReuseStatusUpdateView()
+//    ReuseStatusUpdateViewNew()
+//    ReuseStatusUpdateViewUpdate()
+    ReuseStatusUpdateViewPublic()
 }

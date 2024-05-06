@@ -11,46 +11,75 @@ import Combine
 class HomeViewModel: ObservableObject {
     
     @Published var homeContentData  : [HomeContentBody] = []
+    @Published var homePublicApp    : ListAppVersion.Response? = nil
+    @Published var listApp          : ListApp.Response? = nil
+    
     @Published var isLoading        : Bool = false
     @Published var error            : Error?
     @Published var userType         : UserType? = .Logout
     private var cancellables        : Set<AnyCancellable> = []
     
-    func getHomeData(userID: Int?, companyID: Int?) {
-        isLoading = true
-        let type: ListAppType = (userType == .Login) ? .Private : .Public
+
+    
+    func  fetchListApp  (userID: Int?, companyID: Int?, type: ListAppType , completionHandler: @escaping (Swift.Result<ListApp.Response?, Error>) -> Void ) {
+        let body = ListApp.Request(os_type: AnyCodableValue.string("ios"))
+        NetworkManager.shared.request(endpoint:  APIKey.listPublicApp , httpMethod: .POST, body: body, responseType: ListApp.Response.self)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    completionHandler(.failure(error))
+                case .finished: break
+                }
+            }
+    receiveValue: { [weak self] data in
+        self?.listApp = data
+        completionHandler(.success(data))
+    }
+    .store(in: &cancellables)
         
-//        fetchListApp(userID: userID, companyID: companyID, type: type)
-//            .receive(on: DispatchQueue.main)
-//            .sink { completion in
-//                self.isLoading = false
-//                if case .failure(let error) = completion {
-//                    self.error = error
-//                }
-//            } receiveValue: { response in
-//                self.homeContentData = response?.data as! [HomeContentBody]
-//            }
-//            .store(in: &cancellables)
     }
     
     
+    // MARK: - Public Version by id
+    func  fetchListPublicAppVersion (id : Int ,  completionHandler: @escaping (Swift.Result<ListAppVersion.Response?, Error>) -> Void ) {
+        let body = ListAppVersion.Request(app_id: AnyCodableValue.integer(id), os_type: AnyCodableValue.string("ios"))
+        
+        NetworkManager.shared.request(endpoint:  APIKey.listPublicAppVersion , httpMethod: .POST, body: body, responseType: ListAppVersion.Response.self)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    
+                    completionHandler(.failure(error))
+                case .finished: break
+                }
+            }
+        
+        receiveValue: { [weak self] data in
+            self?.homePublicApp = data
+        completionHandler(.success(data))
+        }
+    .store(in: &cancellables)
+    }
     
-//    private func fetchListApp(userID: Int?, companyID: Int?, type: ListAppType) -> AnyPublisher<ListApp.Response?, Error> {
-//        let body: ListApp.Request?
-//        switch type {
-//        case .Public:
-//            body = ListApp.Request(os_type: AnyCodableValue.string("ios"))
-//        case .Private:
-//            body = ListApp.Request(os_type: AnyCodableValue.string("ios"), user_id: AnyCodableValue.integer(userID ?? 0), company_id: AnyCodableValue.integer(companyID ?? 0))
-//        }
-//        let apiKey = (type == .Public) ? APIKey.listPublicApp : APIKey.listPrivateApp
-//        
-//        return NetworkManager.shared.request(endpoint: apiKey, httpMethod: .POST,body: body  , responseType: ListApp.Response.self)
-//        
-//            .mapError { $0 as Error }
-////            .eraseToAnyPublisher()
-//        
-//    }
-    
-    
+    // MARK: - Private Version by id
+    func  fetchListPrivateAppVersion (id : Int ,  completionHandler: @escaping (Swift.Result<ListAppVersion.Response?, Error>) -> Void ) {
+        let body = ListAppVersion.Request(app_id: AnyCodableValue.integer(id), os_type: AnyCodableValue.string("ios"))
+
+        NetworkManager.shared.request(endpoint:  APIKey.listPrivateAppVersion , httpMethod: .POST, body: body, responseType: ListAppVersion.Response.self)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    
+                    completionHandler(.failure(error))
+                case .finished: break
+                }
+            }
+        
+        receiveValue: { [weak self] data in
+            self?.homePublicApp = data
+        completionHandler(.success(data))
+        }
+    .store(in: &cancellables)
+    }
+
 }

@@ -9,10 +9,14 @@ import SwiftUI
 
 struct LoginScreen: View {
     // MARK: - Propertiers
-    @StateObject var viewModel      = ViewModel()
+    @StateObject var viewModel              = ViewModel()
     @State private var email                = ""
     @State private var password             = ""
     @State private var isFocused: Bool      = false
+    @Environment(\.dismiss) private var dismiss
+    
+    
+    
     var body: some View {
 //        VStack {
 //            List  {
@@ -88,6 +92,10 @@ struct LoginScreen: View {
                                     switch result {
                                         
                                     case .success(let data):
+                                        //action
+                                        dismiss().self
+                                        
+                                        
                                         print("data user \(data)")
                                         
                                         print("""

@@ -17,8 +17,8 @@ struct HomeDetailVC: View {
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
                 HStack {
-                    ReuseStatusUpdateView()
-                    ReuseStatusUpdateView()
+                    ReuseStatusUpdateViewNew()
+                    ReuseStatusUpdateViewPublic()
                 }
                 Spacer()
                 
