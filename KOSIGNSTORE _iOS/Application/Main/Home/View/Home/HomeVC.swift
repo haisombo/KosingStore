@@ -45,7 +45,7 @@ struct HomeVC: View {
             }
             
             .searchable(text: $searchText)
-            .navigationViewStyle(StackNavigationViewStyle())
+//            .navigationViewStyle(StackNavigationViewStyle())
             
             // MARK: - present Pop up Log in from
             if presentPopup {

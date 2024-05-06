@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileUpdateUser: View {
+    
     @State private var name                = ""
     @State private var email                = ""
     @State private var password             = ""
@@ -16,7 +17,6 @@ struct ProfileUpdateUser: View {
        VStack {
             VStack {
                 ZStack {
-                    
                     RoundedRectangle(cornerRadius: 0, style: .continuous)
                         .fill(Color("MianColor"))
                         .frame(width: .infinity , height: 135 )
@@ -28,7 +28,6 @@ struct ProfileUpdateUser: View {
                             .foregroundColor(.white)
                             .font(.customFont(font: .Rubik, style: .regular , size: .h6))
                     }
-                    
                 }
                 
                 List {
@@ -36,15 +35,17 @@ struct ProfileUpdateUser: View {
                     Section {
                         VStack (alignment : .center ) {
                             ZStack  {
-                               RoundedRectangle(cornerRadius: 100, style: .continuous)
+                                Image("defaultIMG")
+                                    .resizable()
+                                    .frame(width: 100 ,height: 100)
+//                               RoundedRectangle(cornerRadius: 100, style: .continuous)
 //                                   .fill(Color("MianColor"))
-                                    .fill(Color.white)
+////                                    .fill(Color.white)
+////                                    .fill(Color.blue)
                                    .frame(width: 100 , height: 100 )
-                                Image ("camera")
-                               
+                                Image ("camera_ico")
                             }
                         } .padding(.horizontal , 90)
-                        
                     }
                     
                     Section {
@@ -63,6 +64,7 @@ struct ProfileUpdateUser: View {
                             Image("user")
                                 .padding()
                             TextField("test@gmail.com", text: self.$email)
+                                .foregroundColor(.black)
                         }
                         .background(Color(.white))
                         .cornerRadius(10)
@@ -81,12 +83,13 @@ struct ProfileUpdateUser: View {
                         .cornerRadius(8)
                     }
                     
-                }.listStyle(.insetGrouped)
+                } .listStyle(.insetGrouped)
 
                 
                 // MARK: - update button
                 VStack {
                     Button(action: {
+                        // action
                         
                     }, label: {
                         Text("Update")
