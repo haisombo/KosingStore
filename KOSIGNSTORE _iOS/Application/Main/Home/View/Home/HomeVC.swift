@@ -17,17 +17,30 @@ struct HomeVC: View {
     var body: some View {
         ZStack {
             NavigationView {
-                VStack {
+                VStack (alignment : .center )  {
                     List {
-                        Section  {
+                        Section (content: {
                             HomeCell()
-                        }
+//                            HomeCell()
+                            // show when search no data
+//                            GeometryReader { geometry in
+//                                VStack {
+//                                    NotFoundCell()
+//                                }.frame(width: geometry.size.width)
+//                            }
+                        }, header: {
+                         
+                        }, footer:  {
+                            GeometryReader { geometry in
+                                VStack(alignment: .center) {
+                                    FooterHomeCell()
+                                }.frame(width: geometry.size.width)
+                            }
+                        })
                     }
                     .listStyle(InsetGroupedListStyle())
                 }
                 .navigationBarLargeTitleItems(trailing:
-                                                
-                           
                                                 Button(action: {
                     withAnimation(.linear(duration: 0.3)) {
                         presentPopup = true
@@ -35,17 +48,19 @@ struct HomeVC: View {
                 }) {
                     Image("profile")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
                         .frame(width: 55, height: 55)
-                        .cornerRadius(50)
+                        .cornerRadius(55)
                 }
-                    .offset(x: -30, y: 10)
+                    .offset(x: -20, y: 10)
+                    .background(Color("BackGoundColor"))
                 )
                 .navigationBarTitle("My App")
+                
+ 
             }
             
             .searchable(text: $searchText)
-//            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationViewStyle(StackNavigationViewStyle())
             
             // MARK: - present Pop up Log in from
             if presentPopup {
@@ -58,6 +73,20 @@ struct HomeVC: View {
             
         }
         
+    }
+    
+    struct NavigationConfigurator: UIViewControllerRepresentable {
+        var configure: (UINavigationController) -> Void = { _ in }
+
+        func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+            UIViewController()
+        }
+        func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+            if let nc = uiViewController.navigationController {
+                self.configure(nc)
+            }
+        }
+
     }
 }
 
@@ -115,14 +144,6 @@ struct Popup<Content: View>: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationStack {
-            HomeVC()
-        }
-    }
-}
-
 struct SearchBarCustomView: View {
     @State var searchText = ""
 
@@ -139,8 +160,6 @@ struct SearchBarCustomView: View {
                     .background(Color.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
             }
-            
-            //                    Spacer()
             
             // MARK: - Filter Data Search
             Button(action: {
@@ -160,4 +179,11 @@ struct SearchBarCustomView: View {
     }
 }
 
-
+// Preview Ui
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            HomeVC()
+        }
+    }
+}

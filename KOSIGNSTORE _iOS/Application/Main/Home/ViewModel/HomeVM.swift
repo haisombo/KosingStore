@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
@@ -14,12 +13,13 @@ class HomeViewModel: ObservableObject {
     @Published var homeContentData  : [HomeContentBody] = []
     @Published var isLoading        : Bool = false
     @Published var error            : Error?
+    @Published var userType         : UserType? = .Logout
     private var cancellables        : Set<AnyCancellable> = []
     
-//    func getHomeData(userID: Int?, companyID: Int?) {
-//        isLoading = true
-//        let type: ListAppType = (userType == .Login) ? .Private : .Public
-//        
+    func getHomeData(userID: Int?, companyID: Int?) {
+        isLoading = true
+        let type: ListAppType = (userType == .Login) ? .Private : .Public
+        
 //        fetchListApp(userID: userID, companyID: companyID, type: type)
 //            .receive(on: DispatchQueue.main)
 //            .sink { completion in
@@ -28,10 +28,12 @@ class HomeViewModel: ObservableObject {
 //                    self.error = error
 //                }
 //            } receiveValue: { response in
-//                self.homeContentData = response?.data ?? []
+//                self.homeContentData = response?.data as! [HomeContentBody]
 //            }
 //            .store(in: &cancellables)
-//    }
+    }
+    
+    
     
 //    private func fetchListApp(userID: Int?, companyID: Int?, type: ListAppType) -> AnyPublisher<ListApp.Response?, Error> {
 //        let body: ListApp.Request?
@@ -43,14 +45,10 @@ class HomeViewModel: ObservableObject {
 //        }
 //        let apiKey = (type == .Public) ? APIKey.listPublicApp : APIKey.listPrivateApp
 //        
-//        return NetworkManager.shared.request(endpoint: apiKey,
-//                                             httpMethod: .POST,
-//                                             
-//                                             responseType: ListApp.Response.self
-//                                            )
+//        return NetworkManager.shared.request(endpoint: apiKey, httpMethod: .POST,body: body  , responseType: ListApp.Response.self)
 //        
 //            .mapError { $0 as Error }
-//            .eraseToAnyPublisher()
+////            .eraseToAnyPublisher()
 //        
 //    }
     

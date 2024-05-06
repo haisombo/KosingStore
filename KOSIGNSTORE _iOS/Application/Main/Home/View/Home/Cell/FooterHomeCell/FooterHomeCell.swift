@@ -9,12 +9,14 @@ import SwiftUI
 
 struct FooterHomeCell: View {
     var body: some View {
-        VStack {
-            Text("Copyright © 2017 KOSIGN")
-                .font(.customFont(font: .Rubik, style: .regular, size: .h9 ))
+        ZStack /*(alignment : .center )*/ {
+            VStack (alignment : .center )  {
+                Text("Copyright © 2017 KOSIGN")
+                    .font(.customFont(font: .Rubik, style: .medium, size: .h8 ))
+                    .foregroundColor(Color.black)
+            }
+            .frame(height: 150 )
         }
-        .frame( width: .infinity ,height: 150 )
-        .background(Color("GrayColor"))
     }
 }
 
