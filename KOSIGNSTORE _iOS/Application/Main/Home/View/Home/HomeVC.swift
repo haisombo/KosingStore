@@ -15,7 +15,7 @@ struct HomeVC: View {
     @State var showSheetView        = false
     @State var searchText           = ""
     @State private var presentPopup = false
-    
+    @State private var mgVM   = MgVM()
     var body: some View {
         ZStack {
             NavigationView {
@@ -42,6 +42,16 @@ struct HomeVC: View {
                 }
                 .onAppear {
                     self.listApp()
+                    self.mgVM.requestMG(){
+                        result in
+                        switch result {
+                        case .success(let data) :
+                         print(data)
+                        case .failure(_) :
+                            print("fail")
+                        }
+                    }
+                    
                 }
                 .navigationBarLargeTitleItems(trailing:
                         Button(action: {

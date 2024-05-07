@@ -32,6 +32,7 @@ struct LoginScreen: View {
                         .padding(.vertical , 30 )
              
                     }
+                    
                   
                     
                     GridRow {

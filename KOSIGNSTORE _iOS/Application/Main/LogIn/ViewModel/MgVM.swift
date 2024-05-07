@@ -14,7 +14,13 @@ class MgVM : ObservableObject  {
     private var cancellables = Set<AnyCancellable>()
     
     func  requestMG (completionHandler: @escaping (Swift.Result<MG.Response?, Error>) -> Void) {
-        NetworkManager.shared.request(endpoint: .mgURL , httpMethod: .GET, responseType: MG.Response.self)
+        var url : APIKey
+        #if DEBUG
+        url = APIKey.mgURL
+        #else
+//        url = APIKey.mgRealURL
+        #endif
+        NetworkManager.shared.request(baseURL: url.rawValue, endpoint: .mgURL, httpMethod: .GET, responseType: MG.Response.self)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
