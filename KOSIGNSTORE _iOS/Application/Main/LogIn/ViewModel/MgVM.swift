@@ -18,9 +18,9 @@ class MgVM : ObservableObject  {
         #if DEBUG
         url = APIKey.mgURL
         #else
-//        url = APIKey.mgRealURL
+        url = APIKey.mgURL
         #endif
-        NetworkManager.shared.request(baseURL: url.rawValue, endpoint: .mgURL, httpMethod: .GET, responseType: MG.Response.self)
+        NetworkManager.shared.request(baseURL:"", endpoint: url , httpMethod: .GET, responseType: MG.Response.self)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
