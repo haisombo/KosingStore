@@ -68,6 +68,7 @@
 		839E3F062BE4D7BA00455220 /* AboutCompanyCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F052BE4D7BA00455220 /* AboutCompanyCV.swift */; };
 		839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F072BE4DE5B00455220 /* AccountViewVC.swift */; };
 		839E3F0A2BE4E59500455220 /* ProfileUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */; };
+		83C195C12BE9D4EB00E9E5A3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C195C12BE9D4EB00E9E5A3 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +560,9 @@
 			dependencies = (
 			);
 			name = "KOSIGNSTORE _iOS";
+			packageProductDependencies = (
+				83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */,
+			);
 			productName = "KOSIGNSTORE _iOS";
 			productReference = 834B70202BE0C4A2006FB95C /* KOSIGNSTORE _iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -586,6 +591,9 @@
 				Base,
 			);
 			mainGroup = 834B70172BE0C4A2006FB95C;
+			packageReferences = (
+				83C195BF2BE9D4EB00E9E5A3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 834B70212BE0C4A2006FB95C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -880,6 +888,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		83C195BF2BE9D4EB00E9E5A3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83C195BF2BE9D4EB00E9E5A3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 834B70182BE0C4A2006FB95C /* Project object */;
 }

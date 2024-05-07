@@ -6,17 +6,15 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HomeCell: View {
-    @StateObject var homeVM = HomeViewModel()
-    @State var showSheetView = false
+    @StateObject var homeVM     = HomeViewModel()
+    @State      var listApp         : ListApp.AppInfo? = nil 
+    @State var showSheetView    = false
     
     var body: some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 8, style: .circular  )
-//                .fill(Color.white)
-//                .frame(width: 374 , height: 154 )
-            
+
             VStack (alignment: .leading ){
                 Button(action: {
                     self.showSheetView.toggle()
@@ -26,25 +24,41 @@ struct HomeCell: View {
                 HStack (spacing : 10 ) {
                     
 //                    Text ("@KOSIGN")
-                    Text(homeVM.listApp?.data.first?.name?.stringValue ?? "" )
+//                    Text("@ \(homeVM.listApp?.data.first?.name?.stringValue ?? "" )")
+                    Text("@ \(listApp?.appOfCompany?.stringValue ?? "" )")
                         .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                         .foregroundColor(Color("MianColor"))
                     HStack {
-                        
-//                        if let data = homeVM.listApp?.data.first.
-                        ReuseStatusUpdateViewPublic()
-                        ReuseStatusUpdateViewUpdate()
-                        ReuseStatusUpdateViewNew()
+                        if let data = listApp?.isPublic {
+                            ReuseStatusUpdateViewPublic(isPublic: false)
+                        } else {
+                            ReuseStatusUpdateViewPublic(isPublic: true)
+                        }
+                       
+                        if let data = listApp?.appCreatedDate {
+                            ReuseStatusUpdateViewUpdate(isUpdate: false)
+                        } else {
+                            ReuseStatusUpdateViewUpdate(isUpdate: true)
+                        }
+                 
+                        if let data  = listApp?.appModifiedDate?.stringValue {
+                            ReuseStatusUpdateViewNew(isNew: false )
+                            
+                        }   else {
+                            ReuseStatusUpdateViewNew(isNew: true )
+                        }
                     }
                 }
                 
                 HStack {
                     HStack {
-                        Image("defaultIMG")
+                        WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" ))
+//
+//                        Image("defaultIMG")
                             .resizable()
                             .frame(width: 50 , height: 50)
-                       
-                        Text("OpenBoard")
+                            .cornerRadius(8.0)
+                        Text(listApp?.name?.stringValue ?? "" )
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))
                     }
                     .padding(.vertical , 12)
@@ -59,8 +73,9 @@ struct HomeCell: View {
                         VStack (alignment : .leading , spacing:  3 )  {
                             Text ("Real Server")
                                 .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-                            
-                            Text ("A yearago")
+//                            Text ("A yearago")
+//                            Text(homeVM.listApp?.data.first?.real?.createdDate?.stringValue ?? "" )
+                            Text(listApp?.real?.createdDate?.stringValue ?? "")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h9))
                                 .foregroundColor(.gray.opacity(0.8))
                         }
@@ -68,8 +83,9 @@ struct HomeCell: View {
                         VStack(alignment : .leading , spacing:  3 )  {
                             Text ("Dev. Server")
                                 .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-                            
-                            Text ("4 months ago")
+//                            Text(homeVM.listApp?.data.first?.dev?.createdDate?.stringValue ?? "" )
+                            Text(listApp?.dev?.createdDate?.stringValue ?? "" )
+//                            Text ("4 months ago")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h9))
                                 .foregroundColor(.gray.opacity(0.8))
                         }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AnyCodableValue: Codable {
+enum AnyCodableValue: Codable , Hashable {
     case integer(Int)
     case string(String)
     case float(Float)

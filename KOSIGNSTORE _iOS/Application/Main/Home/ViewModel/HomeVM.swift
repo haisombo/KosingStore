@@ -13,7 +13,6 @@ class HomeViewModel: ObservableObject {
     @Published var homeContentData  : [HomeContentBody] = []
     @Published var homePublicApp    : ListAppVersion.Response? = nil
     @Published var listApp          : ListApp.Response? = nil
-    
     @Published var isLoading        : Bool = false
     @Published var error            : Error?
     @Published var userType         : UserType? = .Logout

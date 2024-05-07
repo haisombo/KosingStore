@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ReuseStatusUpdateViewNew : View {
+    @State var isNew : Bool
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius:0, style: .continuous)
@@ -20,6 +22,7 @@ struct ReuseStatusUpdateViewNew : View {
     }
 }
 struct ReuseStatusUpdateViewUpdate : View {
+    @State var isUpdate : Bool
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius:0, style: .continuous)
@@ -32,6 +35,7 @@ struct ReuseStatusUpdateViewUpdate : View {
     }
 }
 struct ReuseStatusUpdateViewPublic : View {
+    @State var isPublic : Bool
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius:0, style: .continuous)
@@ -45,8 +49,8 @@ struct ReuseStatusUpdateViewPublic : View {
 }
 
 
-#Preview {
-//    ReuseStatusUpdateViewNew()
-//    ReuseStatusUpdateViewUpdate()
-    ReuseStatusUpdateViewPublic()
-}
+//#Preview {
+////    ReuseStatusUpdateViewNew()
+////    ReuseStatusUpdateViewUpdate()
+//    ReuseStatusUpdateViewPublic()
+//}

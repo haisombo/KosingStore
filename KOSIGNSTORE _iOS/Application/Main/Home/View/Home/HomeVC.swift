@@ -15,16 +15,17 @@ struct HomeVC: View {
     @State var showSheetView        = false
     @State var searchText           = ""
     @State private var presentPopup = false
-
     
     var body: some View {
         ZStack {
             NavigationView {
                 VStack (alignment : .center )  {
-                
-                    List {
-                        Section (content: {
-                            HomeCell(homeVM: homeViewModel)
+                    List  {
+                        Section (content:  {
+                            // map list data from api 
+                            ForEach (homeViewModel.listApp?.data ?? [] , id : \.id) { dataListApp in
+                                HomeCell(listApp: dataListApp )
+                            }
                             
                         }, header: {
                          
@@ -36,6 +37,7 @@ struct HomeVC: View {
                             }
                         })
                     }
+                    .listRowSpacing(15.0)
                     .listStyle(InsetGroupedListStyle())
                 }
                 .onAppear {
@@ -72,9 +74,7 @@ struct HomeVC: View {
                     
                 }
             }
-            
         }
-        
     }
     
     func listApp ( ) {
@@ -83,7 +83,6 @@ struct HomeVC: View {
             case .success(let data):
                 self.homeViewModel.listApp   = data
                 print("data user \(data)")
-                
                 print("""
                              🎉🤩
                               ===> Fetch Sucess ✅ 👏🥳
@@ -169,7 +168,7 @@ struct Popup<Content: View>: View {
                 }
             content
                 .frame(
-                    width: UIScreen.main.bounds.size.width - 30 , height: 500)
+                    width: UIScreen.main.bounds.size.width - 30 , height: 450)
                 .background(.white)
                 .cornerRadius(12)
                 .overlay(alignment: .topTrailing) {

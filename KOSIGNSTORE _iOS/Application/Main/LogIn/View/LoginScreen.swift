@@ -18,25 +18,25 @@ struct LoginScreen: View {
     
     
     var body: some View {
-//        VStack {
-//            List  {
+
                 Grid {
                     GridRow {
-                        VStack  (spacing : 20){
+                        VStack  (spacing : 10){
                             Text("KOSIGN STORE")
                                 .font(Font.custom("Rubik-Bold", size: 24.0))
                          
                             Text("Welcome back Please login to continue")
                                 .font(Font.custom("RubikRoman-Regular", size: 12.0))
-                        }.padding(.vertical , 50 )
-                    }      
+                        }   
+                        .padding(.top , 80 )
+                        .padding(.vertical , 30 )
+             
+                    }
                   
                     
                     GridRow {
-                        VStack() {
-                          
-                            Spacer()
-                            VStack(alignment: .leading, spacing: 0) {
+                        VStack {
+                            VStack(alignment: .leading) {
                                 VStack {
                                     HStack(alignment: .center) {
                                         Image("mail")
@@ -50,7 +50,7 @@ struct LoginScreen: View {
                                     .frame(width: 300 , height: 50)
                                     .background(Color.white)
                                     .cornerRadius(10)
-                                    .shadow(color: Color.gray.opacity(0.2), radius: 9, x: 0.0, y: 9)
+                                    .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0.0, y: 2)
                                     .padding()
                                     .cornerRadius(8)
                                     
@@ -66,26 +66,12 @@ struct LoginScreen: View {
                                     .frame(width: 300 , height: 50)
                                     .background(Color(.white))
                                     .cornerRadius(10)
-                                    .shadow(color: Color.gray.opacity(0.2), radius: 9 , x: 0.0, y: 9)
+                                    .shadow(color: Color.gray.opacity(0.2), radius: 4 , x: 0.0, y: 2)
                                     .padding()
                                     .cornerRadius(8)
                                     
-                                    
-                                    
-                                    Button(action: {
-        //
-                                    }) {
-                                        Text("Forgot Password")
-                                            .font(.headline)
-                                            .foregroundColor(Color("MianColor"))
-                                            .padding()
-                                            .frame(width: 300, height: 50)
-                                            .cornerRadius(15.0)
-                                    }
-                                    
                                 }
                             }
-                            Spacer()
                             // MARK: -   Action LogIn
                             Button(action: {
                                 self.viewModel.requestLogin(username: email, password: password) {/* [weak self] */result in
@@ -121,13 +107,11 @@ struct LoginScreen: View {
                                     .cornerRadius(15.0)
                             }
                             .padding(.vertical , 40)
+                            .padding(.bottom , 60)
                         }
                         
                     }
                 }
-//            }.scrollDisabled(true)
-//            
-//        }
     }
 }
 

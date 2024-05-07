@@ -15,7 +15,7 @@ struct FooterHomeCell: View {
                     .font(.customFont(font: .Rubik, style: .medium, size: .h8 ))
                     .foregroundColor(Color.black)
             }
-            .frame(height: 150 )
+            .frame(height: 80 )
         }
     }
 }
