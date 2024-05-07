@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct KOSIGNSTORE_iOSApp: App {
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appdelegate
+
     var body: some Scene {
         WindowGroup {
             HomeVC()

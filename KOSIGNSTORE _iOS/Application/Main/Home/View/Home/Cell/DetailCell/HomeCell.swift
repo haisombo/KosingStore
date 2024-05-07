@@ -22,7 +22,6 @@ struct HomeCell: View {
                 })
                 
                 HStack (spacing : 10 ) {
-                    
 //                    Text ("@KOSIGN")
 //                    Text("@ \(homeVM.listApp?.data.first?.name?.stringValue ?? "" )")
                     Text("@ \(listApp?.appOfCompany?.stringValue ?? "" )")

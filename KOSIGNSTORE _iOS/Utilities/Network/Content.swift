@@ -65,7 +65,7 @@ public enum NotifyKey : String {
     
 }
 
-public enum APIKey: String {
+public enum APIKey : String {
 
     public static var baseURL  : String = "https://kosignstore.wecambodia.com:8080/kosignstore_v4"
 

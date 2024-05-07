@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import SDWebImageSwiftUI
 
 struct HomeVC: View {
     
@@ -15,6 +15,7 @@ struct HomeVC: View {
     @State var showSheetView        = false
     @State var searchText           = ""
     @State private var presentPopup = false
+
     
     var body: some View {
         ZStack {
@@ -49,21 +50,46 @@ struct HomeVC: View {
                         presentPopup = true
                     }
                 }) {
-                    Image("defaultIMG")
+                    WebImage(url: URL(string: Shared.share.userInfo?.image ?? "" )) { image  in
+//                        Image(image)
+//                        .resizable()
+//                        .frame(width: 50, height: 50)
+//                        .cornerRadius(50)
+                    } placeholder: {
+                        Image("defaultIMG")
                         .resizable()
                         .frame(width: 50, height: 50)
                         .cornerRadius(50)
+                    }
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(50)
+                    
+                    
+//                    WebImage(url: URL(string: Shared.share.userInfo?.image ?? "" )  , content: { result  in
+////                        Image(uiImage : image )
+//                        Image(String  )
+//                            .resizable()
+//                            .frame(width: 50, height: 50)
+//                            .cornerRadius(50)
+//                    }, placeholder: {
+//                        Image("defaultIMG")
+//                            .resizable()
+//                            .frame(width: 50, height: 50)
+//                            .cornerRadius(50)
+//                    })
                 }
                     .offset(x: -20, y: 8)
                     .background(Color("BackGoundColor"))
                 )
                
                 .navigationBarTitle("My App")
-                
-              
             }
             
-            .searchable(text: $searchText)
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always )
+        
+            
+            )
             .navigationViewStyle(StackNavigationViewStyle())
             
             // MARK: - present Pop up Log in from
@@ -77,12 +103,14 @@ struct HomeVC: View {
         }
     }
     
+    
+    
     func listApp ( ) {
         self.homeViewModel.fetchListApp(userID: 0, companyID: 0, type: .Public) { result in
             switch result {
             case .success(let data):
                 self.homeViewModel.listApp   = data
-                print("data user \(data)")
+//                print("data user \(data)")
                 print("""
                              🎉🤩
                               ===> Fetch Sucess ✅ 👏🥳
@@ -102,7 +130,7 @@ struct HomeVC: View {
                switch result {
                case .success(let data):
                    self.homeViewModel.homePublicApp   = data
-                   print("data user \(data)")
+//                   print("data user \(data)")
                    
                    print("""
                                 🎉🤩

@@ -15,8 +15,6 @@ struct LoginScreen: View {
     @State private var isFocused: Bool      = false
     @Environment(\.dismiss) private var dismiss
     
-    
-    
     var body: some View {
 
                 Grid {
@@ -32,8 +30,6 @@ struct LoginScreen: View {
                         .padding(.vertical , 30 )
              
                     }
-                  
-                    
                     GridRow {
                         VStack {
                             VStack(alignment: .leading) {
@@ -80,8 +76,6 @@ struct LoginScreen: View {
                                     case .success(let data):
                                         //action
                                         dismiss().self
-                                        
-                                        
                                         print("data user \(data)")
                                         
                                         print("""

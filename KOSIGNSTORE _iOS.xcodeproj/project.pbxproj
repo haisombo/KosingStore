@@ -69,6 +69,8 @@
 		839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F072BE4DE5B00455220 /* AccountViewVC.swift */; };
 		839E3F0A2BE4E59500455220 /* ProfileUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */; };
 		83C195C12BE9D4EB00E9E5A3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */; };
+		83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */; };
+		83C195C62BEA1F1700E9E5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +136,8 @@
 		839E3F052BE4D7BA00455220 /* AboutCompanyCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyCV.swift; sourceTree = "<group>"; };
 		839E3F072BE4DE5B00455220 /* AccountViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewVC.swift; sourceTree = "<group>"; };
 		839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateUser.swift; sourceTree = "<group>"; };
+		83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				834B707F2BE0EC58006FB95C /* KOSIGNSTORE--iOS-Info.plist */,
+				83C195C22BEA1E5D00E9E5A3 /* AppDelegate */,
 				834B70372BE0D722006FB95C /* Lifecycle */,
 				834B70362BE0C78A006FB95C /* Researce */,
 				834B70332BE0C6F0006FB95C /* Utilities */,
@@ -544,6 +549,15 @@
 			path = static;
 			sourceTree = "<group>";
 		};
+		83C195C22BEA1E5D00E9E5A3 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */,
+				83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -643,6 +657,7 @@
 				834875FB2BE335B2008A50CB /* HomeCell.swift in Sources */,
 				834875E12BE32996008A50CB /* ActivityIndicatorLoading.swift in Sources */,
 				834876112BE38C82008A50CB /* ProfileDetailViewVC.swift in Sources */,
+				83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */,
 				834875F32BE33384008A50CB /* HomeModel.swift in Sources */,
 				834B70572BE0E6D6006FB95C /* LaunchScreen.swift in Sources */,
 				834B703F2BE0DA89006FB95C /* Shared.swift in Sources */,
@@ -667,6 +682,7 @@
 				834B704E2BE0DFF2006FB95C /* Content.swift in Sources */,
 				8348760B2BE343BB008A50CB /* ReuseStatusUpdateView.swift in Sources */,
 				834875EB2BE33281008A50CB /* LoginScreen.swift in Sources */,
+				83C195C62BEA1F1700E9E5A3 /* SceneDelegate.swift in Sources */,
 				834B703D2BE0DA7C006FB95C /* Log.swift in Sources */,
 				839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */,
 				834B70542BE0E58E006FB95C /* HomeVC.swift in Sources */,
