@@ -15,11 +15,21 @@ class ViewModel  : ObservableObject {
     var aosMGData       : MGAOS.Response? = nil
     
     var loginData       : Login.Response? = nil
+    
+    
+    
     var userID                      :      Int? = 0
     var companyID                   :      Int? = 0
     var userInfo                    :      UserInfo?
-    @Published var userType                     : UserType? = .Logout
+    @Published var userType         : UserType? = .Logout
+    @Published var showAlert        = false
+
+    
     private var cancellables = Set<AnyCancellable>()
+    func buttonTapped() {
+            //handle request and then set to true to show the alert
+            self.showAlert = true
+        }
     
     func requestiOSMG() -> Future<MGiOS.Response, Error> {
         let pathVariable    = [Shared.share.appId]

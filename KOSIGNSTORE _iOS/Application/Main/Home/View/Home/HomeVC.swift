@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import FittedSheetsSwiftUI
 
 struct HomeVC: View {
     
@@ -16,6 +17,17 @@ struct HomeVC: View {
     @State var searchText           = ""
     @State private var presentPopup = false
     @State private var mgVM   = MgVM()
+    
+    
+    @State var showFittedSheet: Bool = false
+      let sheetConfiguration: SheetConfiguration = SheetConfiguration(
+          sizes: [.fullscreen],
+          options: nil,
+          sheetViewControllerOptinos: [],
+          shouldDismiss: nil,
+          didDismiss: nil)
+    
+    
     var body: some View {
         ZStack {
             NavigationView {
@@ -96,8 +108,6 @@ struct HomeVC: View {
             }
             
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always )
-        
-            
             )
             .navigationViewStyle(StackNavigationViewStyle())
             

@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "fittedsheets",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gordontucker/FittedSheets",
+      "state" : {
+        "revision" : "5d7f5a6307ad510aa05de5a4a16ac40846d3b2d3",
+        "version" : "2.6.1"
+      }
+    },
+    {
+      "identity" : "fittedsheets-swiftui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Jeonhui/FittedSheets-SwiftUI.git",
+      "state" : {
+        "revision" : "ea069b100d20f7c37e79e998ea89b52ab36a31d6",
+        "version" : "1.1.1"
+      }
+    },
+    {
       "identity" : "sdwebimage",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",

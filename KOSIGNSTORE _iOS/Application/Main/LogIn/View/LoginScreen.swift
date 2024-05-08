@@ -13,8 +13,12 @@ struct LoginScreen: View {
     @State private var email                = ""
     @State private var password             = ""
     @State private var isFocused: Bool      = false
-    @Environment(\.dismiss) private var dismiss
-    
+    @Environment(\.presentationMode) var presentationMode
+    @State private var showAlert = false
+    // 1. Create Alert
+    let alert = UIAlertController(title: "Erorr",
+                                  message: "Your Ticket will Expire Soon.",
+                                  preferredStyle: .alert)
     var body: some View {
 
                 Grid {
@@ -30,9 +34,6 @@ struct LoginScreen: View {
                         .padding(.vertical , 30 )
              
                     }
-                    
-                  
-                    
                     GridRow {
                         VStack {
                             VStack(alignment: .leading) {
@@ -68,33 +69,32 @@ struct LoginScreen: View {
                                     .shadow(color: Color.gray.opacity(0.2), radius: 4 , x: 0.0, y: 2)
                                     .padding()
                                     .cornerRadius(8)
-                                    
                                 }
                             }
                             // MARK: -   Action LogIn
                             Button(action: {
-                                self.viewModel.requestLogin(username: email, password: password) {/* [weak self] */result in
+                                self.viewModel.requestLogin(username: email, password: password) { result in
+                                    
                                     switch result {
-                                        
                                     case .success(let data):
                                         //action
-                                        dismiss().self
-                                        print("data user \(data)")
-                                        
-                                        print("""
-                                                      🎉🤩
-                                                      ===> Fetch Sucess ✅ 👏🥳
-                                                      🎉🤩
-                                                  """)
-                                        
+                                        if (data?.status.booleanValue ?? false) {
+                                            // Dismiss the view upon successful login
+                                            self.presentationMode.wrappedValue.dismiss()
+                                            print("login sucess")
+                                            
+                                        } else {
+                                            // show when erorr
+                                            self.viewModel.buttonTapped()
+                                        }
                                     case .failure(let error):
-                                        print("""
-                                                                  😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
-                                                                  """)
+                                        self.viewModel.buttonTapped()
+                                        print(error.localizedDescription)
                                     }
                                 }
-                                
-                            }) {
+                            }
+                            
+                            ) {
                                 Text("LOGIN")
                                     .font(.headline)
                                     .foregroundColor(.white)
@@ -105,13 +105,30 @@ struct LoginScreen: View {
                             }
                             .padding(.vertical , 40)
                             .padding(.bottom , 60)
+                            .alert(isPresented: $viewModel.showAlert, content: { () -> Alert in
+                                Alert(title: Text("Error").foregroundColor(Color("NewColor") ), message: Text("The email and password entered is invalid. Please try again."), dismissButton: .default (
+                                    Text("Okay")
+                                        .foregroundColor(Color("NewColor"))
+                
+                                ))
+                            })
+
                         }
                         
                     }
                 }
     }
+    
+    func customAlert (title : String) {
+        alert.addAction(UIAlertAction(title:title ,
+                                      style: .default,
+                                      handler: { _ in
+            print("OK tap")
+        }))
+        
+    }
 }
 
-#Preview {
-    LoginScreen()
-}
+//#Preview {
+//    LoginScreen()
+//}

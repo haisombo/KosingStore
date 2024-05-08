@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import FittedSheetsSwiftUI
+import FittedSheets
 
 struct HomeDetailVC: View {
     @Environment(\.dismiss) private var dismiss
@@ -27,7 +29,6 @@ struct HomeDetailVC: View {
                     Button(action: {
                         //action
                          dismiss()
-                        
                     }) {
                         Image ("cancel")
                             .resizable()
@@ -37,7 +38,6 @@ struct HomeDetailVC: View {
                 }
             }
             VStack (alignment : .leading) {
-                
                 HStack {
                     HStack {
                         Image("defaultIMG")

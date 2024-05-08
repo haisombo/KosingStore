@@ -71,6 +71,7 @@
 		83C195C12BE9D4EB00E9E5A3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */; };
 		83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */; };
 		83C195C62BEA1F1700E9E5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */; };
+		83D33D422BEB12D00014F8AB /* FittedSheetsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83D33D412BEB12D00014F8AB /* FittedSheetsSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D33D422BEB12D00014F8AB /* FittedSheetsSwiftUI in Frameworks */,
 				83C195C12BE9D4EB00E9E5A3 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -576,6 +578,7 @@
 			name = "KOSIGNSTORE _iOS";
 			packageProductDependencies = (
 				83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */,
+				83D33D412BEB12D00014F8AB /* FittedSheetsSwiftUI */,
 			);
 			productName = "KOSIGNSTORE _iOS";
 			productReference = 834B70202BE0C4A2006FB95C /* KOSIGNSTORE _iOS.app */;
@@ -607,6 +610,7 @@
 			mainGroup = 834B70172BE0C4A2006FB95C;
 			packageReferences = (
 				83C195BF2BE9D4EB00E9E5A3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				83D33D402BEB12D00014F8AB /* XCRemoteSwiftPackageReference "FittedSheets-SwiftUI" */,
 			);
 			productRefGroup = 834B70212BE0C4A2006FB95C /* Products */;
 			projectDirPath = "";
@@ -836,6 +840,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,6 +872,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -912,6 +918,14 @@
 				minimumVersion = 3.0.4;
 			};
 		};
+		83D33D402BEB12D00014F8AB /* XCRemoteSwiftPackageReference "FittedSheets-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jeonhui/FittedSheets-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -919,6 +933,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 83C195BF2BE9D4EB00E9E5A3 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		83D33D412BEB12D00014F8AB /* FittedSheetsSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83D33D402BEB12D00014F8AB /* XCRemoteSwiftPackageReference "FittedSheets-SwiftUI" */;
+			productName = FittedSheetsSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
