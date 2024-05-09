@@ -7,12 +7,11 @@
 
 import Foundation
 
-
-
 struct UserInfo {
-    var username: String?
-    var fullName: String?
-    var image   : String?
-    var email   : String?
-    var companyName: String?
+    
+    var username    : String?
+    var fullName    : String?
+    var image       : String?
+    var email       : String?
+    var companyName : String?
 }

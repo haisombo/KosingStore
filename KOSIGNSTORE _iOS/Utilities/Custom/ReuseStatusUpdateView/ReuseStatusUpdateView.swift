@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// MARK: - New View
 struct ReuseStatusUpdateViewNew : View {
     @State var isNew : Bool
     
@@ -21,6 +22,8 @@ struct ReuseStatusUpdateViewNew : View {
         }
     }
 }
+
+// MARK: - Update view 
 struct ReuseStatusUpdateViewUpdate : View {
     @State var isUpdate : Bool
     var body: some View {
@@ -34,6 +37,7 @@ struct ReuseStatusUpdateViewUpdate : View {
         }
     }
 }
+// MARK: - Publice view
 struct ReuseStatusUpdateViewPublic : View {
     @State var isPublic : Bool
     var body: some View {

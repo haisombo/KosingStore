@@ -11,102 +11,116 @@ import FittedSheetsSwiftUI
 
 struct HomeVC: View {
     
-    //property
-    @StateObject var homeViewModel  = HomeViewModel()
-    @State var showSheetView        = false
-    @State var searchText           = ""
-    @State private var presentPopup = false
-    @State private var mgVM   = MgVM()
+    // MARK: - property
+    @StateObject    var         homeViewModel           = HomeViewModel()
+    @StateObject    var         logInVM                 = ViewModel()
+    @State          var         showSheetView           = false
+    @State          var         searchText              = ""
+    @State          private var presentPopup            = false
+    @State          private var mgVM                    = MgVM()
+    @State          var         userType                : UserType?
+    @State          private var isShowing               = false
+    @State          var         indexPathToSetVisible   : IndexPath?
+        
+    //sort list using search text
     
+
+    // change color navigationTitle
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "MianColor") ?? .black]
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "MianColor") ?? .black]
+    }
     
-    @State var showFittedSheet: Bool = false
-      let sheetConfiguration: SheetConfiguration = SheetConfiguration(
-          sizes: [.fullscreen],
-          options: nil,
-          sheetViewControllerOptinos: [],
-          shouldDismiss: nil,
-          didDismiss: nil)
-    
-    
+    // MARK: - Body
     var body: some View {
+        
+        
         ZStack {
             NavigationView {
                 VStack (alignment : .center )  {
+                    
+                    // MARK: - ListView
                     List  {
+                        //content
                         Section (content:  {
-                            // map list data from api 
+                            // map list data from api
                             ForEach (homeViewModel.listApp?.data ?? [] , id : \.id) { dataListApp in
+                                // cell
                                 HomeCell(listApp: dataListApp )
                             }
-                            
+                            // header
                         }, header: {
-                         
+                            // footer
                         }, footer:  {
                             GeometryReader { geometry in
                                 VStack(alignment: .center) {
+                                    //cell
                                     FooterHomeCell()
                                 }.frame(width: geometry.size.width)
                             }
                         })
                     }
+                    //                    .animation(.default )
                     .listRowSpacing(15.0)
                     .listStyle(InsetGroupedListStyle())
                 }
+                
+                // MARK: - lifeCyle when open screen
                 .onAppear {
+                    
                     self.listApp()
+                    self.appHomeList()
+                    
                     self.mgVM.requestMG(){
                         result in
                         switch result {
                         case .success(let data) :
-                         print(data)
+                            print(data)
                         case .failure(_) :
                             print("fail")
                         }
                     }
                     
                 }
-                .navigationBarLargeTitleItems(trailing:
-                        Button(action: {
-                    withAnimation(.linear(duration: 0.3)) {
-                        presentPopup = true
+                // MARK: - Navigation Bar
+                .navigationBarLargeTitleItems(trailing: Button(action: {
+                    withAnimation(.easeOut  (duration: 0.3)) {
+                        // MARK: - check type profile navigation
+                        switch(logInVM.userType) {
+                        case .Login :
+                            NavigationLink(destination: ProfileDetailViewVC()) {
+                                Text("Profile")
+                            }
+                            print("log in")
+                        case .Logout :
+                            
+                            print("log out")
+                            presentPopup = true
+                        default: return
+                            
+                        }
                     }
                 }) {
-                    WebImage(url: URL(string: Shared.share.userInfo?.image ?? "" )) { image  in
-//                        Image(image)
-//                        .resizable()
-//                        .frame(width: 50, height: 50)
-//                        .cornerRadius(50)
+                    // Profile User
+                    WebImage(url: URL(string: logInVM.userInfo?.image ?? "" /* Shared.share.userInfo?.image ?? ""*/ )) { image  in
                     } placeholder: {
                         Image("defaultIMG")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(50)
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .cornerRadius(50)
                     }
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                        .cornerRadius(50)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                    .cornerRadius(50)
                     
-                    
-//                    WebImage(url: URL(string: Shared.share.userInfo?.image ?? "" )  , content: { result  in
-////                        Image(uiImage : image )
-//                        Image(String  )
-//                            .resizable()
-//                            .frame(width: 50, height: 50)
-//                            .cornerRadius(50)
-//                    }, placeholder: {
-//                        Image("defaultIMG")
-//                            .resizable()
-//                            .frame(width: 50, height: 50)
-//                            .cornerRadius(50)
-//                    })
                 }
                     .offset(x: -20, y: 8)
                     .background(Color("BackGoundColor"))
                 )
-               
+                
                 .navigationBarTitle("My App")
             }
-            
+            // search bar
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always )
             )
             .navigationViewStyle(StackNavigationViewStyle())
@@ -114,22 +128,25 @@ struct HomeVC: View {
             // MARK: - present Pop up Log in from
             if presentPopup {
                 Popup(isPresented: $presentPopup) {
-                    
-                    LoginScreen()
-                    
+                    LoginScreen(isPresented: $presentPopup) // Pass the binding variable to LoginScreen
                 }
             }
+            
         }
     }
     
-    
-    
+    // MARK: - Method for fetch data
+    func appHomeList () {
+        self.homeViewModel.getHomeData {
+            self.homeViewModel.listApp  = homeViewModel.listApp
+        }
+    }
+    // MARK: - Get Data with ueser type
     func listApp ( ) {
-        self.homeViewModel.fetchListApp(userID: 0, companyID: 0, type: .Public) { result in
+        self.homeViewModel.fetchListApp(userID: 61 , companyID: 1 , type:  .Private ) { result in
             switch result {
             case .success(let data):
                 self.homeViewModel.listApp   = data
-//                print("data user \(data)")
                 print("""
                              🎉🤩
                               ===> Fetch Sucess ✅ 👏🥳
@@ -146,27 +163,29 @@ struct HomeVC: View {
     // MARK: - Get Data Home --> Public
     func getDataHomePublic () {
         self.homeViewModel.fetchListPublicAppVersion(id: 308 ) { result in
-               switch result {
-               case .success(let data):
-                   self.homeViewModel.homePublicApp   = data
-//                   print("data user \(data)")
-                   
-                   print("""
+            switch result {
+            case .success(let data):
+                self.homeViewModel.homePublicApp   = data
+                print("""
                                 🎉🤩
                                  ===> Fetch Sucess ✅ 👏🥳
                                  🎉🤩
                              """)
-                   
-               case .failure(let error):
-                   print("""
+                
+            case .failure(let error):
+                print("""
                             😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
                          """)
-               }
+            }
         }
     }
+    
+    
+    
+    
     struct NavigationConfigurator: UIViewControllerRepresentable {
         var configure: (UINavigationController) -> Void = { _ in }
-
+        
         func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
             UIViewController()
         }
@@ -175,13 +194,12 @@ struct HomeVC: View {
                 self.configure(nc)
             }
         }
-
+        
     }
 }
 
 // MARK: - Extention PopUp
 extension Popup {
-    
     init(isPresented: Binding<Bool>,
          dismissOnTapOutside: Bool = true,
          @ViewBuilder _ content: () -> Content) {
@@ -198,13 +216,11 @@ struct Popup<Content: View>: View {
     let content: Content
     let dismissOnTapOutside: Bool
     
-    private let buttonSize: CGFloat = 24
-    
     var body: some View {
         
-        ZStack {
+       ZStack {
             Rectangle()
-                .fill(.gray.opacity(0.7))
+               .fill(.black.opacity(0.6))
                 .ignoresSafeArea()
                 .onTapGesture {
                     if dismissOnTapOutside {
@@ -215,7 +231,7 @@ struct Popup<Content: View>: View {
                 }
             content
                 .frame(
-                    width: UIScreen.main.bounds.size.width - 30 , height: 450)
+                    width: UIScreen.main.bounds.size.width - 30 , height: 430)
                 .background(.white)
                 .cornerRadius(12)
                 .overlay(alignment: .topTrailing) {

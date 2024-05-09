@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ProfileMoreDetailCell: View {
+    
+    // MARK: - Properties
     @State var isOn: Bool = true
 
+    // MARK: - Body
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8, style: .continuous)
@@ -20,7 +23,6 @@ struct ProfileMoreDetailCell: View {
                 VStack {
                     HStack  {
                         HStack  (spacing : 20 ){
-                            
                             Image("alarm")
                                 .resizable()
                                 .frame(width: 20 , height: 20)
@@ -33,15 +35,9 @@ struct ProfileMoreDetailCell: View {
                                     .font(.customFont(font: .Rubik, style: .regular , size: .h6))
                                     .foregroundColor(Color("GrayTextColor") )
                             }
-                            
-                            
                         }
-                       
-//                        Spacer()
                         Toggle(  isOn: $isOn) {
-                            
                         }.tint(Color("MianColor"))
-                        
                     }.padding(.horizontal , 35 )
                 }
             }

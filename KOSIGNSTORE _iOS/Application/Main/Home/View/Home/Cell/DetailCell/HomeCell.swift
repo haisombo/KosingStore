@@ -7,97 +7,107 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
+import FittedSheetsSwiftUI
 
 struct HomeCell: View {
-    @StateObject var homeVM     = HomeViewModel()
-    @State      var listApp         : ListApp.AppInfo? = nil 
-    @State var showSheetView    = false
     
+    // MARK: - Properties
+    @StateObject    var homeVM              = HomeViewModel()
+    @State          var listApp             : ListApp.AppInfo? = nil
+    @State          var showSheetView       = false
+    @State          var showFittedSheet     : Bool = false
+    
+    // MARK: - Custom Sheet
+    let sheetConfiguration: SheetConfiguration = SheetConfiguration (
+        
+            sizes: [.marginFromTop(70.0)],
+            options: nil,
+            sheetViewControllerOptinos: [],
+            shouldDismiss: nil,
+            didDismiss: nil)
+      
+    // MARK: - Body
     var body: some View {
 
-            VStack (alignment: .leading ){
-                Button(action: {
-                    self.showSheetView.toggle()
-                }, label: {
-                })
+        VStack (alignment: .leading ) {
+            // MARK: - Button Action
+            Button(action: {
+                // call sheet
+                self.showFittedSheet.toggle()
+            }, label: {
+            })
+            
+            // Content 
+            HStack (spacing : 10 ) {
                 
-                HStack (spacing : 10 ) {
-//                    Text ("@KOSIGN")
-//                    Text("@ \(homeVM.listApp?.data.first?.name?.stringValue ?? "" )")
-                    Text("@ \(listApp?.appOfCompany?.stringValue ?? "" )")
-                        .font(.customFont(font: .Rubik, style: .bold , size: .h5))
-                        .foregroundColor(Color("MianColor"))
-                    HStack {
-                        if let data = listApp?.isPublic {
-                            ReuseStatusUpdateViewPublic(isPublic: false)
-                        } else {
-                            ReuseStatusUpdateViewPublic(isPublic: true)
-                        }
-                       
-                        if let data = listApp?.appCreatedDate {
-                            ReuseStatusUpdateViewUpdate(isUpdate: false)
-                        } else {
-                            ReuseStatusUpdateViewUpdate(isUpdate: true)
-                        }
-                 
-                        if let data  = listApp?.appModifiedDate?.stringValue {
-                            ReuseStatusUpdateViewNew(isNew: false )
-                            
-                        }   else {
-                            ReuseStatusUpdateViewNew(isNew: true )
-                        }
-                    }
-                }
+                Text("@ \(listApp?.appOfCompany?.stringValue ?? "" )")
+                    .font(.customFont(font: .Rubik, style: .bold , size: .h5))
+                    .foregroundColor(Color("MianColor"))
                 
+                // Status View
                 HStack {
-                    HStack {
-                        WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" ))
-//
-//                        Image("defaultIMG")
+                    
+                    ReuseStatusUpdateViewPublic     (isPublic: false)
+                    ReuseStatusUpdateViewUpdate     (isUpdate: false)
+                    ReuseStatusUpdateViewNew        (isNew: false )
+                }
+            }
+            
+            HStack (spacing : 50)  {
+                
+                // MARK: - Image Icon Logo App
+                HStack {
+                    
+                    WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" )) { image in
+                        image   .resizable()
+                            .frame(width: 50 , height: 50)
+                            .cornerRadius(8.0)
+                            .aspectRatio(contentMode: .fit)
+                        
+                    } placeholder: {
+                        Image("defaultIMG")
                             .resizable()
                             .frame(width: 50 , height: 50)
                             .cornerRadius(8.0)
-                        Text(listApp?.name?.stringValue ?? "" )
-                            .font(.customFont(font: .Rubik, style: .bold , size: .h3))
+                            .aspectRatio(contentMode: .fit)
+                        
                     }
-                    .padding(.vertical , 12)
-
-                 Spacer()
                     
-                        StatusView()
+                    Text(listApp?.name?.stringValue ?? "" )
+                        .font(.customFont(font: .Rubik, style: .bold , size: .h3));
                 }
-                
+                // Status View Get
+                StatusView()
+            }
+            // Server App Real & Dev
+            HStack {
                 HStack {
-                    HStack {
-                        VStack (alignment : .leading , spacing:  3 )  {
-                            Text ("Real Server")
-                                .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-//                            Text ("A yearago")
-//                            Text(homeVM.listApp?.data.first?.real?.createdDate?.stringValue ?? "" )
-                            Text(listApp?.real?.createdDate?.stringValue ?? "")
-                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                                .foregroundColor(.gray.opacity(0.8))
-                        }
-                        Spacer()
-                        VStack(alignment : .leading , spacing:  3 )  {
-                            Text ("Dev. Server")
-                                .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-//                            Text(homeVM.listApp?.data.first?.dev?.createdDate?.stringValue ?? "" )
-                            Text(listApp?.dev?.createdDate?.stringValue ?? "" )
-//                            Text ("4 months ago")
-                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                                .foregroundColor(.gray.opacity(0.8))
-                        }
+                    VStack (alignment : .leading , spacing:  3 )  {
+                        Text ("Real Server")
+                            .font(.customFont(font: .Rubik, style: .medium , size: .h7))
+                        Text(listApp?.real?.createdDate?.stringValue ?? "")
+                            .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+                            .foregroundColor(.gray.opacity(0.8))
                     }
-                  
+                    
+                    Spacer()
+                    VStack(alignment : .leading , spacing:  3 )  {
+                        Text ("Dev. Server")
+                            .font(.customFont(font: .Rubik, style: .medium , size: .h7))
+                        Text(listApp?.dev?.createdDate?.stringValue ?? "" )
+                            .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+                            .foregroundColor(.gray.opacity(0.8))
+                    }
                 }
-            }  
-        .padding(EdgeInsets(top: -20, leading: 0, bottom: 15, trailing: 0))
-        .sheet(isPresented: $showSheetView) {
-            HomeDetailVC()
-                .presentationDetents([.large])
-
+            }
         }
+        
+        .padding(EdgeInsets(top: -20, leading: 0, bottom: 15, trailing: 0))
+        // MARK: - Open Sheet
+        .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration) {
+            HomeDetailVC()
+        }
+        
     }
 }
 

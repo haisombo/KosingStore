@@ -8,22 +8,14 @@
 import SwiftUI
 
 struct ActivityIndicatorLoading: View {
-    @State var isHideLoader: Bool = true
+    
+    @State var isHideLoader         : Bool = true
+    
     var body: some View {
         VStack {
             LoaderView(tintColor: .black, scaleSize: 2.0).padding(.bottom,50)/*.hidden(isHideLoader)*/
-                
-//                Button(action: {
-//                    self.isHideLoader = !self.isHideLoader
-//                }, label: {
-//                    if self.isHideLoader {
-//                        Text("Click to show Loader")
-//                    } else {
-//                        Text("Click to hide Loader")
-//                    }
-//                }).foregroundColor(.black)
             
-            }
+        }
     }
 }
 struct LoaderView: View {
@@ -45,7 +37,3 @@ extension View {
         }
     }
 }
-
-//#Preview {
-//    ActivityIndicatorLoading()
-//}

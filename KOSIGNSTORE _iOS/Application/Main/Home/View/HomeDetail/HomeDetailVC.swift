@@ -10,21 +10,24 @@ import FittedSheetsSwiftUI
 import FittedSheets
 
 struct HomeDetailVC: View {
+    
+    // MARK: - Properties
+    
     @Environment(\.dismiss) private var dismiss
 
+    // MARK: - Body
     var body: some View {
-        VStack (alignment: .leading ){
-            HStack (spacing : 10 ) {
+        VStack (alignment: .leading ) {
+            HStack (spacing : 20 ) {
                 Text ("@KOSIGN")
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
+                // MARK: - Status
                 HStack {
-                    /// status
-//                    ReuseStatusUpdateViewNew()
-//                    ReuseStatusUpdateViewPublic()
+                    ReuseStatusUpdateViewPublic(isPublic: true)
                 }
                 Spacer()
-                
+                // cancel button
                 HStack {
                     Button(action: {
                         //action
@@ -33,10 +36,12 @@ struct HomeDetailVC: View {
                         Image ("cancel")
                             .resizable()
                             .frame(width: 34 , height: 34)
-                      
-                    }.padding(.horizontal , 24)
+                    }
                 }
-            }
+                
+            }.padding(.horizontal , 16)
+            
+            // MARK: - Content Cell
             VStack (alignment : .leading) {
                 HStack {
                     HStack {
@@ -46,29 +51,35 @@ struct HomeDetailVC: View {
                        
                         Text("OpenBoard")
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))
-                    }.padding(.vertical , 12)
-                }
+                    }
+                } .padding(.horizontal , 16)
                 
                 VStack  (alignment : .leading ) {
-                    Text("List of All App's version ")
-                        .font(.customFont(font: .Rubik, style: .regular , size: .h4))
-                        .foregroundColor(Color("GrayTextColor"))
-                   
+                    VStack {
+                        Text("List of All App's version ")
+                            .font(.customFont(font: .Rubik, style: .regular , size: .h4))
+                            .foregroundColor(Color("GrayTextColor"))
+                    }.padding(.all , 16)
+               
+                
+                // MARK: - List Version Of App Cell
                     VStack  {
-                        List (){
+                        List {
                             AppVersionDetailViewCell()
                             AppVersionDetailViewCell()
                             AppVersionDetailViewCell()
-                        }       
-                        .background(Color.white)
-                        .listStyle(GroupedListStyle())
-
+                            AppVersionDetailViewCell()
+                            AppVersionDetailViewCell()
+                            AppVersionDetailViewCell()
+                        }
+                        
+                        .listStyle(.inset)
+                        .scrollContentBackground(.hidden)
+                        .background(.white)
                     }
                 }
             }
-        }.padding()
-        
-        
+        }
     }
 }
 

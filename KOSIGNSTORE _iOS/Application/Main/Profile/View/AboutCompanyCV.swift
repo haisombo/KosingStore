@@ -60,7 +60,6 @@ struct ChangePassword: View {
                         .padding(.horizontal , 10)
                 }
             }
-//            .shadow(color: Color.gray.opacity(0.3), radius: 8, x: 0.0, y: 8)
         }
     }
 }

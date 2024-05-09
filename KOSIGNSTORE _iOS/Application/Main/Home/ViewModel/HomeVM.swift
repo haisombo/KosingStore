@@ -16,16 +16,16 @@ class HomeViewModel: ObservableObject {
     @Published var logInVM                      = ViewModel()
     @Published var homePublicApp                : ListAppVersion.Response? = nil
     @Published var listApp                      : ListApp.Response? = nil
-    var listStyleValue                          = ""
+    @Published var listStyleValue               = ""
     @Published var isLoading                    : Bool = false
     @Published var error                        : Error?
     @Published var userType                     : UserType? = .Logout
     @Published var sortListValue                = ""
     @Published var userID                       : Int? = 0
     @Published var companyID                    : Int? = 0
-    private var cancellables                    : Set<AnyCancellable> = []
+    @Published private   var cancellables       : Set<AnyCancellable> = []
     
-
+    
     
     // MARK: - get data and check type
     func getHomeData (completionHandler: @escaping () -> () = {} ) {
@@ -34,7 +34,7 @@ class HomeViewModel: ObservableObject {
             
             switch(result) {
             case .success(let data):
-               
+                
                 guard let data = data else {return}
                 let res = data
                 if (res.status.booleanValue) {
@@ -58,7 +58,7 @@ class HomeViewModel: ObservableObject {
                         completionHandler()
                     }
                 }
-
+                
             case .failure(let error ):
                 print(error.localizedDescription)
                 completionHandler()
@@ -66,6 +66,7 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    // MARK: - Filter Data sort by name App
     func getSortListData(completion: () -> ()) {
         if self.sortListValue == FilterContentBody.RowType.SORT_APP_NAME.rawValue {
             self.homeContentData.sort(by: {$0.appName!.lowercased() < $1.appName!.lowercased()})
@@ -74,6 +75,8 @@ class HomeViewModel: ObservableObject {
         }
         completion()
     }
+    
+    // MARK: - Save Data to UserDefault
     func checkUserDefault(completion: @escaping () -> () = {}) {
         listStyleValue = (UserDefaults.standard.string(forKey: FilterSection.listStyle.rawValue) == nil ? FilterContentBody.RowType.LIST_APP_DETAIL.rawValue : UserDefaults.standard.string(forKey: FilterSection.listStyle.rawValue))!
         sortListValue = UserDefaults.standard.string(forKey: FilterSection.sortList.rawValue) == nil ? FilterContentBody.RowType.SORT_DATE.rawValue : UserDefaults.standard.string(forKey: FilterSection.sortList.rawValue)!
@@ -87,15 +90,25 @@ class HomeViewModel: ObservableObject {
             completion()
             return
         }
+        
         logInVM.requestLogin(username: username, password: password) { _ in
             completion()
         }
-
     }
     
+    // MARK: - Fetch Data list App
     func  fetchListApp  (userID: Int?, companyID: Int?, type: ListAppType , completionHandler: @escaping (Swift.Result<ListApp.Response?, Error>) -> Void ) {
-        let body = ListApp.Request(os_type: AnyCodableValue.string("ios"))
-        NetworkManager.shared.request(endpoint:  APIKey.listPublicApp , httpMethod: .POST, body: body, responseType: ListApp.Response.self)
+        let body : ListApp.Request
+        switch type {
+        case .Public :
+            body = ListApp.Request(os_type: AnyCodableValue.string("ios"))
+        case .Private :
+            body =  ListApp.Request(os_type: AnyCodableValue.string("ios"), user_id: AnyCodableValue.integer(userID ?? 0), company_id: AnyCodableValue.integer(companyID ?? 0))
+        }
+        
+        let apiKey = (type == .Public) ? APIKey.listPublicApp : APIKey.listPrivateApp
+        
+        NetworkManager.shared.request(endpoint:  apiKey  , httpMethod: .POST, body: body, responseType: ListApp.Response.self)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -103,6 +116,7 @@ class HomeViewModel: ObservableObject {
                 case .finished: break
                 }
             }
+        
     receiveValue: { [weak self] data in
         self?.listApp = data
         completionHandler(.success(data))
@@ -120,23 +134,21 @@ class HomeViewModel: ObservableObject {
             .sink { completion in
                 switch completion {
                 case .failure(let error):
-                    
                     completionHandler(.failure(error))
                 case .finished: break
                 }
             }
-        
-        receiveValue: { [weak self] data in
-            self?.homePublicApp = data
+    receiveValue: { [weak self] data in
+        self?.homePublicApp = data
         completionHandler(.success(data))
-        }
+    }
     .store(in: &cancellables)
     }
     
     // MARK: - Private Version by id
     func  fetchListPrivateAppVersion (id : Int ,  completionHandler: @escaping (Swift.Result<ListAppVersion.Response?, Error>) -> Void ) {
         let body = ListAppVersion.Request(app_id: AnyCodableValue.integer(id), os_type: AnyCodableValue.string("ios"))
-
+        
         NetworkManager.shared.request(endpoint:  APIKey.listPrivateAppVersion , httpMethod: .POST, body: body, responseType: ListAppVersion.Response.self)
             .sink { completion in
                 switch completion {
@@ -147,11 +159,11 @@ class HomeViewModel: ObservableObject {
                 }
             }
         
-        receiveValue: { [weak self] data in
-            self?.homePublicApp = data
+    receiveValue: { [weak self] data in
+        self?.homePublicApp = data
         completionHandler(.success(data))
-        }
+    }
     .store(in: &cancellables)
     }
-
+    
 }

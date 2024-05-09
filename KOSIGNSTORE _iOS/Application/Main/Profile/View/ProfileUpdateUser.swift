@@ -9,13 +9,14 @@ import SwiftUI
 
 struct ProfileUpdateUser: View {
     
-    @State private var name                = ""
+    @State private var name                 = ""
     @State private var email                = ""
     @State private var password             = ""
     
     var body: some View {
        VStack {
             VStack {
+                // MARK: - Profile User
                 ZStack {
                     RoundedRectangle(cornerRadius: 0, style: .continuous)
                         .fill(Color("MianColor"))
@@ -29,20 +30,14 @@ struct ProfileUpdateUser: View {
                             .font(.customFont(font: .Rubik, style: .regular , size: .h6))
                     }
                 }
-                
+                // MARK: - List View
                 List {
-                    
                     Section {
                         VStack (alignment : .center ) {
                             ZStack  {
                                 Image("defaultIMG")
                                     .resizable()
-                                    .frame(width: 100 ,height: 100)
-//                               RoundedRectangle(cornerRadius: 100, style: .continuous)
-//                                   .fill(Color("MianColor"))
-////                                    .fill(Color.white)
-////                                    .fill(Color.blue)
-                                   .frame(width: 100 , height: 100 )
+                                        .frame(width: 100 ,height: 100)
                                 Image ("camera_ico")
                             }
                         } .padding(.horizontal , 90)
@@ -90,13 +85,12 @@ struct ProfileUpdateUser: View {
                 VStack {
                     Button(action: {
                         // action
-                        
+                        print("update")
                     }, label: {
                         Text("Update")
                             .font(.customFont(font: .Rubik, style: .bold , size: .h4))
                             .foregroundColor(Color.white)
                             .frame(width: 310, height: 45)
-//                            .background(Color ("MianColor"))
                             .background(Color ("GrayTextColor"))
                             .cornerRadius(15)
                     })

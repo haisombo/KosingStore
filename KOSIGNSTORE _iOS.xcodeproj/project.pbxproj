@@ -68,6 +68,7 @@
 		839E3F062BE4D7BA00455220 /* AboutCompanyCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F052BE4D7BA00455220 /* AboutCompanyCV.swift */; };
 		839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F072BE4DE5B00455220 /* AccountViewVC.swift */; };
 		839E3F0A2BE4E59500455220 /* ProfileUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */; };
+		83BA97302BEB5F3C0044FA01 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA972F2BEB5F3C0044FA01 /* NotificationCenter.swift */; };
 		83C195C12BE9D4EB00E9E5A3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */; };
 		83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */; };
 		83C195C62BEA1F1700E9E5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */; };
@@ -137,6 +138,7 @@
 		839E3F052BE4D7BA00455220 /* AboutCompanyCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCompanyCV.swift; sourceTree = "<group>"; };
 		839E3F072BE4DE5B00455220 /* AccountViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewVC.swift; sourceTree = "<group>"; };
 		839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateUser.swift; sourceTree = "<group>"; };
+		83BA972F2BEB5F3C0044FA01 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 			children = (
 				834875F02BE33326008A50CB /* LoginVM.swift */,
 				839E3F012BE4BE0800455220 /* MgVM.swift */,
+				83BA972F2BEB5F3C0044FA01 /* NotificationCenter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				834B70432BE0DC65006FB95C /* NetworkManager.swift in Sources */,
 				834876182BE38DC9008A50CB /* ProfileMoreDetailCell.swift in Sources */,
 				834876152BE38C9F008A50CB /* ProfileModel.swift in Sources */,
+				83BA97302BEB5F3C0044FA01 /* NotificationCenter.swift in Sources */,
 				834875EF2BE33314008A50CB /* LoginModel.swift in Sources */,
 				834B70412BE0DA9C006FB95C /* MyJson.swift in Sources */,
 				839E3F042BE4C01400455220 /* AccountCell.swift in Sources */,

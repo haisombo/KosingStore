@@ -19,7 +19,6 @@ struct ProfileListCell: View {
                     Image("defaultIMG")
                         .resizable()
                         .frame(width: 50 , height: 50)
-                    
                     VStack (alignment : .leading) {
                         Text("Welcome")
                             .font(.customFont(font: .Rubik, style: .medium , size: .h6))
@@ -27,16 +26,12 @@ struct ProfileListCell: View {
                         Text("Hai Sombo")
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))
                             .foregroundColor(.white)
-                        
                     }
-                    
                     Spacer()
                     Image("chevron-right")
                 }
-             
             }
             .padding(.horizontal ,40)
-
         }
     }
 }

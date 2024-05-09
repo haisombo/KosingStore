@@ -11,7 +11,7 @@ struct Login: Codable {
     struct Request: Encodable {
         var username: AnyCodableValue?
         var password: AnyCodableValue?
-//        var token   : AnyCodableValue?
+        var token   : AnyCodableValue?
     }
     
     struct Response: Decodable {

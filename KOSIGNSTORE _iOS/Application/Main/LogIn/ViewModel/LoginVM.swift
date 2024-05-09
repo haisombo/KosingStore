@@ -10,39 +10,32 @@ import Combine
 
 class ViewModel  : ObservableObject {
     
-    var iosMGData       : MGiOS.Response? = nil
+    // MARK: - Property 
+    @Published var iosMGData                   : MGiOS.Response? = nil
+    @Published var aosMGData                   : MGAOS.Response? = nil
+    @Published var loginData                   : Login.Response? = nil
+    @Published var userID                      : Int? = 0
+    @Published var companyID                   : Int? = 0
+    @Published var userInfo                    : UserInfo?
+    @Published var userType                    : UserType? = .Logout
+    @Published var showAlert                   = false
+    @Published private var cancellables        = Set<AnyCancellable>()
     
-    var aosMGData       : MGAOS.Response? = nil
     
-    var loginData       : Login.Response? = nil
-    
-    
-    
-    var userID                      :      Int? = 0
-    var companyID                   :      Int? = 0
-    var userInfo                    :      UserInfo?
-    @Published var userType         : UserType? = .Logout
-    @Published var showAlert        = false
-
-    
-    private var cancellables = Set<AnyCancellable>()
-    func buttonTapped() {
-            //handle request and then set to true to show the alert
-            self.showAlert = true
-        }
-    
+    // MARK: - Requesr iOS MG
     func requestiOSMG() -> Future<MGiOS.Response, Error> {
         let pathVariable    = [Shared.share.appId]
         let urlParam        : Dictionary<String, String> = ["os":"iOS"]
         return NetworkManager.shared.request(shouldShowLoading: false, baseURL: APIKey.mgURL.rawValue , pathVariable: pathVariable, urlParam: urlParam, endpoint: .mgURL, httpMethod: .GET, responseType: MGiOS.Response.self)
     }
-    
+    // MARK: - Requesr AOS MG
     func requestAOSMG() -> Future<MGAOS.Response, Error> {
         let pathVariable    = [Shared.share.appId]
         let urlParam        : Dictionary<String, String> = ["os":"AOS"]
         return NetworkManager.shared.request(shouldShowLoading: false, baseURL: APIKey.mgURL.rawValue , pathVariable: pathVariable, urlParam: urlParam, endpoint: .mgURL  , httpMethod: .GET, responseType: MGAOS.Response.self)
     }
     
+    // MARK: - Request Login
     func requestLogin(username: String, password: String, completionHandler: @escaping (Swift.Result<Login.Response?, Error>) -> Void) {
         let body = Login.Request(username: AnyCodableValue.string(username), password: AnyCodableValue.string(password))
         NetworkManager.shared.request(endpoint: .login, httpMethod: .POST, body: body, responseType: Login.Response.self)
@@ -83,22 +76,24 @@ class ViewModel  : ObservableObject {
     .store(in: &cancellables)
     }
     
-    
+    // MARK: - Request Both Version
     func requestiOSAndiOSMG() {
         Publishers.Zip(requestiOSMG(), requestAOSMG())
             .receive(on: RunLoop.main)
             .sink { completion in
                 switch completion {
                 case .failure(let err):
+                    
                     print("""
-                                                            😵❌ Error is ⚠️ \(err.localizedDescription) ⚠️
-                                                            """)
+                                   😵❌ Error is ⚠️ \(err.localizedDescription) ⚠️
+                                   """)
+                    
                 case .finished:
                     print("""
-                                                🎉🤩
-                                                ===> Fetch Sucess ✅ 👏🥳
-                                                🎉🤩
-                                            """)
+                                🎉🤩
+                                ===> Fetch Sucess ✅ 👏🥳
+                                🎉🤩
+                      """)
                 }
             }
     receiveValue: { [weak self] data in
@@ -107,4 +102,10 @@ class ViewModel  : ObservableObject {
     }
     .store(in: &cancellables)
     }
+    // MARK: - Handle request and then set to true to show the alert
+    func buttonTapped() {
+            self.showAlert = true
+    }
+    
 }
+
