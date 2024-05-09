@@ -73,6 +73,7 @@
 		83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */; };
 		83C195C62BEA1F1700E9E5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */; };
 		83D33D422BEB12D00014F8AB /* FittedSheetsSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83D33D412BEB12D00014F8AB /* FittedSheetsSwiftUI */; };
+		83ED51D82BECD7380093DF90 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ED51D72BECD7380093DF90 /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +142,7 @@
 		83BA972F2BEB5F3C0044FA01 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 		83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		83ED51D72BECD7380093DF90 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +372,7 @@
 		834B70332BE0C6F0006FB95C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				83ED51D92BECD78E0093DF90 /* JsonLocalized */,
 				834B70322BE0C6E5006FB95C /* Components */,
 				834B70392BE0D7A5006FB95C /* MapingMultiTypeData */,
 				834B70382BE0D79B006FB95C /* Custom */,
@@ -399,6 +402,7 @@
 			children = (
 				834B70512BE0E05D006FB95C /* String.swift */,
 				839E3EFB2BE47F7200455220 /* View.swift */,
+				83ED51D72BECD7380093DF90 /* DateFormatter.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -563,6 +567,13 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		83ED51D92BECD78E0093DF90 /* JsonLocalized */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JsonLocalized;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -676,6 +687,7 @@
 				834876082BE341E8008A50CB /* FooterHomeCell.swift in Sources */,
 				834876052BE33E90008A50CB /* NotFoundCell.swift in Sources */,
 				834876132BE38C92008A50CB /* ProfileUserVM.swift in Sources */,
+				83ED51D82BECD7380093DF90 /* DateFormatter.swift in Sources */,
 				834B70432BE0DC65006FB95C /* NetworkManager.swift in Sources */,
 				834876182BE38DC9008A50CB /* ProfileMoreDetailCell.swift in Sources */,
 				834876152BE38C9F008A50CB /* ProfileModel.swift in Sources */,

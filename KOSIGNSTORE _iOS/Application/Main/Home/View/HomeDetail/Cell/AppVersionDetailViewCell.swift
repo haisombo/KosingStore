@@ -9,16 +9,19 @@ import SwiftUI
 
 struct AppVersionDetailViewCell: View {
     // MARK: - Properties
-    @State private var showData         = false
+    @State          private var showData         = false
+    @State          var homeVersionApp           : ListAppVersion.AppVersionInfo.VersionListInfo? = nil
+    let dateFormat                              = DateFormatter()
     
     var body: some View {
         
         VStack (alignment : .leading ,spacing : 20 )  {
             VStack  (alignment : .leading , spacing: 20 ){
                 HStack {
-                    Text("Version 1.0.3")
+                    Text("Version : \(homeVersionApp?.versionNumber?.stringValue ?? ""  )")
                         .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     Spacer()
+                    
                     Button(action: {
                         showData.toggle()
                     }) {
@@ -28,23 +31,24 @@ struct AppVersionDetailViewCell: View {
                             Image("dropup")
                         }
                     }
+                    
                 }
                 
                 if showData {
                     VStack (alignment : .leading ) {
                         HStack {
-                            Text ("Updateed By :")
+                            Text ("Uploaded By:")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h5))
-                            Text(" ios_suhito")
+                            Text(homeVersionApp?.user_upload ?? "" )
                                 .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                                 .foregroundColor(Color("MianColor"))
                         }
                         
                         HStack {
-                            Text ("Modified Date : ")
+                            Text ("Modified Date: ")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h6))
-                            Text ("2024-05-06 15:12:59")
-                                .frame(width: .infinity)
+                            Text (homeVersionApp?.upload_date?.formatDate() ?? "" )
+//                                .frame(width: .infinity)
                                 .font(.customFont(font: .Rubik, style: .medium , size: .h7))
                                 .foregroundColor(.black)
                             Image("historyIcon")
@@ -63,7 +67,7 @@ struct AppVersionDetailViewCell: View {
                             .font(.customFont(font: .Rubik, style: .medium , size: .h5))
                             .foregroundColor(.black)
                         
-                        Text("Lorem Ipsum is simply dummytext of the printing and typesetting industry. ")
+                        Text(homeVersionApp?.description?.stringValue ??  "" )
                             .font(.customFont(font: .Rubik, style: .regular , size: .h5))
                             .foregroundColor(.black)
                     }
@@ -88,7 +92,7 @@ struct AppVersionDetailViewCell: View {
                         })
                         .buttonStyle(PressableButtonStyle())
                         
-                        Text("4 month ago")
+                        Text(homeVersionApp?.real?.createdDate?.stringValue ?? "" )
                             .font(.customFont(font: .Rubik, style: .regular , size: .h5))
                             .foregroundColor(Color("GrayTextColor"))
                     }
@@ -107,7 +111,7 @@ struct AppVersionDetailViewCell: View {
                                 .cornerRadius(8.0)
                         })
                         .buttonStyle(PressableButtonStyle())
-                        Text("4 month ago")
+                        Text(homeVersionApp?.dev?.createdDate?.stringValue   ?? "" )
                             .font(.customFont(font: .Rubik, style: .regular , size: .h5))
                             .foregroundColor(Color("GrayTextColor"))
                     }

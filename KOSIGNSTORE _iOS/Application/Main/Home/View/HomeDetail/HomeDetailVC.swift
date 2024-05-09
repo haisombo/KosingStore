@@ -8,24 +8,28 @@
 import SwiftUI
 import FittedSheetsSwiftUI
 import FittedSheets
+import SDWebImageSwiftUI
 
 struct HomeDetailVC: View {
     
     // MARK: - Properties
-    
+    @State          var homePublicApp       : ListAppVersion.Response? = nil
     @Environment(\.dismiss) private var dismiss
+//    @State var appVersion 
 
     // MARK: - Body
     var body: some View {
         VStack (alignment: .leading ) {
             HStack (spacing : 20 ) {
-                Text ("@KOSIGN")
+//                Text ("@KOSIGN")
+                Text(homePublicApp?.data.appOfCompany?.stringValue ?? "" )
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
                 // MARK: - Status
                 HStack {
                     ReuseStatusUpdateViewPublic(isPublic: true)
                 }
+                
                 Spacer()
                 // cancel button
                 HStack {
@@ -45,11 +49,21 @@ struct HomeDetailVC: View {
             VStack (alignment : .leading) {
                 HStack {
                     HStack {
-                        Image("defaultIMG")
-                            .resizable()
-                            .frame(width: 50 , height: 50)
-                       
-                        Text("OpenBoard")
+//                        Image("defaultIMG")
+                        // Profile User
+                        WebImage(url: URL(string: homePublicApp?.data.icon?.stringValue ?? "" )) { image  in
+                            image
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(12)
+                        } placeholder: {
+                            Image("defaultIMG")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .cornerRadius(12)
+                        }
+                 
+                        Text(homePublicApp?.data.appName?.stringValue  ?? "" )
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))
                     }
                 } .padding(.horizontal , 16)
@@ -64,13 +78,10 @@ struct HomeDetailVC: View {
                 
                 // MARK: - List Version Of App Cell
                     VStack  {
-                        List {
-                            AppVersionDetailViewCell()
-                            AppVersionDetailViewCell()
-                            AppVersionDetailViewCell()
-                            AppVersionDetailViewCell()
-                            AppVersionDetailViewCell()
-                            AppVersionDetailViewCell()
+                        List  {
+                            ForEach ( homePublicApp?.data.versionList ?? [] , id : \.versionNumber?.intValue ) { data in
+                                AppVersionDetailViewCell( homeVersionApp: data )
+                            }
                         }
                         
                         .listStyle(.inset)

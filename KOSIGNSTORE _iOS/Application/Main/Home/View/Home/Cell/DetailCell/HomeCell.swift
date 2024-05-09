@@ -14,8 +14,10 @@ struct HomeCell: View {
     // MARK: - Properties
     @StateObject    var homeVM              = HomeViewModel()
     @State          var listApp             : ListApp.AppInfo? = nil
+    @State          var homePublicApp       : ListAppVersion.Response? = nil
     @State          var showSheetView       = false
     @State          var showFittedSheet     : Bool = false
+    @State          var idApp               : Int  = 0
     
     // MARK: - Custom Sheet
     let sheetConfiguration: SheetConfiguration = SheetConfiguration (
@@ -33,7 +35,20 @@ struct HomeCell: View {
             // MARK: - Button Action
             Button(action: {
                 // call sheet
+                self.idApp = listApp?.id.intValue ?? 0
+                self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
+                    switch result {
+                    case .success( let data ) :
+                        self.homePublicApp = data
+                        print("data have version selected \(data )")
+                    case .failure(let erorr) :
+                        print(erorr.localizedDescription)
+                    }
+                }
+                
+                print("id App \(listApp?.id)")
                 self.showFittedSheet.toggle()
+                
             }, label: {
             })
             
@@ -53,11 +68,9 @@ struct HomeCell: View {
                 }
             }
             
-            HStack (spacing : 50)  {
-                
+            HStack {
                 // MARK: - Image Icon Logo App
                 HStack {
-                    
                     WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" )) { image in
                         image   .resizable()
                             .frame(width: 50 , height: 50)
@@ -70,14 +83,33 @@ struct HomeCell: View {
                             .frame(width: 50 , height: 50)
                             .cornerRadius(8.0)
                             .aspectRatio(contentMode: .fit)
-                        
                     }
                     
-                    Text(listApp?.name?.stringValue ?? "" )
-                        .font(.customFont(font: .Rubik, style: .bold , size: .h3));
+                    HStack {
+                        Text(listApp?.name?.stringValue ?? "" )
+                            .font(.customFont(font: .Rubik, style: .bold , size: .h3))
+                    }
+                    
+                    Spacer()
+                    
+                    // MARK: - Button Action
+                    HStack {
+                        ZStack {
+                            Button(action: {
+                                //action
+                //                showFittedSheet.toggle()
+                            }, label: {
+                                Text("GET")
+                                    .font(.customFont(font: .Rubik, style: .bold , size: .h7))
+                                    .foregroundColor(Color("GetTextColor") )
+                                    .frame(width: 82 , height: 30)
+                                    .background(Color ("GetColor"))
+                                    .cornerRadius(8.0)
+                            })
+                        }
+                    }
+
                 }
-                // Status View Get
-                StatusView()
             }
             // Server App Real & Dev
             HStack {
@@ -102,12 +134,26 @@ struct HomeCell: View {
             }
         }
         
+//        .onDisappear {
+//            self.appVersion ()
+//        }
         .padding(EdgeInsets(top: -20, leading: 0, bottom: 15, trailing: 0))
         // MARK: - Open Sheet
-        .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration) {
-            HomeDetailVC()
+        .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration )  {
+            HomeDetailVC(homePublicApp: homePublicApp )
         }
         
+    }
+    
+    func appVersion ( ) {
+        self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
+            switch result {
+            case .success( let data ) :
+                print("data have version selected \(data )")
+            case .failure(let erorr) :
+                print(erorr.localizedDescription)
+            }
+        }
     }
 }
 

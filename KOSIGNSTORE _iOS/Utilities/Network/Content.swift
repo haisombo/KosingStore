@@ -85,3 +85,8 @@ public enum APIKey : String {
     case GetAllCategory                         =   "https://api.escuelajs.co/api/v1/categories?limit=10"
     case GetAllProduct                          =   "https://api.escuelajs.co/api/v1/products?limit=10&offset=10"
 }
+// TZ = TimeZone
+enum TZ: String {
+    case Korea      = "Asia/Seoul"
+    case Cambodia   = "Asia/Phnom_Penh"
+}

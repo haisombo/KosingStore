@@ -34,7 +34,6 @@ struct HomeVC: View {
     // MARK: - Body
     var body: some View {
         
-        
         ZStack {
             NavigationView {
                 VStack (alignment : .center )  {
@@ -45,6 +44,7 @@ struct HomeVC: View {
                         Section (content:  {
                             // map list data from api
                             ForEach (homeViewModel.listApp?.data ?? [] , id : \.id) { dataListApp in
+//                                print("id App \(dataListApp)") .
                                 // cell
                                 HomeCell(listApp: dataListApp )
                             }

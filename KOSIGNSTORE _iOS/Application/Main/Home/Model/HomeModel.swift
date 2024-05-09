@@ -236,6 +236,8 @@ struct ListAppVersion: Codable {
             var real : VersionListEnvironment?
             var dev: VersionListEnvironment?
             var versionNumber: AnyCodableValue?
+            var upload_date         : String?
+            var user_upload         : String?
             
             enum CodingKeys: String, CodingKey {
                 case description
