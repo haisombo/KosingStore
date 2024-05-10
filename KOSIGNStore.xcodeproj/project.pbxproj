@@ -69,6 +69,11 @@
 		839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F072BE4DE5B00455220 /* AccountViewVC.swift */; };
 		839E3F0A2BE4E59500455220 /* ProfileUpdateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */; };
 		83BA97302BEB5F3C0044FA01 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BA972F2BEB5F3C0044FA01 /* NotificationCenter.swift */; };
+		83C0B6A52BEDB47E00AACB56 /* JsonLocalizedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0B6A42BEDB47E00AACB56 /* JsonLocalizedManager.swift */; };
+		83C0B6A72BEDB49300AACB56 /* JsonLocalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0B6A62BEDB49300AACB56 /* JsonLocalized.swift */; };
+		83C0B6AD2BEDB7E900AACB56 /* My.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0B6AC2BEDB7E900AACB56 /* My.swift */; };
+		83C0B6AF2BEDB86000AACB56 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C0B6AE2BEDB86000AACB56 /* Share.swift */; };
+		83C0B6B02BEDB8D700AACB56 /* LocalizedString.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83C0B6B12BEDB8D700AACB56 /* LocalizedString.strings */; };
 		83C195C12BE9D4EB00E9E5A3 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */; };
 		83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */; };
 		83C195C62BEA1F1700E9E5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */; };
@@ -96,7 +101,7 @@
 		834876142BE38C9F008A50CB /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		834876172BE38DC9008A50CB /* ProfileMoreDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMoreDetailCell.swift; sourceTree = "<group>"; };
 		834876192BE38DE3008A50CB /* ProfileListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListCell.swift; sourceTree = "<group>"; };
-		834B70202BE0C4A2006FB95C /* KOSIGNSTORE _iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KOSIGNSTORE _iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		834B70202BE0C4A2006FB95C /* KOSIGNStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KOSIGNStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		834B70232BE0C4A2006FB95C /* KOSIGNSTORE_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KOSIGNSTORE_iOSApp.swift; sourceTree = "<group>"; };
 		834B70272BE0C4A5006FB95C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		834B702A2BE0C4A5006FB95C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -140,6 +145,11 @@
 		839E3F072BE4DE5B00455220 /* AccountViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewVC.swift; sourceTree = "<group>"; };
 		839E3F092BE4E59500455220 /* ProfileUpdateUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateUser.swift; sourceTree = "<group>"; };
 		83BA972F2BEB5F3C0044FA01 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		83C0B6A42BEDB47E00AACB56 /* JsonLocalizedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLocalizedManager.swift; sourceTree = "<group>"; };
+		83C0B6A62BEDB49300AACB56 /* JsonLocalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonLocalized.swift; sourceTree = "<group>"; };
+		83C0B6AC2BEDB7E900AACB56 /* My.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My.swift; sourceTree = "<group>"; };
+		83C0B6AE2BEDB86000AACB56 /* Share.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		83C0B6B12BEDB8D700AACB56 /* LocalizedString.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = LocalizedString.strings; sourceTree = "<group>"; };
 		83C195C32BEA1E8000E9E5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83C195C52BEA1F1700E9E5A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		83ED51D72BECD7380093DF90 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -327,7 +337,7 @@
 		834B70212BE0C4A2006FB95C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				834B70202BE0C4A2006FB95C /* KOSIGNSTORE _iOS.app */,
+				834B70202BE0C4A2006FB95C /* KOSIGNStore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -393,6 +403,7 @@
 				834B703E2BE0DA89006FB95C /* Shared.swift */,
 				834B704D2BE0DFF2006FB95C /* Content.swift */,
 				834B70422BE0DC65006FB95C /* NetworkManager.swift */,
+				83C0B6AE2BEDB86000AACB56 /* Share.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -403,6 +414,7 @@
 				834B70512BE0E05D006FB95C /* String.swift */,
 				839E3EFB2BE47F7200455220 /* View.swift */,
 				83ED51D72BECD7380093DF90 /* DateFormatter.swift */,
+				83C0B6AC2BEDB7E900AACB56 /* My.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -570,6 +582,9 @@
 		83ED51D92BECD78E0093DF90 /* JsonLocalized */ = {
 			isa = PBXGroup;
 			children = (
+				83C0B6B12BEDB8D700AACB56 /* LocalizedString.strings */,
+				83C0B6A42BEDB47E00AACB56 /* JsonLocalizedManager.swift */,
+				83C0B6A62BEDB49300AACB56 /* JsonLocalized.swift */,
 			);
 			path = JsonLocalized;
 			sourceTree = "<group>";
@@ -577,9 +592,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		834B701F2BE0C4A2006FB95C /* KOSIGNSTORE _iOS */ = {
+		834B701F2BE0C4A2006FB95C /* KOSIGNStore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 834B702E2BE0C4A5006FB95C /* Build configuration list for PBXNativeTarget "KOSIGNSTORE _iOS" */;
+			buildConfigurationList = 834B702E2BE0C4A5006FB95C /* Build configuration list for PBXNativeTarget "KOSIGNStore" */;
 			buildPhases = (
 				834B701C2BE0C4A2006FB95C /* Sources */,
 				834B701D2BE0C4A2006FB95C /* Frameworks */,
@@ -589,13 +604,13 @@
 			);
 			dependencies = (
 			);
-			name = "KOSIGNSTORE _iOS";
+			name = KOSIGNStore;
 			packageProductDependencies = (
 				83C195C02BE9D4EB00E9E5A3 /* SDWebImageSwiftUI */,
 				83D33D412BEB12D00014F8AB /* FittedSheetsSwiftUI */,
 			);
 			productName = "KOSIGNSTORE _iOS";
-			productReference = 834B70202BE0C4A2006FB95C /* KOSIGNSTORE _iOS.app */;
+			productReference = 834B70202BE0C4A2006FB95C /* KOSIGNStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -604,7 +619,7 @@
 		834B70182BE0C4A2006FB95C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
@@ -613,13 +628,14 @@
 					};
 				};
 			};
-			buildConfigurationList = 834B701B2BE0C4A2006FB95C /* Build configuration list for PBXProject "KOSIGNSTORE _iOS" */;
+			buildConfigurationList = 834B701B2BE0C4A2006FB95C /* Build configuration list for PBXProject "KOSIGNStore" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 834B70172BE0C4A2006FB95C;
 			packageReferences = (
@@ -630,7 +646,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				834B701F2BE0C4A2006FB95C /* KOSIGNSTORE _iOS */,
+				834B701F2BE0C4A2006FB95C /* KOSIGNStore */,
 			);
 		};
 /* End PBXProject section */
@@ -657,6 +673,7 @@
 				834B70282BE0C4A5006FB95C /* Assets.xcassets in Resources */,
 				834B707E2BE0E914006FB95C /* README.txt in Resources */,
 				834B70742BE0E914006FB95C /* Rubik-ExtraBoldItalic.ttf in Resources */,
+				83C0B6B02BEDB8D700AACB56 /* LocalizedString.strings in Resources */,
 				834B707B2BE0E914006FB95C /* Rubik-Regular.ttf in Resources */,
 				834B70712BE0E914006FB95C /* Rubik-SemiBoldItalic.ttf in Resources */,
 				834B707A2BE0E914006FB95C /* Rubik-ExtraBold.ttf in Resources */,
@@ -676,6 +693,7 @@
 				834875E12BE32996008A50CB /* ActivityIndicatorLoading.swift in Sources */,
 				834876112BE38C82008A50CB /* ProfileDetailViewVC.swift in Sources */,
 				83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */,
+				83C0B6A72BEDB49300AACB56 /* JsonLocalized.swift in Sources */,
 				834875F32BE33384008A50CB /* HomeModel.swift in Sources */,
 				834B70572BE0E6D6006FB95C /* LaunchScreen.swift in Sources */,
 				834B703F2BE0DA89006FB95C /* Shared.swift in Sources */,
@@ -695,6 +713,7 @@
 				834875EF2BE33314008A50CB /* LoginModel.swift in Sources */,
 				834B70412BE0DA9C006FB95C /* MyJson.swift in Sources */,
 				839E3F042BE4C01400455220 /* AccountCell.swift in Sources */,
+				83C0B6AF2BEDB86000AACB56 /* Share.swift in Sources */,
 				8348760F2BE34E9D008A50CB /* AppVersionDetailViewCell.swift in Sources */,
 				839E3EFC2BE47F7200455220 /* View.swift in Sources */,
 				834875F82BE33516008A50CB /* HomeDetailVC.swift in Sources */,
@@ -706,7 +725,9 @@
 				834B703D2BE0DA7C006FB95C /* Log.swift in Sources */,
 				839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */,
 				834B70542BE0E58E006FB95C /* HomeVC.swift in Sources */,
+				83C0B6A52BEDB47E00AACB56 /* JsonLocalizedManager.swift in Sources */,
 				834B70242BE0C4A2006FB95C /* KOSIGNSTORE_iOSApp.swift in Sources */,
+				83C0B6AD2BEDB7E900AACB56 /* My.swift in Sources */,
 				839E3EFE2BE4BDAA00455220 /* AnyCodableValue.swift in Sources */,
 				834B704C2BE0DF80006FB95C /* Data.swift in Sources */,
 				839E3F022BE4BE0800455220 /* MgVM.swift in Sources */,
@@ -850,6 +871,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "KOSIGNSTORE--iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = KOSIGNStore;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -882,6 +904,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "KOSIGNSTORE--iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = KOSIGNStore;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -905,7 +928,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		834B701B2BE0C4A2006FB95C /* Build configuration list for PBXProject "KOSIGNSTORE _iOS" */ = {
+		834B701B2BE0C4A2006FB95C /* Build configuration list for PBXProject "KOSIGNStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				834B702C2BE0C4A5006FB95C /* Debug */,
@@ -914,7 +937,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		834B702E2BE0C4A5006FB95C /* Build configuration list for PBXNativeTarget "KOSIGNSTORE _iOS" */ = {
+		834B702E2BE0C4A5006FB95C /* Build configuration list for PBXNativeTarget "KOSIGNStore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				834B702F2BE0C4A5006FB95C /* Debug */,

@@ -12,6 +12,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        if let lang = MyDefaults.get(key: .appLang) as? String {
+            Share.language = LanguageCode(rawValue: lang) ?? LanguageCode.Korean
+        }
+        
         return true
     }
     
