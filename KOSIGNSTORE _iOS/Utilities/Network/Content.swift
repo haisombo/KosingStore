@@ -68,8 +68,10 @@ public enum NotifyKey : String {
 public enum APIKey : String {
 
     public static var baseURL  : String = "https://kosignstore.wecambodia.com:8080/kosignstore_v4"
-
-    case mgURL                  = "https://mg.kosign.dev/api/v2/app/setting/866fb6ff-877a-4cdc-bfb5-7619e194cbd4?os=iOS"
+    
+//    case mgDevURL                  = "https://mg.kosign.dev/api/v2/app/setting/866fb6ff-877a-4cdc-bfb5-7619e194cbd4?os=iOS"
+    case mgRealURL                 = "https://mg.wecambodia.com/api/v2/app/setting/abf744e6-021a-432b-9cd7-f2b25fa52b9a?os=iOS"
+    case mgURL                      = "https://mg.kosign.dev/api/v2/app/setting/866fb6ff-877a-4cdc-bfb5-7619e194cbd4?os=iOS"
     
     case listPublicApp                          =   "/list-public-app"
     case listPrivateApp                         =   "/list-private-app"
@@ -81,9 +83,8 @@ public enum APIKey : String {
     case changePassword                         =   "/change-password"
     case deleteAccount                          =   "/delete-user"
     case updateProfile                          =   "/update-profile"
-    case GetAllUser                             =   "/v1/users?limit=70"
-    case GetAllCategory                         =   "https://api.escuelajs.co/api/v1/categories?limit=10"
-    case GetAllProduct                          =   "https://api.escuelajs.co/api/v1/products?limit=10&offset=10"
+    case uploadHistory                          =   "/list-upload-history"
+
 }
 // TZ = TimeZone
 enum TZ: String {

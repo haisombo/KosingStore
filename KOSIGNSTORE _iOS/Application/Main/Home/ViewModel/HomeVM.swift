@@ -105,10 +105,9 @@ class HomeViewModel: ObservableObject {
         case .Private :
             body =  ListApp.Request(os_type: AnyCodableValue.string("ios"), user_id: AnyCodableValue.integer(userID ?? 0), company_id: AnyCodableValue.integer(companyID ?? 0))
         }
-        
         let apiKey = (type == .Public) ? APIKey.listPublicApp : APIKey.listPrivateApp
-        
         NetworkManager.shared.request(endpoint:  apiKey  , httpMethod: .POST, body: body, responseType: ListApp.Response.self)
+        
             .sink { completion in
                 switch completion {
                 case .failure(let error):
@@ -116,13 +115,11 @@ class HomeViewModel: ObservableObject {
                 case .finished: break
                 }
             }
-        
     receiveValue: { [weak self] data in
         self?.listApp = data
         completionHandler(.success(data))
     }
     .store(in: &cancellables)
-        
     }
     
     

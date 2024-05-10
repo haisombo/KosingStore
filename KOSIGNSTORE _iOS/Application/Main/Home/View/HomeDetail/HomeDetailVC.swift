@@ -15,8 +15,8 @@ struct HomeDetailVC: View {
     // MARK: - Properties
     @State          var homePublicApp       : ListAppVersion.Response? = nil
     @Environment(\.dismiss) private var dismiss
-//    @State var appVersion 
-
+    
+//    @State var appVersion
     // MARK: - Body
     var body: some View {
         VStack (alignment: .leading ) {

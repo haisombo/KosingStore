@@ -88,14 +88,17 @@ struct HomeVC: View {
                         // MARK: - check type profile navigation
                         switch(logInVM.userType) {
                         case .Login :
-                            NavigationLink(destination: ProfileDetailViewVC()) {
-                                Text("Profile")
-                            }
-                            print("log in")
-                        case .Logout :
-                            
                             print("log out")
                             presentPopup = true
+                            print("log in")
+                            
+                        case .Logout :
+                            presentPopup = true
+                            // Use NavigationLink to navigate to ProfileDetailViewVC
+                            NavigationLink(destination: ProfileDetailViewVC()) {
+                                Text("Row")
+                            }
+                            print( "my profile ")
                         default: return
                             
                         }
@@ -134,7 +137,7 @@ struct HomeVC: View {
             
         }
     }
-    
+
     // MARK: - Method for fetch data
     func appHomeList () {
         self.homeViewModel.getHomeData {

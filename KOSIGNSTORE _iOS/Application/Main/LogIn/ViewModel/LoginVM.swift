@@ -47,30 +47,30 @@ class ViewModel  : ObservableObject {
                 }
             }
     receiveValue: { [weak self] data in
-//        self?.loginData = data
-//        guard let data = data else {return}
-        if data.status.booleanValue {
-            self?.userType = .Login
-            self?.userID = data.data?.id?.intValue
-            self?.companyID = data.data?.listCompany?.first?.id?.intValue
-            let username = data.data?.username?.stringValue
-            let fullName = data.data?.fullName?.stringValue
-            let email = data.data?.email?.stringValue
-            let image = data.data?.profile?.stringValue
-            let companyName = data.data?.listCompany?.first?.name?.stringValue
-            let token = data.data?.token?.stringValue
-            Shared.share.token = token
-            self?.userInfo = UserInfo(username: username, fullName: fullName, image: image, email: email, companyName: companyName)
-            Shared.share.userInfo = self?.userInfo
-            UserDefaults.standard.set(self?.userID, forKey: "USERID")
-            UserDefaults.standard.set(username, forKey: "USERNAME")
-            UserDefaults.standard.set(password, forKey: "PASSWORD")
-        } else {
-            self?.userType = .Logout
-            UserDefaults.standard.removeObject(forKey: "USERID")
-            UserDefaults.standard.removeObject(forKey: "USERNAME")
-            UserDefaults.standard.removeObject(forKey: "PASSWORD")
-        }
+        //        self?.loginData = data
+        //        guard let data = data else {return}
+                if data.status.booleanValue {
+                    self?.userType = .Login
+                    self?.userID = data.data?.id?.intValue
+                    self?.companyID = data.data?.listCompany?.first?.id?.intValue
+                    let username = data.data?.username?.stringValue
+                    let fullName = data.data?.fullName?.stringValue
+                    let email = data.data?.email?.stringValue
+                    let image = data.data?.profile?.stringValue
+                    let companyName = data.data?.listCompany?.first?.name?.stringValue
+                    let token = data.data?.token?.stringValue
+                    Shared.share.token = token
+                    self?.userInfo = UserInfo(username: username, fullName: fullName, image: image, email: email, companyName: companyName)
+                    Shared.share.userInfo = self?.userInfo
+                    UserDefaults.standard.set(self?.userID, forKey: "USERID")
+                    UserDefaults.standard.set(username, forKey: "USERNAME")
+                    UserDefaults.standard.set(password, forKey: "PASSWORD")
+                } else {
+                    self?.userType = .Logout
+                    UserDefaults.standard.removeObject(forKey: "USERID")
+                    UserDefaults.standard.removeObject(forKey: "USERNAME")
+                    UserDefaults.standard.removeObject(forKey: "PASSWORD")
+                }
         completionHandler(.success(data))
     }
     .store(in: &cancellables)

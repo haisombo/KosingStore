@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct LoginScreen: View {
+ 
     // MARK: - Propertiers
     @StateObject        var         viewModel               = ViewModel()
     @State              private var email                   = ""
     @State              private var password                = ""
     @FocusState         private var isFocused               : Bool
+
     @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
     @State              private var showAlert               = false
     
@@ -53,22 +55,20 @@ struct LoginScreen: View {
                         .background(Color.white)
                         .cornerRadius(10)
                         .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0.0, y: 2)
-                        .textFieldStyle(.plain)
                         .padding()
                         .cornerRadius(8)
                         
                         HStack(alignment: .center) {
                             Image("lock")
                                 .padding()
-                            TextField  ("Password", text: self.$password)
-                            //                                        SecureField("Password", text: self.$password)
+//                            TextField  ("Password", text: self.$password)
+                         SecureField("Password", text: self.$password)
                         }
-                        .keyboardType(.emailAddress)
                         .focused($isFocused)
+                        .keyboardType(.numberPad)
                         .font(.customFont(font: .Rubik, style: .regular  , size: .h7))
                         .frame(width: 300 , height: 50)
                         .background(Color(.white))
-                        .textFieldStyle(.plain)
                         .cornerRadius(10)
                         .shadow(color: Color.gray.opacity(0.2), radius: 4 , x: 0.0, y: 2)
                         .padding()
@@ -84,7 +84,7 @@ struct LoginScreen: View {
                                 if (data?.status.booleanValue ?? false) {
                                     // Dismiss the view upon successful login
                                     self.isPresented = false
-                                    NotificationCenter.default.post(name: Notifications.HomeLogin.name, object: nil)
+//                                    NotificationCenter.default.post(name: Notifications.HomeLogin.name, object: nil)
                                 } else {
                                     // show when erorr
                                     self.viewModel.buttonTapped()
@@ -123,5 +123,5 @@ struct LoginScreen: View {
 }
 
 //#Preview {
-//    LoginScreen()
+//    LoginScreen( isPresented: <#Binding<Bool>#>)
 //}
