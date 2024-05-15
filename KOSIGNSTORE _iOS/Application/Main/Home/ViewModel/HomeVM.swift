@@ -128,6 +128,7 @@ class HomeViewModel: ObservableObject {
         let body = ListAppVersion.Request(app_id: AnyCodableValue.integer(id), os_type: AnyCodableValue.string("ios"))
         
         NetworkManager.shared.request(endpoint:  APIKey.listPublicAppVersion , httpMethod: .POST, body: body, responseType: ListAppVersion.Response.self)
+            
             .sink { completion in
                 switch completion {
                 case .failure(let error):

@@ -43,37 +43,31 @@ struct LoginScreen: View {
                 // Content
                 VStack {
                     VStack(alignment: .leading  ) {
-                        HStack(alignment: .center) {
+                        // email
+                        HStack {
                             Image("mail")
                                 .padding()
                             TextField("Username and email", text: self.$email)
                         }
-                        .focused($isFocused)
                         .keyboardType(.emailAddress)
-                        .font(.customFont(font: .Rubik, style: .regular  , size: .h7))
                         .frame(width: 300 , height: 50)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(color: Color.gray.opacity(0.2), radius: 4, x: 0.0, y: 2)
-                        .padding()
-                        .cornerRadius(8)
-                        
-                        HStack(alignment: .center) {
-                            Image("lock")
-                                .padding()
-//                            TextField  ("Password", text: self.$password)
-                         SecureField("Password", text: self.$password)
-                        }
-                        .focused($isFocused)
-                        .keyboardType(.numberPad)
-                        .font(.customFont(font: .Rubik, style: .regular  , size: .h7))
-                        .frame(width: 300 , height: 50)
-                        .background(Color(.white))
+                        .background(Color.gray.opacity(0.1))
                         .cornerRadius(10)
                         .shadow(color: Color.gray.opacity(0.2), radius: 4 , x: 0.0, y: 2)
-                        .padding()
-                        .cornerRadius(8)
-                    }
+                        // password
+                        HStack {
+                            Image("lock")
+                                .padding()
+                            TextField("Password", text: self.$password)
+                        }
+                        .keyboardType(.numberPad)
+                        .frame(width: 300 , height: 50)
+                        .background(Color.gray.opacity(0.1))
+                        .cornerRadius(10)
+                        .shadow(color: Color.gray.opacity(0.2), radius: 4 , x: 0.0, y: 2)
+                        
+                    }    .padding()
+                    
                     // MARK: -   Action LogIn
                     Button(action: {
                         self.viewModel.requestLogin(username: email, password: password) { result in
@@ -122,6 +116,8 @@ struct LoginScreen: View {
     }
 }
 
+//
 //#Preview {
-//    LoginScreen( isPresented: <#Binding<Bool>#>)
+// 
+//    LoginScreen( )
 //}

@@ -22,6 +22,7 @@ public class NetworkManager : NSObject, URLSessionDelegate {
     
     private var cancellables            = Set<AnyCancellable>()
     private var retryCountRequest       = 10000 // retry request count
+    /// SET TIME DELAY
     private var delayRetryRequest       = 3     // delay request in second
     
     public static var shared: NetworkManager = {
@@ -83,7 +84,6 @@ public class NetworkManager : NSObject, URLSessionDelegate {
                                                     body                       : I                             = "",
                                                     responseType               : O.Type) -> Future<O, Error> {
         
-        
         if shouldShowLoading {
             DispatchQueue.main.async {
 //                LoadingView.show()
@@ -107,7 +107,9 @@ public class NetworkManager : NSObject, URLSessionDelegate {
             /// -  combine network request with dataTaskPublisher
             NetworkManager.session.dataTaskPublisher(for: request)
             
+            /// - IF YOU WANT HANDLE ERROR BEFORE GET DATA
             /// - trycatch:  handle error and and return publisher to upStream
+            
                 .tryCatch { (error) -> AnyPublisher<(data: Data, response: URLResponse), URLError> in
                     print("Try to handle an error")
                     guard self.checkInternetRequest(URLError: error) else {
@@ -122,6 +124,9 @@ public class NetworkManager : NSObject, URLSessionDelegate {
                         .eraseToAnyPublisher()
                 }
                 .retry(self.retryCountRequest) // retry request
+            
+                // indicating that the subscriber should execute its work on a background queue with a quality of service
+                .subscribe(on: DispatchQueue.global(qos: .default ))
             
             /// - tryMap : handle data, response and error from Upstream
                 .tryMap { (data, response) -> Data in
@@ -219,6 +224,7 @@ public class NetworkManager : NSObject, URLSessionDelegate {
                                     """)
                     promise(.success($0))
                 })
+            
                 .store(in: &self.cancellables)
         }
     }
@@ -229,7 +235,7 @@ public class NetworkManager : NSObject, URLSessionDelegate {
                                                      rawURL             : String?                       = nil,
                                                      contentType        : ContentType                   = .FormData,
                                                      pathVariable       : [String]?                     = nil,
-                                                     urlParam           : Dictionary<String, String>?   = nil,
+                                                    urlParam           : Dictionary<String, String>?   = nil,
                                                      body               : I                             = "",
                                                      responseType       : O.Type                        = Download.self,
                                                      httpMethod         : HTTPMethod                    = .GET)  -> AnyPublisher<UploadResponse, Error> {

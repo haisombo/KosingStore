@@ -44,9 +44,8 @@ struct HomeVC: View {
                         Section (content:  {
                             // map list data from api
                             ForEach (homeViewModel.listApp?.data ?? [] , id : \.id) { dataListApp in
-//                                print("id App \(dataListApp)") .
                                 // cell
-                                HomeCell(listApp: dataListApp )
+                                HomeCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
                             }
                             // header
                         }, header: {
@@ -68,6 +67,9 @@ struct HomeVC: View {
                 // MARK: - lifeCyle when open screen
                 .onAppear {
                     
+                    
+                    
+                    
                     self.listApp()
                     self.appHomeList()
                     
@@ -80,8 +82,8 @@ struct HomeVC: View {
                             print("fail")
                         }
                     }
-                    
                 }
+                
                 // MARK: - Navigation Bar
                 .navigationBarLargeTitleItems(trailing: Button(action: {
                     withAnimation(.easeOut  (duration: 0.3)) {
@@ -109,12 +111,12 @@ struct HomeVC: View {
                     } placeholder: {
                         Image("defaultIMG")
                             .resizable()
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(50)
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(40)
                     }
                     .resizable()
-                    .frame(width: 50, height: 50)
-                    .cornerRadius(50)
+                    .frame(width: 40, height: 40)
+                    .cornerRadius(40)
                     
                 }
                     .offset(x: -20, y: 8)
@@ -157,6 +159,7 @@ struct HomeVC: View {
                           """)
                 
             case .failure(let error):
+               
                 print("""
                          😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
                       """)

@@ -21,7 +21,6 @@ struct HomeDetailVC: View {
     var body: some View {
         VStack (alignment: .leading ) {
             HStack (spacing : 20 ) {
-//                Text ("@KOSIGN")
                 Text(homePublicApp?.data.appOfCompany?.stringValue ?? "" )
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
@@ -49,7 +48,6 @@ struct HomeDetailVC: View {
             VStack (alignment : .leading) {
                 HStack {
                     HStack {
-//                        Image("defaultIMG")
                         // Profile User
                         WebImage(url: URL(string: homePublicApp?.data.icon?.stringValue ?? "" )) { image  in
                             image

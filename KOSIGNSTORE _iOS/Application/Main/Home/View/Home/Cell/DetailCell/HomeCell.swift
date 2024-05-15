@@ -18,7 +18,8 @@ struct HomeCell: View {
     @State          var showSheetView       = false
     @State          var showFittedSheet     : Bool = false
     @State          var idApp               : Int  = 0
-    
+    @State          var viewModel           = ViewModel()
+    @State          var dateFormat               = DateFormatter()
     // MARK: - Custom Sheet
     let sheetConfiguration: SheetConfiguration = SheetConfiguration (
         
@@ -32,6 +33,7 @@ struct HomeCell: View {
     var body: some View {
 
         VStack (alignment: .leading ) {
+    
             // MARK: - Button Action
             Button(action: {
                 // call sheet
@@ -39,20 +41,22 @@ struct HomeCell: View {
                 self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
                     switch result {
                     case .success( let data ) :
+                        
                         self.homePublicApp = data
+                        self.showFittedSheet.toggle()
                         print("data have version selected \(data )")
                     case .failure(let erorr) :
+                        self.viewModel.buttonTapped()
                         print(erorr.localizedDescription)
                     }
                 }
                 
                 print("id App \(listApp?.id)")
-                self.showFittedSheet.toggle()
+              
                 
             }, label: {
             })
-            
-            // Content 
+            // Content
             HStack (spacing : 10 ) {
                 
                 Text("@ \(listApp?.appOfCompany?.stringValue ?? "" )")
@@ -117,18 +121,34 @@ struct HomeCell: View {
                     VStack (alignment : .leading , spacing:  3 )  {
                         Text ("Real Server")
                             .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-                        Text(listApp?.real?.createdDate?.stringValue ?? "")
-                            .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                            .foregroundColor(.gray.opacity(0.8))
+                        
+                        if let date = listApp?.real?.createdDate?.stringValue {
+                            let   realDate = dateFormat.getRelativeDate(date: date)
+                            Text(realDate)
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+                                .foregroundColor(.gray.opacity(0.8))
+                        } else {
+                            Text("N/A")
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+                                .foregroundColor(.gray.opacity(0.8))
+                        }
                     }
                     
                     Spacer()
                     VStack(alignment : .leading , spacing:  3 )  {
                         Text ("Dev. Server")
                             .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-                        Text(listApp?.dev?.createdDate?.stringValue ?? "" )
-                            .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                            .foregroundColor(.gray.opacity(0.8))
+                        if let date = listApp?.dev?.createdDate?.stringValue {
+                            let   realDate = dateFormat.getRelativeDate(date: date)
+                            Text(realDate)
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+                                .foregroundColor(.gray.opacity(0.8))
+                        } else {
+                            Text("N/A")
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+                                .foregroundColor(.gray.opacity(0.8))
+                        }
+              
                     }
                 }
             }

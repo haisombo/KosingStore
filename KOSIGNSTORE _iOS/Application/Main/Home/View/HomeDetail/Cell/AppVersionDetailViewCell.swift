@@ -11,10 +11,9 @@ struct AppVersionDetailViewCell: View {
     // MARK: - Properties
     @State          private var showData         = false
     @State          var homeVersionApp           : ListAppVersion.AppVersionInfo.VersionListInfo? = nil
-    let dateFormat                              = DateFormatter()
+    @State          var dateFormat               = DateFormatter()
     
     var body: some View {
-        
         VStack (alignment : .leading ,spacing : 20 )  {
             VStack  (alignment : .leading , spacing: 20 ){
                 HStack {
@@ -39,43 +38,67 @@ struct AppVersionDetailViewCell: View {
                         HStack {
                             Text ("Uploaded By:")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h5))
-                            Text(homeVersionApp?.user_upload ?? "" )
-                                .font(.customFont(font: .Rubik, style: .bold , size: .h5))
-                                .foregroundColor(Color("MianColor"))
+                            if let userUpload = homeVersionApp?.user_upload {
+                                Text(userUpload)
+                                    .font(.customFont(font: .Rubik, style: .bold , size: .h5))
+                                    .foregroundColor(Color("MianColor"))
+                            } else {
+                                Text("null" )
+                                    .font(.customFont(font: .Rubik, style: .bold , size: .h5))
+                                    .foregroundColor(Color("MianColor"))
+                            }
                         }
                         
                         HStack {
                             Text ("Modified Date: ")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h6))
-                            Text (homeVersionApp?.upload_date?.formatDate() ?? "" )
-//                                .frame(width: .infinity)
-                                .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-                                .foregroundColor(.black)
+                            
+                            if let uploadDate = homeVersionApp?.upload_date?.formatDate()  {
+                                
+                               Text(uploadDate)
+                                    .font(.customFont(font: .Rubik, style: .medium , size: .h7))
+                                    .foregroundColor(.black)
+                            } else {
+                                Text ("null")
+                                    .font(.customFont(font: .Rubik, style: .medium , size: .h7))
+                                    .foregroundColor(.black)
+                            }
+                            
                             Image("historyIcon")
                             Button(action: {
                                 //action
-                                
+                                print("view history detail. ")
                             }, label: {
                                 Text("ViewAll")
                                     .font(.customFont(font: .Rubik, style: .regular , size: .h7))
                                     .foregroundColor(.black )
                             })
                         }
+                        
+                        
                     }
                     VStack (alignment : .leading , spacing: 10.0) {
                         Text("Description")
                             .font(.customFont(font: .Rubik, style: .medium , size: .h5))
                             .foregroundColor(.black)
-                        
-                        Text(homeVersionApp?.description?.stringValue ??  "" )
-                            .font(.customFont(font: .Rubik, style: .regular , size: .h5))
-                            .foregroundColor(.black)
+                        if let desText = homeVersionApp?.description?.stringValue {
+                            Text(desText)
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h5))
+                                .foregroundColor(.black)
+                        } else {
+                            Text("null")
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h5))
+                                .foregroundColor(.black)
+                        }
                     }
+                } else {
+                    
                 }
             }
             
             HStack  {
                 HStack (spacing : 20 ) {
+                    // MARK: - Button Real
                     VStack {
                         Button(action: {
                             // action
@@ -92,11 +115,19 @@ struct AppVersionDetailViewCell: View {
                         })
                         .buttonStyle(PressableButtonStyle())
                         
-                        Text(homeVersionApp?.real?.createdDate?.stringValue ?? "" )
-                            .font(.customFont(font: .Rubik, style: .regular , size: .h5))
-                            .foregroundColor(Color("GrayTextColor"))
+                        if let date = homeVersionApp?.real?.createdDate?.stringValue {
+                            let realDate = dateFormat.getRelativeDate(date: date)
+                            Text(realDate)
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h5))
+                                .foregroundColor(Color("GrayTextColor"))
+                        } else {
+                            Text("N/A")
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h5))
+                                .foregroundColor(Color("GrayTextColor"))
+                        }
+                         
                     }
-                    
+                    // MARK: - Button Dev
                     VStack {
                         Button(action: {
                             // Action
@@ -111,9 +142,18 @@ struct AppVersionDetailViewCell: View {
                                 .cornerRadius(8.0)
                         })
                         .buttonStyle(PressableButtonStyle())
-                        Text(homeVersionApp?.dev?.createdDate?.stringValue   ?? "" )
-                            .font(.customFont(font: .Rubik, style: .regular , size: .h5))
-                            .foregroundColor(Color("GrayTextColor"))
+                        
+                        if let date = homeVersionApp?.dev?.createdDate?.stringValue {
+                            let realDate = dateFormat.getRelativeDate(date: date)
+                            Text(realDate)
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h5))
+                                .foregroundColor(Color("GrayTextColor"))
+                        } else {
+                            Text("N/A")
+                                .font(.customFont(font: .Rubik, style: .regular , size: .h5))
+                                .foregroundColor(Color("GrayTextColor"))
+                        }
+                        
                     }
                 }
                 

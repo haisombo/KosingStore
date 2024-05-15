@@ -30,8 +30,8 @@
             filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -55,296 +55,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9AA1D916-E4FA-448B-B3A1-452C9E574F72"
+            uuid = "B1A07783-1DFC-4EE2-973E-8A97FE2AB1AE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "appVersion()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9AA1D916-E4FA-448B-B3A1-452C9E574F72 - d929d6c4d6bd0e99"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "9AA1D916-E4FA-448B-B3A1-452C9E574F72 - d929d6c4d6bd0e99"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "97">
-               </Location>
-               <Location
-                  uuid = "9AA1D916-E4FA-448B-B3A1-452C9E574F72 - d929d6c4d6bd0e99"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "152"
-                  endingLineNumber = "152"
-                  offsetFromSymbolStart = "617">
-               </Location>
-               <Location
-                  uuid = "9AA1D916-E4FA-448B-B3A1-452C9E574F72 - d929d6c4d6bd0e7a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "72">
-               </Location>
-               <Location
-                  uuid = "9AA1D916-E4FA-448B-B3A1-452C9E574F72 - d929d6c4d6bd0e7a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "97">
-               </Location>
-               <Location
-                  uuid = "9AA1D916-E4FA-448B-B3A1-452C9E574F72 - d929d6c4d6bd0e7a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "617">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "36A05D97-D523-430B-AE30-489C64E76D65"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "appVersion()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "36A05D97-D523-430B-AE30-489C64E76D65 - d929d6c4d6bd0eb8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
-                  offsetFromSymbolStart = "163">
-               </Location>
-               <Location
-                  uuid = "36A05D97-D523-430B-AE30-489C64E76D65 - d929d6c4d6bd0eb8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "153"
-                  endingLineNumber = "153"
-                  offsetFromSymbolStart = "631">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F529A65A-BCE1-4B91-B7EF-BCC9D44BC0F2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "appVersion()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F529A65A-BCE1-4B91-B7EF-BCC9D44BC0F2 - 80d0e6be822c2684"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "150"
-                  endingLineNumber = "150"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "F529A65A-BCE1-4B91-B7EF-BCC9D44BC0F2 - 80d0e6be822c26fb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "149"
-                  endingLineNumber = "149"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "F529A65A-BCE1-4B91-B7EF-BCC9D44BC0F2 - d929d6c4d6bd0e7a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNSTORE__iOS.HomeCell.appVersion() -&gt; ()"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "151"
-                  endingLineNumber = "151"
-                  offsetFromSymbolStart = "72">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF297965-F5C5-4B3E-AF1A-3CC3F372F132"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "FF297965-F5C5-4B3E-AF1A-3CC3F372F132 - a5e2c7d11796d979"
+                  uuid = "B1A07783-1DFC-4EE2-973E-8A97FE2AB1AE - fe504c32a8a85a46"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNSTORE__iOS.ReuseStatusUpdateViewPublic, KOSIGNSTORE__iOS.ReuseStatusUpdateViewUpdate, KOSIGNSTORE__iOS.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNSTORE__iOS.HomeCell.body.getter : some"
-                  moduleName = "KOSIGNSTORE _iOS"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "112">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "49">
                </Location>
                <Location
-                  uuid = "FF297965-F5C5-4B3E-AF1A-3CC3F372F132 - a5e2c7d11796d979"
+                  uuid = "B1A07783-1DFC-4EE2-973E-8A97FE2AB1AE - b41af3d66b363a17"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNSTORE__iOS.ReuseStatusUpdateViewPublic, KOSIGNSTORE__iOS.ReuseStatusUpdateViewUpdate, KOSIGNSTORE__iOS.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNSTORE__iOS.HomeCell.body.getter : some"
-                  moduleName = "KOSIGNSTORE _iOS"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  uuid = "FF297965-F5C5-4B3E-AF1A-3CC3F372F132 - a5e2c7d11796d979"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNSTORE__iOS.ReuseStatusUpdateViewPublic, KOSIGNSTORE__iOS.ReuseStatusUpdateViewUpdate, KOSIGNSTORE__iOS.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNSTORE__iOS.HomeCell.body.getter : some"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "688">
-               </Location>
-               <Location
-                  uuid = "FF297965-F5C5-4B3E-AF1A-3CC3F372F132 - a5e2c7d11796d979"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNSTORE__iOS.ReuseStatusUpdateViewPublic, KOSIGNSTORE__iOS.ReuseStatusUpdateViewUpdate, KOSIGNSTORE__iOS.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNSTORE__iOS.HomeCell.body.getter : some"
-                  moduleName = "KOSIGNSTORE _iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "175">
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "49">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -352,41 +103,25 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "40FB263A-B51B-44E1-ABF6-C95369CE5784"
+            uuid = "134D3AE3-1AC7-4C5E-B54D-50997F9DAF14"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D8B6570F-1774-461D-9E89-327DA4841148"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "D8B6570F-1774-461D-9E89-327DA4841148 - a5e2c7d11796d9bb"
+                  uuid = "134D3AE3-1AC7-4C5E-B54D-50997F9DAF14 - 1556368312416ec5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNSTORE__iOS.ReuseStatusUpdateViewPublic, KOSIGNSTORE__iOS.ReuseStatusUpdateViewUpdate, KOSIGNSTORE__iOS.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNSTORE__iOS.HomeCell.body.getter : some"
-                  moduleName = "KOSIGNSTORE _iOS"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
                   startingColumnNumber = "9223372036854775807"
@@ -396,19 +131,221 @@
                   offsetFromSymbolStart = "234">
                </Location>
                <Location
-                  uuid = "D8B6570F-1774-461D-9E89-327DA4841148 - a5e2c7d11796d9bb"
+                  uuid = "134D3AE3-1AC7-4C5E-B54D-50997F9DAF14 - d54751f218f2b6ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNSTORE__iOS.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNSTORE__iOS.ReuseStatusUpdateViewPublic, KOSIGNSTORE__iOS.ReuseStatusUpdateViewUpdate, KOSIGNSTORE__iOS.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNSTORE__iOS.HomeCell.body.getter : some"
-                  moduleName = "KOSIGNSTORE _iOS"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "44"
                   endingLineNumber = "44"
-                  offsetFromSymbolStart = "702">
+                  offsetFromSymbolStart = "175">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7208773D-047E-40CB-9284-40F32CAF2B1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7208773D-047E-40CB-9284-40F32CAF2B1A - fe504c32a8a85a65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "382">
+               </Location>
+               <Location
+                  uuid = "7208773D-047E-40CB-9284-40F32CAF2B1A - 1556368312416e07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "7208773D-047E-40CB-9284-40F32CAF2B1A - b41af3d66b363a34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "382">
+               </Location>
+               <Location
+                  uuid = "7208773D-047E-40CB-9284-40F32CAF2B1A - d54751f218f2b608"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32C08BEC-1FA2-447E-8539-DA156DFBFCA6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7AAF646B-54A5-4F3B-9F3C-C92FC2794AAF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7AAF646B-54A5-4F3B-9F3C-C92FC2794AAF - 1556368312416e07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "7AAF646B-54A5-4F3B-9F3C-C92FC2794AAF - 1556368312416e07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "7AAF646B-54A5-4F3B-9F3C-C92FC2794AAF - 1556368312416e07"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.refreshable(action: @Sendable () async -&gt; ()) -&gt; some&gt;&gt;.0, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "688">
+               </Location>
+               <Location
+                  uuid = "7AAF646B-54A5-4F3B-9F3C-C92FC2794AAF - d54751f218f2b608"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "7AAF646B-54A5-4F3B-9F3C-C92FC2794AAF - d54751f218f2b608"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "7AAF646B-54A5-4F3B-9F3C-C92FC2794AAF - d54751f218f2b608"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewUpdate, KOSIGNStore.ReuseStatusUpdateViewNew)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SDWebImageSwiftUI.WebImage&lt;SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomeCell.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomeCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "747">
                </Location>
             </Locations>
          </BreakpointContent>
