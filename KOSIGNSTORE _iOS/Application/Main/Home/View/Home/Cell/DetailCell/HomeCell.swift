@@ -36,6 +36,7 @@ struct HomeCell: View {
     
             // MARK: - Button Action
             Button(action: {
+                self.showFittedSheet.toggle()
                 // call sheet
                 self.idApp = listApp?.id.intValue ?? 0
                 self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
@@ -43,7 +44,7 @@ struct HomeCell: View {
                     case .success( let data ) :
                         
                         self.homePublicApp = data
-                        self.showFittedSheet.toggle()
+                       
                         print("data have version selected \(data )")
                     case .failure(let erorr) :
                         self.viewModel.buttonTapped()
@@ -64,12 +65,13 @@ struct HomeCell: View {
                     .foregroundColor(Color("MianColor"))
                 
                 // Status View
-                HStack {
-                    
-                    ReuseStatusUpdateViewPublic     (isPublic: false)
-                    ReuseStatusUpdateViewUpdate     (isUpdate: false)
-                    ReuseStatusUpdateViewNew        (isNew: false )
-                }
+//                HStack {
+//                    
+//                    ReuseStatusUpdateViewPublic     (isPublic: false)
+//                    ReuseStatusUpdateViewUpdate     (isUpdate: false)
+//                    ReuseStatusUpdateViewNew        (isNew: false )
+//                }
+                
             }
             
             HStack {
@@ -97,61 +99,61 @@ struct HomeCell: View {
                     Spacer()
                     
                     // MARK: - Button Action
-                    HStack {
-                        ZStack {
-                            Button(action: {
-                                //action
-                //                showFittedSheet.toggle()
-                            }, label: {
-                                Text("GET")
-                                    .font(.customFont(font: .Rubik, style: .bold , size: .h7))
-                                    .foregroundColor(Color("GetTextColor") )
-                                    .frame(width: 82 , height: 30)
-                                    .background(Color ("GetColor"))
-                                    .cornerRadius(8.0)
-                            })
-                        }
-                    }
+//                    HStack {
+//                        ZStack {
+//                            Button(action: {
+//                                //action
+//                //                showFittedSheet.toggle()
+//                            }, label: {
+//                                Text("GET")
+//                                    .font(.customFont(font: .Rubik, style: .bold , size: .h7))
+//                                    .foregroundColor(Color("GetTextColor") )
+//                                    .frame(width: 82 , height: 30)
+//                                    .background(Color ("GetColor"))
+//                                    .cornerRadius(8.0)
+//                            })
+//                        }
+//                    }
 
                 }
             }
             // Server App Real & Dev
-            HStack {
-                HStack {
-                    VStack (alignment : .leading , spacing:  3 )  {
-                        Text ("Real Server")
-                            .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-                        
-                        if let date = listApp?.real?.createdDate?.stringValue {
-                            let   realDate = dateFormat.getRelativeDate(date: date)
-                            Text(realDate)
-                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                                .foregroundColor(.gray.opacity(0.8))
-                        } else {
-                            Text("N/A")
-                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                                .foregroundColor(.gray.opacity(0.8))
-                        }
-                    }
-                    
-                    Spacer()
-                    VStack(alignment : .leading , spacing:  3 )  {
-                        Text ("Dev. Server")
-                            .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-                        if let date = listApp?.dev?.createdDate?.stringValue {
-                            let   realDate = dateFormat.getRelativeDate(date: date)
-                            Text(realDate)
-                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                                .foregroundColor(.gray.opacity(0.8))
-                        } else {
-                            Text("N/A")
-                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
-                                .foregroundColor(.gray.opacity(0.8))
-                        }
-              
-                    }
-                }
-            }
+//            HStack {
+//                HStack {
+//                    VStack (alignment : .leading , spacing:  3 )  {
+//                        Text ("Real Server")
+//                            .font(.customFont(font: .Rubik, style: .medium , size: .h7))
+//                        
+//                        if let date = listApp?.real?.createdDate?.stringValue {
+//                            let   realDate = dateFormat.getRelativeDate(date: date)
+//                            Text(realDate)
+//                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+//                                .foregroundColor(.gray.opacity(0.8))
+//                        } else {
+//                            Text("N/A")
+//                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+//                                .foregroundColor(.gray.opacity(0.8))
+//                        }
+//                    }
+//                    
+//                    Spacer()
+//                    VStack(alignment : .leading , spacing:  3 )  {
+//                        Text ("Dev. Server")
+//                            .font(.customFont(font: .Rubik, style: .medium , size: .h7))
+//                        if let date = listApp?.dev?.createdDate?.stringValue {
+//                            let   realDate = dateFormat.getRelativeDate(date: date)
+//                            Text(realDate)
+//                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+//                                .foregroundColor(.gray.opacity(0.8))
+//                        } else {
+//                            Text("N/A")
+//                                .font(.customFont(font: .Rubik, style: .regular , size: .h9))
+//                                .foregroundColor(.gray.opacity(0.8))
+//                        }
+//              
+//                    }
+//                }
+//            }
         }
         
 //        .onDisappear {
@@ -160,7 +162,8 @@ struct HomeCell: View {
         .padding(EdgeInsets(top: -20, leading: 0, bottom: 15, trailing: 0))
         // MARK: - Open Sheet
         .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration )  {
-            HomeDetailVC(homePublicApp: homePublicApp )
+//            HomeDetailVC(homePublicApp: homePublicApp )
+            AppDetailVC()   
         }
         
     }

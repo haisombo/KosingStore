@@ -7,7 +7,6 @@
 
 import SwiftUI
 import FittedSheetsSwiftUI
-import FittedSheets
 import SDWebImageSwiftUI
 
 struct HomeDetailVC: View {
@@ -72,7 +71,6 @@ struct HomeDetailVC: View {
                             .font(.customFont(font: .Rubik, style: .regular , size: .h4))
                             .foregroundColor(Color("GrayTextColor"))
                     }.padding(.all , 16)
-               
                 
                 // MARK: - List Version Of App Cell
                     VStack  {

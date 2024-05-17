@@ -24,8 +24,16 @@ class HomeViewModel: ObservableObject {
     @Published var userID                       : Int? = 0
     @Published var companyID                    : Int? = 0
     @Published private   var cancellables       : Set<AnyCancellable> = []
-    
-    
+
+    func search(text: String, completion: (Bool) -> ()) {
+        let tempData = tempHomeContentData.filter({($0.appName?.lowercased().contains(text.lowercased())) ?? false})
+        if tempData.isEmpty {
+            completion(false)
+        } else {
+            homeContentData = tempData
+            completion(true)
+        }
+    }
     
     // MARK: - get data and check type
     func getHomeData (completionHandler: @escaping () -> () = {} ) {
@@ -65,6 +73,10 @@ class HomeViewModel: ObservableObject {
             }
         }
     }
+    
+
+    
+    
     
     // MARK: - Filter Data sort by name App
     func getSortListData(completion: () -> ()) {

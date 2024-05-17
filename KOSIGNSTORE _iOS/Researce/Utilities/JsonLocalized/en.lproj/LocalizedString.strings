@@ -1,0 +1,476 @@
+{
+    
+    "more" :  {
+        "ko": "더보기",
+        "en": "More",
+        "km": "បន្ថែម",
+    },
+    "setting" : {
+        "ko": "설정하기",
+        "en": "Setting",
+        "km": "ការកំណត់",
+    },
+    "log_out" : {
+        "ko" : "로그아웃",
+        "en" : "Log Out",
+        "km" : "ចាកចេញ",
+    },
+    "welcome" : {
+        "ko" : "환영해요",
+        "en" : "Welcome",
+        "km" : "សូមស្វាគមន៍",
+    },
+    
+    "account" : {
+        "ko" : "계좌",
+        "en" : "Account",
+        "km" : "គណនី",
+    },
+    
+    "about_us" : {
+        "ko" : "우리에 대해요",
+        "en" : "About Us",
+        "km" : "អំពី​ពួក​យើង",
+    },
+    
+    "language" : {
+        "ko" : "언어",
+        "en" : "Language",
+        "km" : "ភាសា",
+    },
+    
+    "notification" : {
+        "ko" : "고지",
+        "en" : "Notifications",
+        "km" : "ការជូនដំណឹង",
+    },
+    
+    "account_desc" : {
+        "ko" : "개인 정보, 보안, 암호 변경",
+        "en" : "Privacy, Security, Change password",
+        "km" : "ភាពឯកជន សុវត្ថិភាព ការផ្លាស់ប្តូរលេខសម្ងាត់",
+    },
+    
+    "about_us_desc" : {
+        "ko" : "23시간 동안 답변 드리겠습니다",
+        "en" : "23 hours we will response to you",
+        "km" : "23 ម៉ោងយើងនឹងឆ្លើយតបទៅអ្នក",
+    },
+    
+    "language_desc" : {
+        "ko" : "을 선택합니다",
+        "en" : "Choose your",
+        "km" : "ជ្រើសរើសរបស់អ្នក",
+    },
+    
+    "notification_desc" : {
+        "ko" : "새 앱에 대한 알림 받기",
+        "en" : "Get notified for new app",
+        "km" : "ទទួលបានការជូនដំណឹងសម្រាប់កម្មវិធីថ្មី។",
+    },
+    
+    "profile" : {
+        "ko" : "옆모습",
+        "en" : "Profile",
+        "km" : "ប្រវត្តិរូប",
+    },
+    
+    "profile_desc" : {
+        "ko" : "프로필 정보 업데이트",
+        "en" : "Update for you profile information",
+        "km" : "ធ្វើបច្ចុប្បន្នភាពសម្រាប់ព័ត៌មានប្រវត្តិរូបរបស់អ្នក",
+    },
+    
+    "update" : {
+        "ko" : "갱신해요",
+        "en" : "Update",
+        "km" : "ធ្វើបច្ចុប្បន្នភាព",
+    },
+    
+    "about_us_detail" : {
+        "ko" : "KOSIGN, 프놈펜의 사랑으로 만들어졌습니다",
+        "en" : "Made by love from KOSIGN, Phnom Penh",
+        "km" : "ផលិតដោយក្តីស្រលាញ់ពី KOSIGN ភ្នំពេញ",
+    },
+    
+    "facebook_desc" : {
+        "ko" : "Facebook에 있는 우리처럼 더 많은 것을 위해",
+        "en" : "Like us on Facebook for more",
+        "km" : "Like ពួកយើងនៅលើ Facebook សម្រាប់ច្រើនទៀត",
+    },
+    
+    "language_detail" : {
+        "ko" : "표시 언어를 선택하십시오",
+        "en" : "Please select a display language",
+        "km" : "សូមជ្រើសរើសភាសាបង្ហាញ",
+    },
+    
+    "select" : {
+        "ko" : "선택해요",
+        "en" : "Select",
+        "km" : "ជ្រើសរើស",
+    },
+    
+    "change_password" : {
+        "ko" : "암호 변경",
+        "en" : "Change Password",
+        "km" : "ផ្លាស់ប្តូរពាក្យសម្ងាត់",
+    },
+    
+    "change_password_desc" : {
+        "ko" : "꼭 기억하세요",
+        "en" : "Make sure you rememeber it",
+        "km" : "ត្រូវប្រាកដថាអ្នកចងចាំវា។",
+    },
+    
+    "old_password" : {
+        "ko" : "이전 암호",
+        "en" : "Old password",
+        "km" : "លេខសំងាត់​ចាស់",
+    },
+    
+    "new_password" : {
+        "ko" : "새 암호",
+        "en" : "New password",
+        "km" : "ពាក្យសម្ងាត់​ថ្មី",
+    },
+    
+    "verify_password" : {
+        "ko" : "새 암호 확인",
+        "en" : "Verify new password",
+        "km" : "ផ្ទៀងផ្ទាត់ពាក្យសម្ងាត់ថ្មី",
+    },
+    
+    "save" : {
+        "ko" : "절약해요",
+        "en" : "Save",
+        "km" : "រក្សាទុក",
+    },
+    
+    "account_delete" : {
+        "ko" : "삭제 계정",
+        "en" : "Account Delete",
+        "km" : "លុបគណនី",
+    },
+    
+    "account_delete_desc" : {
+        "ko" : "영구 삭제",
+        "en" : "Delete your permanent",
+        "km" : "លុបអចិន្ត្រៃយ៍របស់អ្នក។",
+    },
+    
+    "account_delete_waring" : {
+        "ko" : "경고! 더 이상 WeCafe를 사용하지 않으려는 경우에만 계정을 삭제하십시오. 계정 삭제가 어떤 영향을 미치는지 읽어 보십시오.",
+        "en" : "Warning! Please only delete your account if you no longer want to user WeCafe. Please read how account deletion will affect.",
+        "km" : "ព្រមាន! សូមលុបតែគណនីរបស់អ្នក ប្រសិនបើអ្នកលែងចង់ប្រើ WeCafe។ សូមអានពីរបៀបដែលការលុបគណនីនឹងប៉ះពាល់ដល់.",
+    },
+    
+    "account_delete_detail" : {
+        "ko" : "계정을 삭제하면 데이터베이스에서 개인 정보가 제거됩니다. 전자 메일이 영구적으로 예약되어 새 계정을 등록하는 데 동일한 전자 메일을 다시 사용할 수 없습니다.",
+        "en" : "Deleting your account removes personal Information from our database. Your email becomes permanently reserved and same email cannot be re-used to register a new account.",
+        "km" : "ការលុបគណនីរបស់អ្នកលុបព័ត៌មានផ្ទាល់ខ្លួនចេញពីមូលដ្ឋានទិន្នន័យរបស់យើង។ អ៊ីមែលរបស់អ្នកត្រូវបានបម្រុងទុកជាអចិន្ត្រៃយ៍ ហើយអ៊ីមែលដដែលមិនអាចប្រើឡើងវិញដើម្បីចុះឈ្មោះគណនីថ្មីបានទេ.",
+    },
+    
+    "account_delete_confirm" : {
+        "ko" : "계정 삭제 확인",
+        "en" : "Confirm Account Deletion",
+        "km" : "បញ្ជាក់ការលុបគណនី",
+    },
+    
+    "account_delete_confirm_delete" : {
+        "ko" : "확인하려면 “000123_DELETE” 를 입력하십시오",
+        "en" : "Enter “000123_DELETE” to confirm",
+        "km" : "បញ្ចូល “000123_DELETE” ដើម្បីបញ្ជាក់",
+    },
+    
+    "delete" : {
+        "ko" : "대표님",
+        "en" : "Delete",
+        "km" : "លុប",
+    },
+    
+    "my_app" : {
+        "ko" : "대표님",
+        "en" : "My Apps",
+        "km" : "លុប",
+    },
+    
+    "search_placeholder" : {
+        "ko" : "앱 이름 검색",
+        "en" : "Search App Name",
+        "km" : "ស្វែងរកឈ្មោះកម្មវិធី",
+    },
+    
+    "filter" : {
+        "ko" : "여과기",
+        "en" : "Filter",
+        "km" : "តម្រង",
+    },
+    
+    "select_company" : {
+        "ko" : "회사 선택",
+        "en" : "Select Company",
+        "km" : "ជ្រើសរើសក្រុមហ៊ុន",
+    },
+    
+    "sort_list" : {
+        "ko" : "목록 정렬 기준:",
+        "en" : "Sort the list by:",
+        "km" : "តម្រៀបបញ្ជីតាម:",
+    },
+    
+    "style_list" : {
+        "ko" : "목록을 스타일로 표시:",
+        "en" : "Show list as style by:",
+        "km" : "បង្ហាញបញ្ជីជារចនាប័ទ្មដោយ:",
+    },
+    
+    "last_update" : {
+        "ko" : "마지막 업데이트",
+        "en" : "Last Update",
+        "km" : "បច្ចុប្បន្នភាពចុងក្រោយ",
+    },
+    
+    "app_name" : {
+        "ko" : "앱 이름",
+        "en" : "App Name",
+        "km" : "ឈ្មោះកម្មវិធី",
+    },
+    
+    "detail" : {
+        "ko" : "세부 사항",
+        "en" : "Detail",
+        "km" : "លម្អិត",
+    },
+    
+    "less_detail" : {
+        "ko" : "세부 정보 감소",
+        "en" : "Less Detail",
+        "km" : "លម្អិតតិច",
+    },
+    
+    "apply_filter" : {
+        "ko" : "필터 적용",
+        "en" : "Apply Filter",
+        "km" : "អនុវត្តតម្រង",
+    },
+    
+    "search_not_found" : {
+        "ko" : "죄송합니다. 결과를 찾을 수 없습니다.",
+        "en" : "Sorry, no result found.",
+        "km" : "សូមអភ័យទោស រកមិនឃើញលទ្ធផលទេ",
+    },
+    
+    "get" : {
+        "ko" : "얻어요",
+        "en" : "GET",
+        "km" : "ទទួលបាន",
+    },
+    
+    "real" : {
+        "ko" : "진짜",
+        "en" : "Real",
+        "km" : "ពិត",
+    },
+    
+    "develop" : {
+        "ko" : "발전시켜요",
+        "en" : "Develop",
+        "km" : "អភិវឌ្ឍ",
+    },
+    
+    "real_server" : {
+        "ko" : "실제 서버",
+        "en" : "Real Server",
+        "km" : "ម៉ាស៊ីនមេពិតប្រាកដ",
+    },
+    
+    "dev_server" : {
+        "ko" : "Dev. 서버",
+        "en" : "Dev. Server",
+        "km" : "Dev. ម៉ាស៊ីនមេ",
+    },
+    
+    "new_status" : {
+        "ko" : "신규",
+        "en" : "NEW",
+        "km" : "ថ្មី",
+    },
+    
+    "update_status" : {
+        "ko" : "갱신해요",
+        "en" : "UPDATE",
+        "km" : "ធ្វើបច្ចុប្បន្នភាព",
+    },
+    
+    "public_status" : {
+        "ko" : "일반의",
+        "en" : "PUBLIC",
+        "km" : "សាធារណៈ",
+    },
+    
+    "username" : {
+        "ko" : "사용자 이름",
+        "en" : "Username",
+        "km" : "ឈ្មោះ​អ្នកប្រើប្រាស់",
+    },
+    
+    "full_name" : {
+        "ko" : "풀네임",
+        "en" : "Full Name",
+        "km" : "ឈ្មោះ​ពេញ",
+    },
+    
+    "email" : {
+        "ko" : "이메일",
+        "en" : "Email",
+        "km" : "អ៊ីមែល",
+    },
+    
+    "list_all_app" : {
+        "ko" : "모든 앱의 버전 목록",
+        "en" : "List of All App's version",
+        "km" : "បញ្ជីកំណែរបស់កម្មវិធីទាំងអស់",
+    },
+    
+    "version" : {
+        "ko" : "판본",
+        "en" : "Version",
+        "km" : "កំណែ",
+    },
+    
+    "description" : {
+        "ko" : "묘사",
+        "en" : "Description",
+        "km" : "ពិពណ៌នា",
+    },
+    
+    "latest_version" : {
+        "ko" : "최신 버전",
+        "en" : "Latest Version",
+        "km" : "ជំនាន់​ចុងក្រោយ",
+    },
+    
+    "status_info" : {
+        "ko" : "정보",
+        "en" : "Information",
+        "km" : "ព័ត៌មាន",
+    },
+    
+    "status_success" : {
+        "ko" : "성공",
+        "en" : "Success",
+        "km" : "ជោគជ័យ",
+    },
+    
+    "status_warning" : {
+        "ko" : "경고문",
+        "en" : "Waring",
+        "km" : "ការព្រមាន",
+    },
+    
+    "status_error" : {
+        "ko" : "착오",
+        "en" : "Error",
+        "km" : "កំហុស",
+    },
+    
+    "logout_msg" : {
+        "ko" : "로그아웃하시겠습니까?",
+        "en" : "Are you sure you want to log out?",
+        "km" : "តើ​អ្នក​ប្រាកដ​ជា​ចង់​ចេញ?",
+    },
+    
+    "cancel" : {
+        "ko" : "취소",
+        "en" : "Cancel",
+        "km" : "បោះបង់",
+    },
+    
+    "no_app_version_msg" : {
+        "ko" : "죄송합니다. 사용할 수 있는 앱 버전이 없습니다.",
+        "en" : "Sorry, No app version available.",
+        "km" : "សូមអភ័យទោស មិនមានកំណែកម្មវិធីទេ.",
+    },
+    
+    "wrong_credential_msg" : {
+        "ko" : "입력한 전자 메일 및 암호가 잘못되었습니다. 다시 시도하십시오.",
+        "en" : "The email and password entered is invalid. Please try again.",
+        "km" : "អ៊ីមែល និងពាក្យសម្ងាត់ដែលបានបញ្ចូលមិនត្រឹមត្រូវទេ. សូម​ព្យាយាម​ម្តង​ទៀត.",
+    },
+    
+    "offline_msg" : {
+        "ko" : "인터넷 연결이 오프라인 상태인 것 같습니다.",
+        "en" : "The Internet connection appears to be offline.",
+        "km" : "ការភ្ជាប់អ៊ីនធឺណិតហាក់ដូចជាគ្មានអ៊ីនធឺណិត.",
+    },
+    
+    "register_profile" : {
+        "ko" : "레지스터 프로필",
+        "en" : "Register Profile",
+        "km" : "ចុះឈ្មោះប្រវត្តិរូប",
+    },
+    
+    "register_profile_desc" : {
+        "ko" : "사진 촬영 또는 갤러리에서 선택",
+        "en" : "Take a photo or choose from gallery",
+        "km" : "ថតរូប ឬជ្រើសរើសពីវិចិត្រសាល",
+    },
+    
+    "take_photo" : {
+        "ko" : "사진을 찍으세요",
+        "en" : "Take a Photo",
+        "km" : "ថតរូប",
+    },
+    
+    "choose_gallery" : {
+        "ko" : "갤러리에서 선택",
+        "en" : "Choose from a Gallery",
+        "km" : "ជ្រើសរើសពីវិចិត្រសាល",
+    },
+    
+    "require_field" : {
+        "ko" : "이 필드는 필수 항목입니다.",
+        "en" : "This field is required.",
+        "km" : "ចន្លោះ​នេះ​ត្រូវតែ​បំពេញ.",
+    },
+    
+    "invalid_old_password" : {
+        "ko" : "이전 암호가 잘못되었습니다! 다시 시도하십시오.",
+        "en" : "Invalid old Password! Please try again.",
+        "km" : "ពាក្យ​សម្ងាត់​ចាស់​មិន​ត្រឹមត្រូវ! សូម​ព្យាយាម​ម្តង​ទៀត.",
+    },
+    
+    "invalid_verify_password" : {
+        "ko" : "확인 암호가 잘못되었습니다.",
+        "en" : "Invalid verify password.",
+        "km" : "ផ្ទៀងផ្ទាត់ពាក្យសម្ងាត់មិនត្រឹមត្រូវ.",
+    },
+    
+    "invalid_email" : {
+        "ko" : "잘못된 전자 메일입니다.",
+        "en" : "Invalid email.",
+        "km" : "អ៊ីមែលមិនត្រឹមត្រូវ.",
+    },
+    
+    "update_user_msg" : {
+        "ko" : "사용자가 성공적으로 업데이트되었습니다",
+        "en" : "User has updated successfully",
+        "km" : "អ្នកប្រើប្រាស់បានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ",
+    },
+    
+    "update_password_msg" : {
+        "ko" : "암호가 성공적으로 업데이트되었습니다",
+        "en" : "Password has updated successfully",
+        "km" : "ពាក្យសម្ងាត់ត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ",
+    },
+    
+    "same_password_msg" : {
+        "ko" : "새 암호가 이전 암호와 같을 수 없습니다.",
+        "en" : "Your new password cannot be same as old password.",
+        "km" : "ពាក្យសម្ងាត់ថ្មីរបស់អ្នកមិនអាចដូចគ្នានឹងពាក្យសម្ងាត់ចាស់ទេ.",
+    },
+    
+    
+    
+}

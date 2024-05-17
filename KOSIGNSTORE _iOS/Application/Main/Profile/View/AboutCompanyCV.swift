@@ -9,21 +9,21 @@ import SwiftUI
 
 struct AboutCompanyCV: View {
     var body: some View {
-        ZStack {
+        ZStack  (alignment : .top ){
             RoundedRectangle(cornerRadius: 0, style: .continuous)
                 .fill(Color("MianColor"))
-                .frame(width: .infinity , height: 135 )
+                .frame(width: .infinity , height: 120 )
             
-            VStack (spacing : 16 ) {
+            VStack (alignment : .center  , spacing : 16 ) {
                 Text ("Account")
                     .foregroundColor(.white)
                     .font(.customFont(font: .Rubik, style: .bold , size: .h2))
-                //                Text ("Made by love from KOSIGN, Phnom Penh")
                 Text("Privacy, Security, Change password ")
                     .foregroundColor(.white)
                     .font(.customFont(font: .Rubik, style: .regular , size: .h6))
             }
         }
+        
         List {
             
             ChangePassword()

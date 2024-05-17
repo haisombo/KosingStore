@@ -12,29 +12,54 @@ struct ProfileDetailViewVC: View {
         VStack {
             NavigationView {
                 VStack {
-                    
                     List {
-                        
-                        NavigationLink (destination : HomeVC() )   {
-                            ProfileListCell()
+                        Section {
+                            NavigationLink (destination : ProfileUpdateUser() )   {
+                                ProfileListCell()
+                            }
                         }
                         
-                        Section("More") {
+                        .listRowBackground(Color("MianColor"))
+                        .frame(width: .infinity , height: 100 )
+                        
+                        Section {
                             NavigationLink (destination : AboutCompanyCV() )   {
                                 AccountCell()
+                                    .toolbarRole(.editor)
                             }
                             
                             NavigationLink (destination : AccountViewVC()  ) {
                                 AccountCell()
+                                    
                             }
+                        } header: {
+                             Text( "More")
+                                .font(.customFont(font: .Rubik, style: .bold , size: .h4 ))
+                                .foregroundColor(Color("MianColor"))
                         }
-                        Section("Setting") {
-                            NavigationLink (destination : HomeVC() )   {
+                                                
+                        Section {
+                            NavigationLink (destination : AboutCompanyCV() )   {
                                 AccountCell()
                             }
-                        }
+//                            .toolbarRole(.editor)
+                            .navigationBarColor(backgroundColor: Color("MianColor") , titleColor: .red)
+                            NavigationLink (destination : AccountViewVC() )   {
+                                AccountCell()
+//                                ProfileMoreDetailCell()
+                            }
+                        } header: {
+                         Text ("Setting")
+                            .font(.customFont(font: .Rubik, style: .bold , size: .h4 ))
+                            .foregroundColor(Color("MianColor"))
+                    }
+                        
+                        
                     }
                     .listStyle(.insetGrouped)
+                    .listRowSpacing(14.0)
+                    .environment(\.defaultMinListRowHeight, 70)
+                    
                     VStack {
                         Button(action: {
                             
@@ -51,6 +76,8 @@ struct ProfileDetailViewVC: View {
                         .buttonStyle(PressableButtonStyle())
                     }
                 }
+                
+                .background(Color("BackGoundColor") )
 
             }
         }

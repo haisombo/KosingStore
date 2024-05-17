@@ -9,10 +9,10 @@ import SwiftUI
 
 struct AccountViewVC: View {
     var body: some View {
-        ZStack {
+        ZStack (alignment : .top ) {
             RoundedRectangle(cornerRadius: 0, style: .continuous)
                 .fill(Color("MianColor"))
-                .frame(width: .infinity , height: 135 )
+                .frame(width: .infinity , height: 120 )
             VStack (spacing : 16 ) {
                 Text ("About Us")
                     .foregroundColor(.white)
@@ -22,10 +22,11 @@ struct AccountViewVC: View {
                     .font(.customFont(font: .Rubik, style: .regular , size: .h6))
             }
         }
+        
         List {
             AccountViewCell()
-            
-        }.listStyle(.insetGrouped)
+        }
+        .listStyle(.insetGrouped)
     }
 }
 struct AccountViewCell: View {
@@ -51,7 +52,7 @@ struct AccountViewCell: View {
                     }
                     Spacer()
                     Image("chevron-right 1")
-                        .padding(.horizontal , 10)
+//                        .padding(.horizontal , 10)
                 }
             }
         }

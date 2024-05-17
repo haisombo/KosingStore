@@ -48,7 +48,6 @@ struct AppVersionDetailViewCell: View {
                                     .foregroundColor(Color("MianColor"))
                             }
                         }
-                        
                         HStack {
                             Text ("Modified Date: ")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h6))
@@ -74,8 +73,6 @@ struct AppVersionDetailViewCell: View {
                                     .foregroundColor(.black )
                             })
                         }
-                        
-                        
                     }
                     VStack (alignment : .leading , spacing: 10.0) {
                         Text("Description")

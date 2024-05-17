@@ -15,7 +15,7 @@ struct LoginScreen: View {
     @State              private var password                = ""
     @FocusState         private var isFocused               : Bool
 
-    @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
+//    @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
     @State              private var showAlert               = false
     
     // Create Alert
@@ -77,7 +77,7 @@ struct LoginScreen: View {
                                 //action
                                 if (data?.status.booleanValue ?? false) {
                                     // Dismiss the view upon successful login
-                                    self.isPresented = false
+//                                    self.isPresented = false
 //                                    NotificationCenter.default.post(name: Notifications.HomeLogin.name, object: nil)
                                 } else {
                                     // show when erorr
@@ -91,7 +91,7 @@ struct LoginScreen: View {
                     }
                     ) {
                         Text("LOGIN")
-                            .font(.headline)
+                            .font(.customFont(font: .Rubik, style: .regular , size: .h3))
                             .foregroundColor(.white)
                             .padding()
                             .frame(width: 300, height: 50)
@@ -99,7 +99,7 @@ struct LoginScreen: View {
                             .cornerRadius(15.0)
                     }
                     .padding(.vertical , 40)
-                    .padding(.bottom , 60)
+//                    .padding(.bottom , 60)
                     
                     // Alert Custom
                     .alert(isPresented: $viewModel.showAlert, content: { () -> Alert in
@@ -108,7 +108,71 @@ struct LoginScreen: View {
                                 .foregroundColor(Color("NewColor"))
                         ))
                     })
+                    // MARK: - for New Login
+                    HStack {
+                        VStack {
+                            Divider()
+                        }
+                        Text("Or")
+                            .font(.customFont(font: .Rubik, style: .bold , size: .h3))
+                            .foregroundColor(Color("GrayTextColor"))
+                        VStack {
+                            Divider()
+                        }
+                    }
                     
+                    
+                    // MARK: -   Action LogIn
+                    VStack {
+//                        ZStack {
+                            Button(action: {
+                                // action
+                                print("log in with Google  ")
+                            }
+                            ) {
+                               HStack (spacing : 30)  {
+
+                                    Image("google")
+                                        .resizable()
+                                        .frame(width: 36 , height: 36)
+                                    Text("Login with Google")
+                                        .font(.customFont(font: .Rubik, style: .regular , size: .h3))
+                                        .foregroundColor(.black)
+
+                                }
+                               .padding()
+                               .frame(width: 300, height: 50)
+                               .background(Color.white)
+                               .cornerRadius(15.0)
+                               .shadow(color: Color.gray.opacity(0.3), radius: 20 , x: 3 , y:3)
+                            }
+                        }
+//                         login with apple
+//                        Button(action: {
+//                            // action
+//                            print("log in with apple ")
+//                        }
+//                        ) {
+//                            HStack (spacing : 30) {
+//                                Image("apple_icon")
+//                                    .resizable()
+//                                    .frame(width: 25 , height: 27)
+//                                Text("Login with Apple")
+//                                    .font(.customFont(font: .Rubik, style: .regular , size: .h3))
+//                                    .foregroundColor(.white)
+//                                   
+//                            } 
+//                                .padding()
+//                                .frame(width: 300, height: 50)
+//                                .background(Color.black)
+//                                .cornerRadius(15.0)
+//                                .shadow(color: Color.gray.opacity(0.3), radius: 20 , x: 3 , y:3)
+//                        
+//                        }
+                        
+                    
+                    
+//                        }
                 }
                 
             }
@@ -116,8 +180,8 @@ struct LoginScreen: View {
     }
 }
 
-//
-//#Preview {
-// 
-//    LoginScreen( )
-//}
+
+#Preview {
+ 
+    LoginScreen( )
+}
