@@ -14,24 +14,16 @@ enum appDetailType : String, CaseIterable {
     
 }
 
-
-struct AppDetailData {
+struct AppDetail : Identifiable     {
     
-    var id              : Int?
-    var companyName     : String?
-    var appName         : String?
-    var appImage        : String?
-    var appDetailBody   : AppDetailBody?
+    var id          = UUID()
+    var title       : String?
+    var icon        : String?
+    var readData    : String?
+    var pathFile    : String?
+    var roeType     : appDetailType?
+    var returnType  : Bool = false
     
-    struct AppDetailBody {
-        
-        var title       : String?
-        var icon        : String?
-        var readData    : String?
-        var pathFile    : String?
-        var roeType     : appDetailType?
-        var returnType  : Bool = false
-        
-    }
 }
+
 

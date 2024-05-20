@@ -11,10 +11,11 @@ import SDWebImageSwiftUI
 
 struct AppDetailVC: View {
     
-    @State var appDetailVM = AppDetailVM()
-    
+    @StateObject var appDetailVM = AppDetailVM()
+
     @Environment(\.dismiss) private var dismiss
     @State private var selection: String? = nil
+    
     // MARK: - Body
     var body: some View {
         VStack (alignment: .leading ) {
@@ -70,14 +71,15 @@ struct AppDetailVC: View {
                     VStack  {
                         NavigationView {
                             List  {
-                                AppDetailCell( )
-                                AppDetailCell( )
-                            }                            .listStyle(.inset)
+                                ForEach (appDetailVM.appDetailData  ) { dataListApp in
+                                    AppDetailCell( listAppVersion: dataListApp )
+                                }
+                            }
+                            .listStyle(.inset)
                             .scrollContentBackground(.hidden)
                             .background(.white)
                             
                         }
-                      
                     }
                 }
             }

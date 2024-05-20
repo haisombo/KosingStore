@@ -43,10 +43,11 @@ struct HomeVC: View {
                         //content
                         Section (content:  {
                             // map list data from api
-                            ForEach (homeViewModel.listApp?.data ?? [] , id : \.id) { dataListApp in
-                                // cell
-                                HomeCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
-                            }
+//                            ForEach (homeViewModel.listApp?.data ?? [] , id : \.id) { dataListApp in
+//                                // cell
+//                                HomeCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
+//                            }
+                            HomeCell()
                             // header
                         }, header: {
                             // footer

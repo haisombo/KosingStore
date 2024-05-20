@@ -37,30 +37,31 @@ struct HomeCell: View {
             // MARK: - Button Action
             Button(action: {
                 self.showFittedSheet.toggle()
-                // call sheet
-                self.idApp = listApp?.id.intValue ?? 0
-                self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
-                    switch result {
-                    case .success( let data ) :
-                        
-                        self.homePublicApp = data
-                       
-                        print("data have version selected \(data )")
-                    case .failure(let erorr) :
-                        self.viewModel.buttonTapped()
-                        print(erorr.localizedDescription)
-                    }
-                }
-                
-                print("id App \(listApp?.id)")
-              
+//                // call sheet
+//                self.idApp = listApp?.id.intValue ?? 0
+//                self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
+//                    switch result {
+//                    case .success( let data ) :
+//                        
+//                        self.homePublicApp = data
+//                       
+//                        print("data have version selected \(data )")
+//                    case .failure(let erorr) :
+//                        self.viewModel.buttonTapped()
+//                        print(erorr.localizedDescription)
+//                    }
+//                }
+//                
+//                print("id App \(listApp?.id)")
+//              
                 
             }, label: {
             })
             // Content
             HStack (spacing : 10 ) {
                 
-                Text("@ \(listApp?.appOfCompany?.stringValue ?? "" )")
+//                Text("@ \(listApp?.appOfCompany?.stringValue ?? "" )")
+                Text("@ KOSIGN")
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
                 
@@ -77,7 +78,8 @@ struct HomeCell: View {
             HStack {
                 // MARK: - Image Icon Logo App
                 HStack {
-                    WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" )) { image in
+                    WebImage(url: URL(string: "https://kosignstore.wecambodia.com/storage/image/3d8b0319-0a7a-4977-b1d0-84460ef4f906.png" )) { image in
+//                    WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" )) { image in
                         image   .resizable()
                             .frame(width: 50 , height: 50)
                             .cornerRadius(8.0)
@@ -92,7 +94,8 @@ struct HomeCell: View {
                     }
                     
                     HStack {
-                        Text(listApp?.name?.stringValue ?? "" )
+//                        Text(listApp?.name?.stringValue ?? "" )
+                        Text("TOPIK II")
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))
                     }
                     
