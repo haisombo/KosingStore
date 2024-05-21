@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileListCell: View {
+    
+    @State var fullName: String?
+    
     var body: some View {
 
 //        ZStack {
@@ -26,7 +29,7 @@ struct ProfileListCell: View {
                         Text("Welcome")
                             .font(.customFont(font: .Rubik, style: .medium , size: .h6))
                             .foregroundColor(.white)
-                        Text("Hai Sombo")
+                        Text(fullName ?? "")
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))
                             .foregroundColor(.white)
                     }

@@ -13,9 +13,10 @@ struct KOSIGNSTORE_iOSApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            NavigationStack {
+            NavigationStack {
                 HomeVC()
-//            }
+//            ProfileDetailViewVC()
+            }
         }
     }
 }

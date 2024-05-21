@@ -94,6 +94,7 @@
 		83F1BA582BF72EC000A20967 /* 33rd-TOPIK-Papers-Intermediate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 83F1BA552BF72EC000A20967 /* 33rd-TOPIK-Papers-Intermediate.pdf */; };
 		83F1BA592BF72EC000A20967 /* 32nd-TOPIK-Papers-Intermediate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 83F1BA562BF72EC000A20967 /* 32nd-TOPIK-Papers-Intermediate.pdf */; };
 		83F1BA5B2BF7385C00A20967 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1BA5A2BF7385C00A20967 /* DownloadManager.swift */; };
+		FD6701562BFAEF1B000C43A7 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6701552BFAEF1B000C43A7 /* ModifiedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -183,6 +184,7 @@
 		83F1BA552BF72EC000A20967 /* 33rd-TOPIK-Papers-Intermediate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "33rd-TOPIK-Papers-Intermediate.pdf"; sourceTree = "<group>"; };
 		83F1BA562BF72EC000A20967 /* 32nd-TOPIK-Papers-Intermediate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "32nd-TOPIK-Papers-Intermediate.pdf"; sourceTree = "<group>"; };
 		83F1BA5A2BF7385C00A20967 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		FD6701552BFAEF1B000C43A7 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +416,7 @@
 		834B70312BE0C6D7006FB95C /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				FD6701542BFAEE90000C43A7 /* ModifiedView */,
 				834B70442BE0DEA2006FB95C /* Main */,
 			);
 			path = Application;
@@ -699,6 +702,14 @@
 			path = PDF;
 			sourceTree = "<group>";
 		};
+		FD6701542BFAEE90000C43A7 /* ModifiedView */ = {
+			isa = PBXGroup;
+			children = (
+				FD6701552BFAEF1B000C43A7 /* ModifiedView.swift */,
+			);
+			path = ModifiedView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -812,6 +823,7 @@
 				83C0B6A72BEDB49300AACB56 /* JsonLocalized.swift in Sources */,
 				834875F32BE33384008A50CB /* HomeModel.swift in Sources */,
 				83F1BA492BF7149A00A20967 /* AppDetailVC.swift in Sources */,
+				FD6701562BFAEF1B000C43A7 /* ModifiedView.swift in Sources */,
 				83283F7B2BF60FA300318479 /* LoginPopView.swift in Sources */,
 				834B70572BE0E6D6006FB95C /* LaunchScreen.swift in Sources */,
 				834B703F2BE0DA89006FB95C /* Shared.swift in Sources */,
@@ -1004,7 +1016,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1037,7 +1049,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

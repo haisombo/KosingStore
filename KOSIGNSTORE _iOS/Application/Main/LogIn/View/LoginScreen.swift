@@ -15,7 +15,7 @@ struct LoginScreen: View {
     @State              private var password                = ""
     @FocusState         private var isFocused               : Bool
 
-//    @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
+   @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
     @State              private var showAlert               = false
     
     // Create Alert
@@ -48,6 +48,7 @@ struct LoginScreen: View {
                             Image("mail")
                                 .padding()
                             TextField("Username and email", text: self.$email)
+                                .autocapitalization(.none)
                         }
                         .keyboardType(.emailAddress)
                         .frame(width: 300 , height: 50)
@@ -77,7 +78,7 @@ struct LoginScreen: View {
                                 //action
                                 if (data?.status.booleanValue ?? false) {
                                     // Dismiss the view upon successful login
-//                                    self.isPresented = false
+                                    self.isPresented = false
 //                                    NotificationCenter.default.post(name: Notifications.HomeLogin.name, object: nil)
                                 } else {
                                     // show when erorr
@@ -181,7 +182,7 @@ struct LoginScreen: View {
 }
 
 
-#Preview {
- 
-    LoginScreen( )
-}
+//#Preview {
+// 
+//    LoginScreen( )
+//}

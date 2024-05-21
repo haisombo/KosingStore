@@ -46,11 +46,12 @@ class ViewModel  : ObservableObject {
                 case .finished: break
                 }
             }
-    receiveValue: { [weak self] data in
+            receiveValue: { [weak self] data in
+                
         //        self?.loginData = data
         //        guard let data = data else {return}
                 if data.status.booleanValue {
-                    self?.userType = .Login
+                    Shared.userType = .Login
                     self?.userID = data.data?.id?.intValue
                     self?.companyID = data.data?.listCompany?.first?.id?.intValue
                     let username = data.data?.username?.stringValue
@@ -61,12 +62,12 @@ class ViewModel  : ObservableObject {
                     let token = data.data?.token?.stringValue
                     Shared.share.token = token
                     self?.userInfo = UserInfo(username: username, fullName: fullName, image: image, email: email, companyName: companyName)
-                    Shared.share.userInfo = self?.userInfo
+                    Shared.userInfo = self?.userInfo
                     UserDefaults.standard.set(self?.userID, forKey: "USERID")
                     UserDefaults.standard.set(username, forKey: "USERNAME")
                     UserDefaults.standard.set(password, forKey: "PASSWORD")
                 } else {
-                    self?.userType = .Logout
+                    Shared.userType = .Logout
                     UserDefaults.standard.removeObject(forKey: "USERID")
                     UserDefaults.standard.removeObject(forKey: "USERNAME")
                     UserDefaults.standard.removeObject(forKey: "PASSWORD")
