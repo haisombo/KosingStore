@@ -23,9 +23,9 @@ struct HomeVC: View {
     @State          var         indexPathToSetVisible   : IndexPath?
     @State          var         searchEmpty             = false
     @State          var         logInUser               : Login.Response? = nil
-    @State private var navigateToWelcome = false
-    @EnvironmentObject private var appRootManager: AppRootManager
-    @State          var         isGoProfileDetail            = false
+    @State private var navigateToWelcome                = false
+    @EnvironmentObject private var appRootManager       : AppRootManager
+    @State          var         isGoProfileDetail       = false
 
     // change color navigationTitle
     init() {
@@ -39,17 +39,21 @@ struct HomeVC: View {
         ZStack {
             NavigationView {
                 VStack (alignment : .center )  {
-                    
                     // MARK: - ListView
                     List  {
                         //content
                         Section (content:  {
                             // map list data from api
-//                            ForEach (homeViewModel.listApp?.data ?? [] , id : \.id) { dataListApp in
-//                                // cell
-//                                HomeCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
-//                            }
-                            HomeCell()
+                             
+                            // type Privite --> logIn
+                            ForEach (homeViewModel.listApp?.data ?? [] ) { dataListApp in
+                                // cell
+                                HomePrivateCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
+                            }
+                            
+                            // type Public --> logOut
+//                            HomeCell()
+                            
                             // header
                         }, header: {
                             // footer
@@ -90,9 +94,12 @@ struct HomeVC: View {
                         // MARK: - check type profile navigation
                         switch Shared.userType {
                         case .Login :
-                            isGoProfileDetail = true
+//                            isGoProfileDetail = true
                             
+                            // log in
+                            presentPopup = true
                         case .Logout :
+                            // log out
                             presentPopup = true
                         }
                     }
@@ -119,8 +126,6 @@ struct HomeVC: View {
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always )) {
                 
             }
-
-            
             NavigationLink(destination: ProfileDetailViewVC(), isActive: $isGoProfileDetail.animation(.smooth)) {
                 Text("")
                     .hidden()
@@ -142,7 +147,7 @@ struct HomeVC: View {
     }
     // MARK: - Get Data with ueser type
     func listApp ( ) {
-        self.homeViewModel.fetchListApp(userID: 0 , companyID: 1 , type:  .Public ) { result in
+        self.homeViewModel.fetchListApp(userID: 18 , companyID: 1 , type:  .Private ) { result in
             switch result {
             case .success(let data):
                 self.homeViewModel.listApp   = data

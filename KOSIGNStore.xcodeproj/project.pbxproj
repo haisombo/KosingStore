@@ -89,6 +89,9 @@
 		8351CC882BFC3A6900C1C93B /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 8351CC872BFC3A6900C1C93B /* FirebaseVertexAI-Preview */; };
 		8351CC8C2BFC3BA400C1C93B /* FirebAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351CC8B2BFC3BA400C1C93B /* FirebAuth.swift */; };
 		8351CC8E2BFC4A0F00C1C93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8351CC8D2BFC4A0F00C1C93B /* GoogleService-Info.plist */; };
+		8351CC902BFC76E200C1C93B /* HomePrivateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351CC8F2BFC76E200C1C93B /* HomePrivateCell.swift */; };
+		8351CC932BFC823400C1C93B /* UploadHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351CC922BFC823400C1C93B /* UploadHistoryVC.swift */; };
+		8351CC962BFC824700C1C93B /* UploadHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8351CC952BFC824700C1C93B /* UploadHistoryCell.swift */; };
 		839E3EFC2BE47F7200455220 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3EFB2BE47F7200455220 /* View.swift */; };
 		839E3EFE2BE4BDAA00455220 /* AnyCodableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3EFD2BE4BDAA00455220 /* AnyCodableValue.swift */; };
 		839E3F002BE4BDD200455220 /* MG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E3EFF2BE4BDD200455220 /* MG.swift */; };
@@ -184,6 +187,9 @@
 		834B70812BE0ED89006FB95C /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8351CC8B2BFC3BA400C1C93B /* FirebAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebAuth.swift; sourceTree = "<group>"; };
 		8351CC8D2BFC4A0F00C1C93B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8351CC8F2BFC76E200C1C93B /* HomePrivateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePrivateCell.swift; sourceTree = "<group>"; };
+		8351CC922BFC823400C1C93B /* UploadHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadHistoryVC.swift; sourceTree = "<group>"; };
+		8351CC952BFC824700C1C93B /* UploadHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadHistoryCell.swift; sourceTree = "<group>"; };
 		839E3EFB2BE47F7200455220 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		839E3EFD2BE4BDAA00455220 /* AnyCodableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodableValue.swift; sourceTree = "<group>"; };
 		839E3EFF2BE4BDD200455220 /* MG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MG.swift; sourceTree = "<group>"; };
@@ -336,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				834875FA2BE335B2008A50CB /* HomeCell.swift */,
+				8351CC8F2BFC76E200C1C93B /* HomePrivateCell.swift */,
 			);
 			path = DetailCell;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 		834875F92BE33599008A50CB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8351CC912BFC820D00C1C93B /* UploadHistory */,
 				83F1BA472BF7146B00A20967 /* NewUIDownloadTopic */,
 				8348760C2BE34945008A50CB /* Cell */,
 				834B70532BE0E58E006FB95C /* HomeVC.swift */,
@@ -681,6 +689,23 @@
 			path = static;
 			sourceTree = "<group>";
 		};
+		8351CC912BFC820D00C1C93B /* UploadHistory */ = {
+			isa = PBXGroup;
+			children = (
+				8351CC942BFC823800C1C93B /* Cell */,
+				8351CC922BFC823400C1C93B /* UploadHistoryVC.swift */,
+			);
+			path = UploadHistory;
+			sourceTree = "<group>";
+		};
+		8351CC942BFC823800C1C93B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8351CC952BFC824700C1C93B /* UploadHistoryCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		83A4D8542BF74AAC0056E123 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,6 +937,7 @@
 				83C195C42BEA1E8000E9E5A3 /* AppDelegate.swift in Sources */,
 				83C0B6A72BEDB49300AACB56 /* JsonLocalized.swift in Sources */,
 				834875F32BE33384008A50CB /* HomeModel.swift in Sources */,
+				8351CC962BFC824700C1C93B /* UploadHistoryCell.swift in Sources */,
 				83F1BA492BF7149A00A20967 /* AppDetailVC.swift in Sources */,
 				FD6701562BFAEF1B000C43A7 /* ModifiedView.swift in Sources */,
 				83283F7B2BF60FA300318479 /* LoginPopView.swift in Sources */,
@@ -948,7 +974,9 @@
 				83C195C62BEA1F1700E9E5A3 /* SceneDelegate.swift in Sources */,
 				834B703D2BE0DA7C006FB95C /* Log.swift in Sources */,
 				83A4D8512BF741B50056E123 /* PDFViewer.swift in Sources */,
+				8351CC932BFC823400C1C93B /* UploadHistoryVC.swift in Sources */,
 				839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */,
+				8351CC902BFC76E200C1C93B /* HomePrivateCell.swift in Sources */,
 				83A4D8592BF74BF40056E123 /* AppDetailVM.swift in Sources */,
 				834B70542BE0E58E006FB95C /* HomeVC.swift in Sources */,
 				83C0B6A52BEDB47E00AACB56 /* JsonLocalizedManager.swift in Sources */,

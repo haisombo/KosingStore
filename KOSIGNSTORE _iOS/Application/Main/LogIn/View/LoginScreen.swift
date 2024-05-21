@@ -127,7 +127,6 @@ struct LoginScreen: View {
                     // MARK: -   Action with Google
                     VStack {
                         // Action LogIn
-               
                         GoogleSignInButton()
                             .frame(width: 300, height: 50)
                             .background(Color.white)

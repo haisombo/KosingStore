@@ -11,6 +11,8 @@ import FirebaseAuth
 import FirebaseCore
 
 struct GoogleSignInButton: UIViewRepresentable {
+
+    
     func makeUIView(context: Context) -> UIButton {
         let button = UIButton(type: .custom)
            
@@ -28,9 +30,7 @@ struct GoogleSignInButton: UIViewRepresentable {
            // Adjust image and title insets for proper spacing
            button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
            button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-           
-           // Customize the button appearance
-           button.backgroundColor = .white
+   
         
            // Set target for button action
            button.addTarget(context.coordinator, action: #selector(Coordinator.signInWithGoogle), for: .touchUpInside)

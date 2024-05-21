@@ -129,6 +129,8 @@ struct AppVersionDetailViewCell: View {
                         Button(action: {
                             // Action
                             print("Develop")
+                            
+                            
                         }, label: {
                             Text("DEVELOP")
                                 .font(.customFont(font: .Rubik, style: .bold , size: .h4))

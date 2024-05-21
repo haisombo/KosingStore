@@ -20,12 +20,13 @@ struct HomeDetailVC: View {
     var body: some View {
         VStack (alignment: .leading ) {
             HStack (spacing : 20 ) {
-                Text(homePublicApp?.data.appOfCompany?.stringValue ?? "" )
+                Text("@ \(homePublicApp?.data.appOfCompany?.stringValue ?? "")")
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
                 // MARK: - Status
                 HStack {
                     ReuseStatusUpdateViewPublic(isPublic: true)
+                    ReuseStatusUpdateViewNew(isNew: true)
                 }
                 
                 Spacer()
@@ -72,6 +73,7 @@ struct HomeDetailVC: View {
                 // MARK: - List Version Of App Cell
                     VStack  {
                         List  {
+                            // check data response from api
                             ForEach ( homePublicApp?.data.versionList ?? [] , id : \.versionNumber?.intValue ) { data in
                                 AppVersionDetailViewCell( homeVersionApp: data )
                             }
