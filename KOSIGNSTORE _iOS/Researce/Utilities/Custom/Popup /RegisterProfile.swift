@@ -30,6 +30,7 @@ struct RegisterProfile: View {
 //                            self.shouldPresentCamera = true
                         }
                     }
+                    .listRowSeparator(.hidden)
                     
                     Section {
                         HStack  (spacing : 20)  {
@@ -41,6 +42,7 @@ struct RegisterProfile: View {
                                 .foregroundColor(Color.black)
                         }
                     }
+                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
                 .scrollDisabled(true)

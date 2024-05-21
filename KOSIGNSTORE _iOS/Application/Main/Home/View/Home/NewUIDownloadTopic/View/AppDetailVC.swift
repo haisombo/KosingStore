@@ -46,15 +46,12 @@ struct AppDetailVC: View {
                         // Profile User
                         WebImage(url: URL(string: "https://kosignstore.wecambodia.com/storage/image/3d8b0319-0a7a-4977-b1d0-84460ef4f906.png" )) { image  in
                             image
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(12)
                         } placeholder: {
                             Image("defaultIMG")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(12)
                         }
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .modifier(AppImageStyle(width: 50, height: 50, cornerRadius: 12))
                  
                         Text("TOPIK II")
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))

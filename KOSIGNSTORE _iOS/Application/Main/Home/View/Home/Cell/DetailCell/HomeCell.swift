@@ -83,18 +83,13 @@ struct HomeCell: View {
                 HStack {
                     WebImage(url: URL(string: "https://kosignstore.wecambodia.com/storage/image/3d8b0319-0a7a-4977-b1d0-84460ef4f906.png" )) { image in
 //                    WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" )) { image in
-                        image   .resizable()
-                            .frame(width: 50 , height: 50)
-                            .cornerRadius(8.0)
-                            .aspectRatio(contentMode: .fit)
-                        
+                        image
                     } placeholder: {
                         Image("defaultIMG")
-                            .resizable()
-                            .frame(width: 50 , height: 50)
-                            .cornerRadius(8.0)
-                            .aspectRatio(contentMode: .fit)
                     }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .modifier(AppImageStyle(width: 50, height: 50, cornerRadius: 8))
                     
                     HStack {
 //                        Text(listApp?.name?.stringValue ?? "" )

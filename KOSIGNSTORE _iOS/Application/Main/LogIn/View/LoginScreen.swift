@@ -50,6 +50,7 @@ struct LoginScreen: View {
                             Image("mail")
                                 .padding()
                             TextField("Username and email", text: self.$email)
+                                .autocapitalization(.none)
                         }
                         .keyboardType(.emailAddress)
                         .frame(width: 300 , height: 50)

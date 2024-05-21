@@ -17,7 +17,8 @@ public struct Shared {
     public var jSessionId                       : String?
     public var token                            : String?
     static var timeZone                         : String?
-    var userInfo                                : UserInfo?
+    static var userInfo                         : UserInfo?
+    static var userType                         : UserType = .Logout
     
     // app id kosign store
     public var appId                           : String = "866fb6ff-877a-4cdc-bfb5-7619e194cbd4"

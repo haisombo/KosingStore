@@ -15,12 +15,11 @@ struct ProfileDetailViewVC: View {
                     List {
                         Section {
                             NavigationLink (destination : ProfileUpdateUser() )   {
-                                ProfileListCell()
+                                ProfileListCell(fullName: Shared.userInfo?.fullName ?? "")
                             }
                         }
-                        
                         .listRowBackground(Color("MianColor"))
-                        .frame(width: .infinity , height: 100 )
+                        .frame(width: .infinity , height: 100)
                         
                         Section {
                             NavigationLink (destination : AboutCompanyCV() )   {

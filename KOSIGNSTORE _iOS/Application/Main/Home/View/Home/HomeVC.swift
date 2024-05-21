@@ -25,6 +25,7 @@ struct HomeVC: View {
     @State          var         logInUser               : Login.Response? = nil
     @State private var navigateToWelcome = false
     @EnvironmentObject private var appRootManager: AppRootManager
+    @State          var         isGoProfileDetail            = false
 
     // change color navigationTitle
     init() {
@@ -87,41 +88,29 @@ struct HomeVC: View {
                 .navigationBarLargeTitleItems(trailing: Button(action: {
                     withAnimation(.easeOut  (duration: 0.3)) {
                         // MARK: - check type profile navigation
-                        switch(logInVM.userType) {
+                        switch Shared.userType {
                         case .Login :
-                     
-//                            presentPopup = true
-                            print("log in")
+                            isGoProfileDetail = true
                             
                         case .Logout :
-                            print("log out")
                             presentPopup = true
-//                            navigateToWelcome = true
-                            
-                            print( "my profile ")
-                        default: return
-                            
                         }
                     }
                 }) {
                     // Profile User
-                    WebImage(url: URL(string: logInVM.loginData?.data?.profile?.stringValue ?? ""  )) { image  in
+                    WebImage(url: URL(string: Shared.userInfo?.image ?? "")) { image  in
+                       image
+                        
                     } placeholder: {
                         Image("defaultIMG")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .cornerRadius(40)
                     }
                     .resizable()
-                    .frame(width: 40, height: 40)
-                    .cornerRadius(40)
-                    
+                    .aspectRatio(contentMode: .fit)
+                    .modifier(AppImageStyle(width: 40, height: 40, cornerRadius: 40))
                 }
                     .offset(x: -20, y: 8)
                     .background(Color("BackGoundColor"))
                 )
-              
-
                 .navigationBarTitle("My App")
 
             }
@@ -131,6 +120,11 @@ struct HomeVC: View {
                 
             }
 
+            
+            NavigationLink(destination: ProfileDetailViewVC(), isActive: $isGoProfileDetail.animation(.smooth)) {
+                Text("")
+                    .hidden()
+            }
             // MARK: - present Pop up Log in from
             if presentPopup {
                 Popup(isPresented: $presentPopup) {

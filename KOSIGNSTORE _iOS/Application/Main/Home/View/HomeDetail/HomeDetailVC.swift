@@ -50,16 +50,13 @@ struct HomeDetailVC: View {
                         // Profile User
                         WebImage(url: URL(string: homePublicApp?.data.icon?.stringValue ?? "" )) { image  in
                             image
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(12)
                         } placeholder: {
                             Image("defaultIMG")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(12)
                         }
-                 
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .modifier(AppImageStyle(width: 50, height: 50, cornerRadius: 12))
+                        
                         Text(homePublicApp?.data.appName?.stringValue  ?? "" )
                             .font(.customFont(font: .Rubik, style: .bold , size: .h3))
                     }
