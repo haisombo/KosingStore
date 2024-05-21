@@ -11,16 +11,17 @@ import SDWebImageSwiftUI
 
 struct AppDetailVC: View {
     
+    // MARK: - Properties
     @StateObject var appDetailVM = AppDetailVM()
-
-    @Environment(\.dismiss) private var dismiss
     @State private var selection: String? = nil
-    
+    @Environment(\.dismiss) private var dismiss
+    @State private var isLoading: Bool = false
+
     // MARK: - Body
     var body: some View {
         VStack (alignment: .leading ) {
             HStack (spacing : 20 ) {
-                Text("@ Kosign")
+                Text("@ KOSIGN")
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
                 Spacer()
@@ -72,7 +73,8 @@ struct AppDetailVC: View {
                         NavigationView {
                             List  {
                                 ForEach (appDetailVM.appDetailData  ) { dataListApp in
-                                    AppDetailCell( listAppVersion: dataListApp )
+                                    
+                                    AppDetailCell( listAppVersion : dataListApp )
                                 }
                             }
                             .listStyle(.inset)
@@ -84,8 +86,9 @@ struct AppDetailVC: View {
                 }
             }
         }
+        
         .onAppear {
-            self.appDetailVM.appDetailInit()
+            self.appDetailVM.appDetailInit(shouldShowLoading: isLoading )
         }
     }
 }

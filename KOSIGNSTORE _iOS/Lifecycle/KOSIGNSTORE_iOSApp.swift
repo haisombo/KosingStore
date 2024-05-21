@@ -6,16 +6,39 @@
 //
 
 import SwiftUI
+import Foundation
+import Firebase
+import GoogleSignIn
 
 @main
 struct KOSIGNSTORE_iOSApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appdelegate
+
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @AppStorage("signIn") var isSignIn = false
+    @StateObject private var appRootManager = AppRootManager()
 
     var body: some Scene {
         WindowGroup {
-//            NavigationStack {
-                HomeVC()
-//            }
+            Group {
+                switch appRootManager.currentRoot {
+                case .splash:
+                    LaunchScreen()
+                case .home:
+                    HomeVC()
+                }
+            }
+            .environmentObject(appRootManager)
         }
+    }
+}
+
+
+final class AppRootManager: ObservableObject {
+    
+    @Published var currentRoot: eAppRoots = .splash
+    
+    enum eAppRoots {
+        case splash
+        case home
     }
 }

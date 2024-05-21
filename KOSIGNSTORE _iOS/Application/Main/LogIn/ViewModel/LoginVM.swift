@@ -47,7 +47,7 @@ class ViewModel  : ObservableObject {
                 }
             }
     receiveValue: { [weak self] data in
-        //        self?.loginData = data
+                self?.loginData = data
         //        guard let data = data else {return}
                 if data.status.booleanValue {
                     self?.userType = .Login

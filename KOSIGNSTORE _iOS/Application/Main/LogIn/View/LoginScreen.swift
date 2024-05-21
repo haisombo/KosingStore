@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import GoogleSignIn
+import Firebase
 
 struct LoginScreen: View {
  
@@ -14,10 +17,9 @@ struct LoginScreen: View {
     @State              private var email                   = ""
     @State              private var password                = ""
     @FocusState         private var isFocused               : Bool
-
-//    @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
+    @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
     @State              private var showAlert               = false
-    
+    @State              var dataLogIn                       : Login.Response? = nil
     // Create Alert
     let alert = UIAlertController(title: "Erorr",
                                   message: "Your Ticket will Expire Soon.",
@@ -35,7 +37,7 @@ struct LoginScreen: View {
                         .font(Font.custom("RubikRoman-Regular", size: 12.0))
                 }
                 
-                .padding(.top , 80 )
+//                .padding(.top , 80 )
                 .padding(.vertical , 30 )
             }
             
@@ -74,10 +76,11 @@ struct LoginScreen: View {
                             
                             switch result {
                             case .success(let data):
+                                self.dataLogIn = data
                                 //action
                                 if (data?.status.booleanValue ?? false) {
                                     // Dismiss the view upon successful login
-//                                    self.isPresented = false
+                                    self.isPresented = false
 //                                    NotificationCenter.default.post(name: Notifications.HomeLogin.name, object: nil)
                                 } else {
                                     // show when erorr
@@ -98,7 +101,7 @@ struct LoginScreen: View {
                             .background(Color("MianColor"))
                             .cornerRadius(15.0)
                     }
-                    .padding(.vertical , 40)
+//                    .padding(.vertical , 40)
 //                    .padding(.bottom , 60)
                     
                     // Alert Custom
@@ -120,68 +123,53 @@ struct LoginScreen: View {
                             Divider()
                         }
                     }
-                    
-                    
-                    // MARK: -   Action LogIn
+                    // MARK: -   Action with Google
                     VStack {
-//                        ZStack {
-                            Button(action: {
-                                // action
-                                print("log in with Google  ")
-                            }
-                            ) {
-                               HStack (spacing : 30)  {
-
-                                    Image("google")
-                                        .resizable()
-                                        .frame(width: 36 , height: 36)
-                                    Text("Login with Google")
-                                        .font(.customFont(font: .Rubik, style: .regular , size: .h3))
-                                        .foregroundColor(.black)
-
-                                }
-                               .padding()
-                               .frame(width: 300, height: 50)
-                               .background(Color.white)
-                               .cornerRadius(15.0)
-                               .shadow(color: Color.gray.opacity(0.3), radius: 20 , x: 3 , y:3)
-                            }
-                        }
-//                         login with apple
-//                        Button(action: {
-//                            // action
-//                            print("log in with apple ")
-//                        }
-//                        ) {
-//                            HStack (spacing : 30) {
-//                                Image("apple_icon")
-//                                    .resizable()
-//                                    .frame(width: 25 , height: 27)
-//                                Text("Login with Apple")
-//                                    .font(.customFont(font: .Rubik, style: .regular , size: .h3))
-//                                    .foregroundColor(.white)
-//                                   
-//                            } 
-//                                .padding()
-//                                .frame(width: 300, height: 50)
-//                                .background(Color.black)
-//                                .cornerRadius(15.0)
-//                                .shadow(color: Color.gray.opacity(0.3), radius: 20 , x: 3 , y:3)
-//                        
-//                        }
+                        // Action LogIn
+               
+                        GoogleSignInButton()
+                            .frame(width: 300, height: 50)
+                            .background(Color.white)
+                            .cornerRadius(15.0)
+                            .shadow(color: Color.gray.opacity(0.3), radius: 20, x: 3, y: 3)
+                    }
+                        //                         login with apple
+                        //                        Button(action: {
+                        //                            // action
+                        //                            print("log in with apple ")
+                        //                        }
+                        //                        ) {
+                        //                            HStack (spacing : 30) {
+                        //                                Image("apple_icon")
+                        //                                    .resizable()
+                        //                                    .frame(width: 25 , height: 27)
+                        //                                Text("Login with Apple")
+                        //                                    .font(.customFont(font: .Rubik, style: .regular , size: .h3))
+                        //                                    .foregroundColor(.white)
+                        //
+                        //                            }
+                        //                                .padding()
+                        //                                .frame(width: 300, height: 50)
+                        //                                .background(Color.black)
+                        //                                .cornerRadius(15.0)
+                        //                                .shadow(color: Color.gray.opacity(0.3), radius: 20 , x: 3 , y:3)
+                        //
+                        //                        }
                         
-                    
-                    
-//                        }
-                }
+                        
+                        
+                        //                        }
+                    }
                 
             }
         }
+        
     }
+    
 }
 
 
-#Preview {
- 
-    LoginScreen( )
-}
+//#Preview {
+// 
+//    LoginScreen( )
+//}

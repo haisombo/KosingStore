@@ -19,7 +19,10 @@ struct HomeCell: View {
     @State          var showFittedSheet     : Bool = false
     @State          var idApp               : Int  = 0
     @State          var viewModel           = ViewModel()
+    
     @State          var dateFormat               = DateFormatter()
+    @State var isLoading: Bool = false
+
     // MARK: - Custom Sheet
     let sheetConfiguration: SheetConfiguration = SheetConfiguration (
         
@@ -159,14 +162,16 @@ struct HomeCell: View {
 //            }
         }
         
-//        .onDisappear {
-//            self.appVersion ()
-//        }
+
         .padding(EdgeInsets(top: -20, leading: 0, bottom: 15, trailing: 0))
         // MARK: - Open Sheet
         .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration )  {
-//            HomeDetailVC(homePublicApp: homePublicApp )
-            AppDetailVC()   
+          
+            if isLoading {
+                ActivityIndicatorLoading()
+            } else {
+                AppDetailVC()
+            }
         }
         
     }

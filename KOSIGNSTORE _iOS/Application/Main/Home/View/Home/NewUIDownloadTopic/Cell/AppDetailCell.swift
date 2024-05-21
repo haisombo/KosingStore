@@ -6,26 +6,28 @@
 //
 
 import SwiftUI
-import  FittedSheetsSwiftUI
+import FittedSheetsSwiftUI
 
 struct AppDetailCell: View {
     
-    @ObservedObject var downloadManager     = DownloadManager.shared
+    // MARK: - Properties
+    
     @State private  var showPDFViewer       = false
     @State private  var selection: String?  = nil
-    @State          var listAppVersion      : AppDetail? = nil
     @State private  var showShareSheet      = false
-    let remotePDFUrlString                  = "https://example.com/yourfile.pdf"
-    let localPDFFileName                    = "DownloadedFile.pdf"
+    @State var listAppVersion      : AppDetail? = nil
+    @State var items : [Any] = []
     
+    // MARK: - Custom PopSheet
     let sheetConfiguration: SheetConfiguration = SheetConfiguration (
         
-        sizes: [.marginFromTop(70.0)],
+        sizes: [.fixed(550)],
         options: nil,
         sheetViewControllerOptinos: [],
         shouldDismiss: nil,
         didDismiss: nil)
-
+    
+    // MARK: - BODY
     var body: some View {
         VStack (alignment : .leading ,spacing : 20 )  {
             VStack  (alignment : .leading , spacing: 20 ){
@@ -40,21 +42,21 @@ struct AppDetailCell: View {
                     
                     Spacer()
                     
+                    // MARK: - Action Hide and Show Data Implement
                     Button(action: {
+                        // hide and show
                     }) {
                         Image("dropdown")
-                        
                     }
                 }
             }
             
             HStack  {
                 HStack (spacing : 40 ) {
-                    // MARK: - Button Real
+                    // MARK: - Button View FILE.pdf
                     VStack {
-                        
                         Button(action: {
-                            selection = "read"
+                            // call to Screen Viewer
                             showPDFViewer = true
                             
                         }, label: {
@@ -68,16 +70,34 @@ struct AppDetailCell: View {
                             
                         })
                         .buttonStyle(PressableButtonStyle())
-                        
-                        //                            }
-                        
                     }
-                    // MARK: - Button Download
+                    // MARK: - Button Download --> FILE.pdf
                     VStack {
                         Button(action: {
-//                            downloadManager.downloadFile(from: remotePDFUrlString , fileName: localPDFFileName)
-                            
-                            downloadManager.downloadFile(from: listAppVersion?.pathFile ?? "", fileName: listAppVersion?.readData ?? "")
+
+                            if let localPath = listAppVersion?.pathFile, !localPath.isEmpty {
+                                let fileName = (localPath as NSString).lastPathComponent
+                                let destinationURL = FileManager.default.temporaryDirectory.appendingPathComponent(fileName)
+                                
+                                // Check if the file already exists
+                                if FileManager.default.fileExists(atPath: destinationURL.path) {
+                                    do {
+                                        // If file exists, remove it first
+                                        try FileManager.default.removeItem(at: destinationURL)
+                                    } catch {
+                                        
+                                        print("Removing existing file failed with error: \(error)")
+                                    }
+                                }
+                                do {
+                                    let fileURL = URL(fileURLWithPath: localPath)
+                                    try FileManager.default.copyItem(at: fileURL, to: destinationURL)
+                                    items.append(destinationURL)
+                                    showShareSheet.toggle()
+                                } catch {
+                                    print("Copying local file failed with error: \(error)")
+                                }
+                            }
                         }, label: {
                             Text("Download")
                                 .font(.customFont(font: .Rubik, style: .bold, size: .h4))
@@ -86,59 +106,24 @@ struct AppDetailCell: View {
                                 .frame(maxWidth: .infinity)
                                 .background(Color("ColorDownload"))
                                 .cornerRadius(8.0)
-                            
-                            
                         })
                         .buttonStyle(PressableButtonStyle())
-                        .onChange(of: downloadManager.downloadedFileURL) { newURL in
-                            if newURL != nil {
-                                showShareSheet = true
-                            }
-                        }
+                        
                     }
                 }
-                
             }
-            
-            
         }
+        // MARK: - PDF Viwer FILE.pdf
         .fullScreenCover(isPresented: $showPDFViewer) {
-            if let localPath = listAppVersion?.pathFile, !localPath.isEmpty {
-                PDFViewer(pdfName: listAppVersion?.readData ?? "", fileURL: URL(fileURLWithPath: localPath))
-            } else {
-                PDFViewer(pdfName: listAppVersion?.readData ?? "", fileURL: downloadManager.downloadedFileURL)
-            }
+            PDFViewer(pdfName: listAppVersion?.readData ?? "", fileURL: URL(fileURLWithPath:  listAppVersion?.pathFile ?? "" ))
         }
-
-        .fittedSheet(isPresented: $showShareSheet,  configuration: sheetConfiguration )  {
-            if let downloadedFileURL = downloadManager.downloadedFileURL {
-                ActivityView(activityItems: [downloadedFileURL])
-            }
+        // MARK: - ShareSheet Download --> PDF
+        .fittedSheet(isPresented: $showShareSheet, configuration: sheetConfiguration) {
+            ShareSheet(item:   items )
         }
     }
 }
 
-struct ActivityView: UIViewControllerRepresentable {
-    typealias Callback = (_ activityType: UIActivity.ActivityType?, _ completed: Bool, _ returnedItems: [Any]?, _ error: Error?) -> Void
-    
-    let activityItems: [Any]
-    let applicationActivities: [UIActivity]? = nil
-    let excludedActivityTypes: [UIActivity.ActivityType]? = nil
-    let callback: Callback? = nil
-    
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        let controller = UIActivityViewController(
-            activityItems: activityItems,
-            applicationActivities: applicationActivities)
-        controller.excludedActivityTypes = excludedActivityTypes
-        controller.completionWithItemsHandler = callback
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-        // nothing to do here
-    }
-}
 #Preview {
     AppDetailCell()
 }

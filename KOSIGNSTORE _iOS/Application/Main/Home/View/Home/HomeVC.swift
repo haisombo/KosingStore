@@ -22,8 +22,9 @@ struct HomeVC: View {
     @State          private var isShowing               = false
     @State          var         indexPathToSetVisible   : IndexPath?
     @State          var         searchEmpty             = false
-
+    @State          var         logInUser               : Login.Response? = nil
     @State private var navigateToWelcome = false
+    @EnvironmentObject private var appRootManager: AppRootManager
 
     // change color navigationTitle
     init() {
@@ -67,9 +68,10 @@ struct HomeVC: View {
                 
                 // MARK: - lifeCyle when open screen
                 .onAppear {
+//                    appRootManager.currentRoot = .home
                     self.listApp()
                     self.appHomeList()
-                    
+//                    self.logInVM.requestLogin()
                     self.mgVM.requestMG(){
                         result in
                         switch result {
@@ -87,11 +89,12 @@ struct HomeVC: View {
                         // MARK: - check type profile navigation
                         switch(logInVM.userType) {
                         case .Login :
-                            print("log out")
-                            presentPopup = true
+                     
+//                            presentPopup = true
                             print("log in")
                             
                         case .Logout :
+                            print("log out")
                             presentPopup = true
 //                            navigateToWelcome = true
                             
@@ -102,7 +105,7 @@ struct HomeVC: View {
                     }
                 }) {
                     // Profile User
-                    WebImage(url: URL(string: logInVM.userInfo?.image ?? "" /* Shared.share.userInfo?.image ?? ""*/ )) { image  in
+                    WebImage(url: URL(string: logInVM.loginData?.data?.profile?.stringValue ?? ""  )) { image  in
                     } placeholder: {
                         Image("defaultIMG")
                             .resizable()
@@ -127,14 +130,11 @@ struct HomeVC: View {
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always )) {
                 
             }
-//            NavigationLink(destination: ProfileDetailViewVC(), isActive: $navigateToWelcome.animation(.smooth)) {
-//                Text("")
-//                    .hidden()
-//            }
+
             // MARK: - present Pop up Log in from
             if presentPopup {
                 Popup(isPresented: $presentPopup) {
-                    LoginScreen(/*isPresented: $presentPopup*/) // Pass the binding variable to LoginScreen
+                    LoginScreen(isPresented: $presentPopup, dataLogIn: logInUser) // Pass the binding variable to LoginScreen
                 }
             }
         }
@@ -193,15 +193,21 @@ struct HomeVC: View {
 
 
 
-
-// Preview Ui
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             HomeVC()
-        }
+        } .environmentObject(AppRootManager())
     }
 }
+
+
+
+
+
+
+
+
 
 
 //struct SearchBarCustomView: View {
