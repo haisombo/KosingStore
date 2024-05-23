@@ -48,10 +48,7 @@ struct HomeVC: View {
                         //content
                         Section (content:  {
                             // map list data from api
-//                            if searchEmpty {
-//                                // empty data
-//                                NotFoundCell()
-//                            } else {
+                            
                                 if islogin {
                                     // type Privite --> logIn
                                     ForEach (homeViewModel.listApp?.data ?? []  ,  id : \.id ) { dataListApp in
@@ -192,7 +189,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             HomeVC()
-        }// .environmentObject(AppRootManager())
+        }.environmentObject(AppRootManager())
     }
 }
 

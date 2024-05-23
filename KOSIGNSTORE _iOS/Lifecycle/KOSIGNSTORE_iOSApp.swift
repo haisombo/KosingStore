@@ -14,7 +14,7 @@ import GoogleSignIn
 struct KOSIGNSTORE_iOSApp: App {
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @AppStorage("signIn") var isSignIn = false
+//    @AppStorage("signIn") var isSignIn = false
     @StateObject private var appRootManager = AppRootManager()
 
     var body: some Scene {
