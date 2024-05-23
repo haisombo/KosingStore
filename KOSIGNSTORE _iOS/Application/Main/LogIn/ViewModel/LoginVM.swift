@@ -16,7 +16,7 @@ class ViewModel  : ObservableObject {
     @Published var loginData                   : Login.Response? = nil
     @Published var userID                      : Int? = 0
     @Published var companyID                   : Int? = 0
-    @Published var userInfo                    : UserInfo?
+    @Published var userInfo                    = UserInfo()
     @Published var userType                    : UserType? = .Logout
     @Published var showAlert                   = false
     @Published private var cancellables        = Set<AnyCancellable>()
@@ -61,8 +61,8 @@ class ViewModel  : ObservableObject {
                     let companyName = data.data?.listCompany?.first?.name?.stringValue
                     let token = data.data?.token?.stringValue
                     Shared.share.token = token
-                    self?.userInfo = UserInfo(username: username, fullName: fullName, image: image, email: email, companyName: companyName)
-                    Shared.userInfo = self?.userInfo
+//                    self.userInfo = UserInfo(username: username, fullName: fullName, image: image, email: email, companyName: companyName)
+                    Shared.userInfo = UserInfo(username: username ?? "", fullName: fullName ?? "", image: image ?? "", email: email ?? "", companyName: companyName)
                     UserDefaults.standard.set(self?.userID, forKey: "USERID")
                     UserDefaults.standard.set(username, forKey: "USERNAME")
                     UserDefaults.standard.set(password, forKey: "PASSWORD")

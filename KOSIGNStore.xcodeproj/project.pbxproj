@@ -94,6 +94,7 @@
 		83F1BA582BF72EC000A20967 /* 33rd-TOPIK-Papers-Intermediate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 83F1BA552BF72EC000A20967 /* 33rd-TOPIK-Papers-Intermediate.pdf */; };
 		83F1BA592BF72EC000A20967 /* 32nd-TOPIK-Papers-Intermediate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 83F1BA562BF72EC000A20967 /* 32nd-TOPIK-Papers-Intermediate.pdf */; };
 		83F1BA5B2BF7385C00A20967 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1BA5A2BF7385C00A20967 /* DownloadManager.swift */; };
+		FD3525402BFC5B22001AE903 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD35253F2BFC5B22001AE903 /* CameraView.swift */; };
 		FD6701562BFAEF1B000C43A7 /* ModifiedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6701552BFAEF1B000C43A7 /* ModifiedView.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,6 +185,7 @@
 		83F1BA552BF72EC000A20967 /* 33rd-TOPIK-Papers-Intermediate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "33rd-TOPIK-Papers-Intermediate.pdf"; sourceTree = "<group>"; };
 		83F1BA562BF72EC000A20967 /* 32nd-TOPIK-Papers-Intermediate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "32nd-TOPIK-Papers-Intermediate.pdf"; sourceTree = "<group>"; };
 		83F1BA5A2BF7385C00A20967 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		FD35253F2BFC5B22001AE903 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		FD6701552BFAEF1B000C43A7 /* ModifiedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -416,6 +418,7 @@
 		834B70312BE0C6D7006FB95C /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				FD35253E2BFC5AB3001AE903 /* Extension */,
 				FD6701542BFAEE90000C43A7 /* ModifiedView */,
 				834B70442BE0DEA2006FB95C /* Main */,
 			);
@@ -702,6 +705,14 @@
 			path = PDF;
 			sourceTree = "<group>";
 		};
+		FD35253E2BFC5AB3001AE903 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FD35253F2BFC5B22001AE903 /* CameraView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		FD6701542BFAEE90000C43A7 /* ModifiedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -859,6 +870,7 @@
 				834B703D2BE0DA7C006FB95C /* Log.swift in Sources */,
 				83A4D8512BF741B50056E123 /* PDFViewer.swift in Sources */,
 				839E3F082BE4DE5B00455220 /* AccountViewVC.swift in Sources */,
+				FD3525402BFC5B22001AE903 /* CameraView.swift in Sources */,
 				83A4D8592BF74BF40056E123 /* AppDetailVM.swift in Sources */,
 				834B70542BE0E58E006FB95C /* HomeVC.swift in Sources */,
 				83C0B6A52BEDB47E00AACB56 /* JsonLocalizedManager.swift in Sources */,

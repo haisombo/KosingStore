@@ -71,11 +71,11 @@ extension DateFormatter {
         self.dateFormat = "yyyy-MM-dd HH:mm:ss"
         var date = ""
         if let devModifiedDate = data.dev?.modifiedDate {
-            date = checkFormatDate(data: devModifiedDate) ?? ""
+            date = checkFormatDate(data: devModifiedDate) 
         }
         
         if let realModifiedDate = data.real?.modifiedDate {
-            let realDate = checkFormatDate(data: realModifiedDate) ?? ""
+            let realDate = checkFormatDate(data: realModifiedDate) 
             
             if date.isEmpty || realDate > date {
                 date = realDate

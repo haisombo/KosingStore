@@ -94,7 +94,7 @@ struct HomeVC: View {
                     }
                 }) {
                     // Profile User
-                    WebImage(url: URL(string: Shared.userInfo?.image ?? "")) { image  in
+                    WebImage(url: URL(string: Shared.userInfo.image )) { image  in
                        image
                         
                     } placeholder: {
@@ -108,7 +108,6 @@ struct HomeVC: View {
                     .background(Color("BackGoundColor"))
                 )
                 .navigationBarTitle("My App")
-
             }
             
             // search bar
@@ -141,17 +140,10 @@ struct HomeVC: View {
             switch result {
             case .success(let data):
                 self.homeViewModel.listApp   = data
-                print("""
-                             🎉🤩
-                              ===> Fetch Sucess ✅ 👏🥳
-                              🎉🤩
-                          """)
+                print("🎉🤩 ===> Fetch Sucess ✅🤩")
                 
             case .failure(let error):
-               
-                print("""
-                         😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
-                      """)
+                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
             }
         }
     }
@@ -161,27 +153,14 @@ struct HomeVC: View {
             switch result {
             case .success(let data):
                 self.homeViewModel.homePublicApp   = data
-                print("""
-                                🎉🤩
-                                 ===> Fetch Sucess ✅ 👏🥳
-                                 🎉🤩
-                             """)
+                print("🎉🤩 ===> Fetch Sucess ✅🤩")
                 
             case .failure(let error):
-                print("""
-                            😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
-                         """)
+                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
             }
         }
     }
-    
-    
-    
-
 }
-
-
-
 
 // Preview Ui
 struct ContentView_Previews: PreviewProvider {
