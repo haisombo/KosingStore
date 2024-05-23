@@ -26,17 +26,17 @@ struct HomePrivateCell: View {
     // MARK: - Custom Sheet
     let sheetConfiguration: SheetConfiguration = SheetConfiguration (
         
-            sizes: [.marginFromTop(70.0)],
-            options: nil,
-            sheetViewControllerOptinos: [],
-            shouldDismiss: nil,
-            didDismiss: nil)
+        sizes: [.marginFromTop(70.0)],
+        options: nil,
+        sheetViewControllerOptinos: [],
+        shouldDismiss: nil,
+        didDismiss: nil)
     var body: some View {
         VStack (alignment: .leading ) {
-    
+            
             // MARK: - Button Action
             Button(action: {
-            
+                
                 // call sheet
                 self.idApp = listApp?.id.intValue ?? 0
                 self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
@@ -44,10 +44,10 @@ struct HomePrivateCell: View {
                     case .success( let data ) :
                         self.homePublicApp = data
                         self.showFittedSheet.toggle()
-                     
+                        
                         print("data have version selected \(data )")
                     case .failure(let erorr) :
-//                        self.viewModel.buttonTapped()
+                        //                        self.viewModel.buttonTapped()
                         print(erorr.localizedDescription)
                     }
                 }
@@ -61,16 +61,45 @@ struct HomePrivateCell: View {
                     .foregroundColor(Color("MianColor"))
                 // Status View
                 HStack {
-                    ReuseStatusUpdateViewPublic     (isPublic: false)
-                    ReuseStatusUpdateViewUpdate     (isUpdate: false)
-                    ReuseStatusUpdateViewNew        (isNew: false )
+                    // check public app status
+                    if let data = listApp?.isPublic {
+                        if data.booleanValue == true {
+                            ReuseStatusUpdateViewPublic     (isPublic: true)
+                        }else {
+                            ReuseStatusUpdateViewPublic     (isPublic: false)
+                        }
+                    } else {
+                        ReuseStatusUpdateViewPublic     (isPublic: false)
+                    }
+                    
+                    //check Create App Status
+                    if let date = listApp?.appCreatedDate {
+                        if dateFormat.checkNewApp(date: date.stringValue) {
+                            ReuseStatusUpdateViewNew   (isNew   : false )
+                        }
+                        else {
+                            ReuseStatusUpdateViewNew   (isNew   : true )
+                        }
+                    } else {
+                        ReuseStatusUpdateViewNew        (isNew  : true )
+                    }
+                    
+                    //Chack ModifiedDate App
+                    if let data = listApp {
+                        if dateFormat.checkUpdate(data: data ) {
+                            ReuseStatusUpdateViewUpdate        (isUpdate    : true )
+                        }
+                    } else {
+                        ReuseStatusUpdateViewUpdate        (isUpdate    :  false )
+                    }
+                    
                 }
             }
             
             HStack {
                 // MARK: - Image Icon Logo App
                 HStack {
-
+                    
                     WebImage(url: URL(string: listApp?.icon?.stringValue ?? "" )) { image in
                         image
                     } placeholder: {
@@ -92,7 +121,7 @@ struct HomePrivateCell: View {
                         ZStack {
                             Button(action: {
                                 //action
-                //                showFittedSheet.toggle()
+                                //                showFittedSheet.toggle()
                             }, label: {
                                 Text("GET")
                                     .font(.customFont(font: .Rubik, style: .bold , size: .h7))
@@ -103,7 +132,7 @@ struct HomePrivateCell: View {
                             })
                         }
                     }
-
+                    
                 }
             }
             // Server App Real & Dev
@@ -112,7 +141,7 @@ struct HomePrivateCell: View {
                     VStack (alignment : .leading , spacing:  3 )  {
                         Text ("Real Server")
                             .font(.customFont(font: .Rubik, style: .medium , size: .h7))
-
+                        
                         if let date = listApp?.real?.createdDate?.stringValue {
                             let   realDate = dateFormat.getRelativeDate(date: date)
                             Text(realDate)
@@ -124,7 +153,7 @@ struct HomePrivateCell: View {
                                 .foregroundColor(.gray.opacity(0.8))
                         }
                     }
-
+                    
                     Spacer()
                     VStack(alignment : .leading , spacing:  3 )  {
                         Text ("Dev. Server")

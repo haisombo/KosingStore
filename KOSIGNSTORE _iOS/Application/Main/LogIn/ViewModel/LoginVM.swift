@@ -62,11 +62,13 @@ class ViewModel  : ObservableObject {
                     Shared.share.token = token
                     self?.userInfo = UserInfo(username: username, fullName: fullName, image: image, email: email, companyName: companyName)
                     Shared.userInfo = self?.userInfo
+                    UserDefaults.standard.set(true, forKey: "login")
                     UserDefaults.standard.set(self?.userID, forKey: "USERID")
                     UserDefaults.standard.set(username, forKey: "USERNAME")
                     UserDefaults.standard.set(password, forKey: "PASSWORD")
                 } else {
                     Shared.userType = .Logout
+                    UserDefaults.standard.set(true, forKey: "logout")
                     UserDefaults.standard.removeObject(forKey: "USERID")
                     UserDefaults.standard.removeObject(forKey: "USERNAME")
                     UserDefaults.standard.removeObject(forKey: "PASSWORD")

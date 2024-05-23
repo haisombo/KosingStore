@@ -67,15 +67,15 @@ extension DateFormatter {
             return data
         }
     }
-    func checkUpdate(data: AppDetailBody.VersionListInfo) -> Bool {
+    func checkUpdate(data: ListApp.AppInfo ) -> Bool {
         self.dateFormat = "yyyy-MM-dd HH:mm:ss"
         var date = ""
         if let devModifiedDate = data.dev?.modifiedDate {
-            date = checkFormatDate(data: devModifiedDate) ?? ""
+            date = checkFormatDate(data: devModifiedDate.stringValue) 
         }
         
         if let realModifiedDate = data.real?.modifiedDate {
-            let realDate = checkFormatDate(data: realModifiedDate) ?? ""
+            let realDate = checkFormatDate(data: realModifiedDate.stringValue) 
             
             if date.isEmpty || realDate > date {
                 date = realDate
@@ -93,7 +93,14 @@ extension DateFormatter {
     }
 
 
-    
+    func checkNewApp(date: String) -> Bool {
+        self.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let data = checkFormatDate(data: date)
+        let currentDate = Date()
+        let fromDate    = self.date(from: data)
+        let countDate   = Calendar.current.dateComponents([.day], from: fromDate!, to: currentDate).day!
+        return countDate > 1 ? true : false
+    }
     
     
     

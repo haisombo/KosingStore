@@ -74,8 +74,10 @@ struct HomeDetailVC: View {
                     VStack  {
                         List  {
                             // check data response from api
-                            ForEach ( homePublicApp?.data.versionList ?? [] , id : \.versionNumber?.intValue ) { data in
-                                AppVersionDetailViewCell( homeVersionApp: data )
+                            if let versionList = homePublicApp?.data.versionList {
+                                ForEach(versionList) { data in
+                                    AppVersionDetailViewCell(homeVersionApp: data)
+                                }
                             }
                         }
                         

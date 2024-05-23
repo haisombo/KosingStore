@@ -26,7 +26,10 @@ struct HomeVC: View {
     @State private var navigateToWelcome                = false
     @EnvironmentObject private var appRootManager       : AppRootManager
     @State          var         isGoProfileDetail       = false
-
+    @AppStorage("login") var     islogin                = false
+    @AppStorage("logout") var     islogout              = false
+    @State  private var isSearchEmpty                   = false
+    
     // change color navigationTitle
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "MianColor") ?? .black]
@@ -44,15 +47,21 @@ struct HomeVC: View {
                         //content
                         Section (content:  {
                             // map list data from api
-                             
-                            // type Privite --> logIn
-                            ForEach (homeViewModel.listApp?.data ?? [] ) { dataListApp in
-                                // cell
-                                HomePrivateCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
-                            }
-                            
-                            // type Public --> logOut
-//                            HomeCell()
+//                            if searchEmpty {
+//                                // empty data
+//                                NotFoundCell()
+//                            } else {
+                                if islogin {
+                                    // type Privite --> logIn
+                                    ForEach (homeViewModel.listApp?.data ?? []  ,  id : \.id ) { dataListApp in
+                                        // cell
+                                        HomePrivateCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
+                                    }
+                                }else {
+                                    // type Public --> logOut
+                                    HomeCell()
+                                }
+//                            }
                             
                             // header
                         }, header: {
@@ -73,6 +82,13 @@ struct HomeVC: View {
                 
                 // MARK: - lifeCyle when open screen
                 .onAppear {
+                    self.homeViewModel.search(text: searchText) { result in
+                        if result == true {
+                            print("have data ")
+                        }
+                    }
+                        
+                    
 //                    appRootManager.currentRoot = .home
                     self.listApp()
                     self.appHomeList()
@@ -123,7 +139,7 @@ struct HomeVC: View {
             }
             
             // search bar
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always )) {
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic )) {
                 
             }
             NavigationLink(destination: ProfileDetailViewVC(), isActive: $isGoProfileDetail.animation(.smooth)) {

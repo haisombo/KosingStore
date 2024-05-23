@@ -235,13 +235,16 @@ struct ListAppVersion: Codable {
             case versionList = "version_list"
         }
         
-        struct VersionListInfo: Decodable {
+        struct VersionListInfo: Decodable ,Identifiable  {
+            
+            var id: UUID = UUID()  // Unique ID for Identifiable conforman
             var versionNumber: AnyCodableValue?
             var description : AnyCodableValue?
             var real : VersionListEnvironment?
+            var upload_date         : AnyCodableValue?
+            var user_upload         : AnyCodableValue?
             var dev: VersionListEnvironment?
-            var upload_date         : String?
-            var user_upload         : String?
+ 
             
             enum CodingKeys: String, CodingKey {
                 case description

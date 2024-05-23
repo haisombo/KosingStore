@@ -38,7 +38,7 @@ struct AppVersionDetailViewCell: View {
                         HStack {
                             Text ("Uploaded By:")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h5))
-                            if let userUpload = homeVersionApp?.user_upload {
+                            if let userUpload = homeVersionApp?.user_upload?.stringValue {
                                 Text(userUpload)
                                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                                     .foregroundColor(Color("MianColor"))
@@ -52,7 +52,7 @@ struct AppVersionDetailViewCell: View {
                             Text ("Modified Date: ")
                                 .font(.customFont(font: .Rubik, style: .regular , size: .h6))
                             
-                            if let uploadDate = homeVersionApp?.upload_date?.formatDate()  {
+                            if let uploadDate = homeVersionApp?.upload_date?.stringValue.formatDate()  {
                                 
                                Text(uploadDate)
                                     .font(.customFont(font: .Rubik, style: .medium , size: .h7))
@@ -100,6 +100,19 @@ struct AppVersionDetailViewCell: View {
                         Button(action: {
                             // action
                             print("Real")
+                            
+                            // Action for REAL
+                            if let filePath = homeVersionApp?.real?.filePath?.stringValue,
+                               let url = URL(string: filePath) {
+                                // Ensure the action is performed on the main thread
+                                DispatchQueue.main.async {
+                                    UIApplication.shared.open(url) { success in
+                                        if !success {
+                                            print("Failed to open URL: \(url)")
+                                        }
+                                    }
+                                }
+                            }
                         }, label: {
                             Text("REAL")
                                 .font(.customFont(font: .Rubik, style: .bold , size: .h4))
@@ -129,7 +142,18 @@ struct AppVersionDetailViewCell: View {
                         Button(action: {
                             // Action
                             print("Develop")
-                            
+                            // Action for Develop
+                            if let filePath = homeVersionApp?.dev?.filePath?.stringValue,
+                               let url = URL(string: filePath) {
+                                // Ensure the action is performed on the main thread
+                                DispatchQueue.main.async {
+                                    UIApplication.shared.open(url) { success in
+                                        if !success {
+                                            print("Failed to open URL: \(url)")
+                                        }
+                                    }
+                                }
+                            }
                             
                         }, label: {
                             Text("DEVELOP")
