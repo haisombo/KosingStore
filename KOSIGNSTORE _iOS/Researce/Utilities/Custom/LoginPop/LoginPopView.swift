@@ -40,7 +40,7 @@ struct Popup<Content: View>: View {
                 }
             content
                 .frame(
-                    width: UIScreen.main.bounds.size.width - 30 , height: 430)
+                    width: UIScreen.main.bounds.size.width - 30 , height: 500)
                 .background(.white)
                 .cornerRadius(12)
                 .overlay(alignment: .topTrailing) {

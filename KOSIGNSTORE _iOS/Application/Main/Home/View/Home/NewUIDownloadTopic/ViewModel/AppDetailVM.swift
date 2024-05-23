@@ -17,21 +17,17 @@ class AppDetailVM : ObservableObject {
         }
 
     
-    func appDetailInit (){
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            
+    func appDetailInit (shouldShowLoading: Bool = true ) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ) {
+
             self.appDetailData = [
                 
                 AppDetail (title: "24th TOPIK" , icon: "icon_file-pdf" ,  readData: "31st TOPIK Papers Intermediate" , pathFile: Bundle.main.path(forResource: "31st TOPIK Papers Intermediate", ofType: "pdf") ?? ""),
-                AppDetail (title: "25th TOPIK" , icon: "icon_file-pdf" ,  readData: "32nd-TOPIK-Papers-Intermediate" ,pathFile: Bundle.main.path(forResource: "32st TOPIK Papers Intermediate", ofType: "pdf") ?? ""  ),
-                AppDetail (title: "26th TOPIK" , icon: "icon_file-pdf" ,  readData: "33rd-TOPIK-Papers-Intermediate" ,pathFile: Bundle.main.path(forResource: "33st TOPIK Papers Intermediate", ofType: "pdf") ?? ""),
-                AppDetail (title: "27th TOPIK" , icon: "icon_file-pdf" ,  readData: "33rd-TOPIK-Papers-Intermediate" ,pathFile: Bundle.main.path(forResource: "33st TOPIK Papers Intermediate", ofType: "pdf") ?? "" ),
+                AppDetail (title: "25th TOPIK" , icon: "icon_file-pdf" ,  readData: "32nd-TOPIK-Papers-Intermediate" ,pathFile: Bundle.main.path(forResource: "32nd-TOPIK-Papers-Intermediate", ofType: "pdf") ?? ""  ),
+                AppDetail (title: "26th TOPIK" , icon: "icon_file-pdf" ,  readData: "33rd-TOPIK-Papers-Intermediate" ,pathFile: Bundle.main.path(forResource: "33rd-TOPIK-Papers-Intermediate", ofType: "pdf") ?? ""),
+                AppDetail (title: "27th TOPIK" , icon: "icon_file-pdf" ,  readData: "33rd-TOPIK-Papers-Intermediate" ,pathFile: Bundle.main.path(forResource: "33rd-TOPIK-Papers-Intermediate", ofType: "pdf") ?? "" ),
                 
             ]
-            
         }
     }
-
-    
 }

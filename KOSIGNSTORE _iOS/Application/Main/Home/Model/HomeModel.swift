@@ -70,13 +70,17 @@ struct AppDetailBody {
     struct VersionListInfo {
         var versionNumber       : String?
         var description         : String?
+        var upload_date         : String?
+        var user_upload         : String?
         var dev                 : AppEnvironment?
         var real                : AppEnvironment?
         
         struct AppEnvironment {
+            var version_id          : Int?
             var modifiedDate        : String?
             var filePath            : String?
             var status              : Int?
+        
         }
     }
 }
@@ -148,7 +152,7 @@ struct ListApp: Codable {
         var message: AnyCodableValue
         var data: [AppInfo]
     }
-    struct AppInfo: Codable {
+    struct AppInfo: Codable , Identifiable {
         var id                  :   AnyCodableValue
         var name                :   AnyCodableValue?
         var icon                :   AnyCodableValue?
@@ -232,10 +236,10 @@ struct ListAppVersion: Codable {
         }
         
         struct VersionListInfo: Decodable {
+            var versionNumber: AnyCodableValue?
             var description : AnyCodableValue?
             var real : VersionListEnvironment?
             var dev: VersionListEnvironment?
-            var versionNumber: AnyCodableValue?
             var upload_date         : String?
             var user_upload         : String?
             

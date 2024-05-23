@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LaunchScreen: View {
     
+    @EnvironmentObject private var appRootManager: AppRootManager
+
     var body: some View {
         List {
             VStack {
@@ -22,33 +24,48 @@ struct LaunchScreen: View {
                     Text("KOSIGN STORE")
                         .font(.customFont(font: .Rubik, style: .medium , size: .h0))
                         .foregroundColor(Color("MianColor"))
-                    Text("Manage your app , download and app version list controller")
-                        .font(.customFont(font: .Rubik, style: .regular , size: .h3))
+//                    Text("Manage your app , download and app version list controller")
+//                        .font(.customFont(font: .Rubik, style: .regular , size: .h3))
                     
                 }
-                
-                .padding(.vertical , 30)
+//                .padding(.vertical , 30)
                 // MARK: - Loading View
-                VStack(alignment: .center) {
-                    //
-                    ActivityIndicatorLoading()
+                VStack (alignment : .center ) {
                     
-                }.padding(.vertical , 122)
-                
-                VStack(alignment: .center) {
-                    Text("Copyright © 2017 KOSIGN")
-                        .font(.customFont(font: .Rubik, style: .medium , size: .h4))
-                        .foregroundColor(Color("MianColor"))
-                }
-                
+                    VStack {
+
+                        ActivityIndicatorLoading()
+                        
+                    } .frame(height: 380)
+
+                    VStack {
+                        Text("Copyright © 2017 KOSIGN")
+                            .font(.customFont(font: .Rubik, style: .medium , size: .h4))
+                            .foregroundColor(Color("MianColor"))
+                    }
+                    .padding()
+                }     
+           
             }
+            .frame(width: 350)
         }
         
         .scrollContentBackground(.hidden)
+        .listStyle(.insetGrouped)
         .scrollDisabled(true)
+        
+        .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                appRootManager.currentRoot = .home
+            }
+        }
+        
     }
 }
 
-#Preview {
-    LaunchScreen()
+struct SplashView_Previews: PreviewProvider {
+    static var previews: some View {
+        LaunchScreen()
+            .environmentObject(AppRootManager())
+    }
 }

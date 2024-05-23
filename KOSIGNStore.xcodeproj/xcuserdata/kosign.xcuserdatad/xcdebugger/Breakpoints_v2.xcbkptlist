@@ -67,5 +67,116 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5C62364-0E99-4C98-B32C-960527066E70"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "C5C62364-0E99-4C98-B32C-960527066E70 - 82ca972eca596cfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.searchable&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(text: SwiftUI.Binding&lt;Swift.String&gt;, placement: SwiftUI.SearchFieldPlacement, prompt: Swift.Optional&lt;SwiftUI.Text&gt;, suggestions: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.hidden() -&gt; some&gt;&gt;.0, KOSIGNStore.ProfileDetailViewVC&gt;, Swift.Optional&lt;KOSIGNStore.Popup&lt;KOSIGNStore.LoginScreen&gt;&gt;)&gt; in KOSIGNStore.HomeVC.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kosign/Desktop/KOSIGNStore/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "C5C62364-0E99-4C98-B32C-960527066E70 - 82ca972eca596cfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #3 () -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationBarTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.searchable&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(text: SwiftUI.Binding&lt;Swift.String&gt;, placement: SwiftUI.SearchFieldPlacement, prompt: Swift.Optional&lt;SwiftUI.Text&gt;, suggestions: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.hidden() -&gt; some&gt;&gt;.0, KOSIGNStore.ProfileDetailViewVC&gt;, Swift.Optional&lt;KOSIGNStore.Popup&lt;KOSIGNStore.LoginScreen&gt;&gt;)&gt; in KOSIGNStore.HomeVC.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kosign/Desktop/KOSIGNStore/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F9BD406-0CE8-4D72-8092-F990E164812F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "1F9BD406-0CE8-4D72-8092-F990E164812F - 2da84ce61fdd9f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.searchable&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(text: SwiftUI.Binding&lt;Swift.String&gt;, placement: SwiftUI.SearchFieldPlacement, prompt: Swift.Optional&lt;SwiftUI.Text&gt;, suggestions: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.hidden() -&gt; some&gt;&gt;.0, KOSIGNStore.ProfileDetailViewVC&gt;, Swift.Optional&lt;KOSIGNStore.Popup&lt;KOSIGNStore.LoginScreen&gt;&gt;)&gt; in KOSIGNStore.HomeVC.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kosign/Desktop/KOSIGNStore/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1208">
+               </Location>
+               <Location
+                  uuid = "1F9BD406-0CE8-4D72-8092-F990E164812F - c4a371a93a34d691"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.hidden() -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.searchable&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(text: SwiftUI.Binding&lt;Swift.String&gt;, placement: SwiftUI.SearchFieldPlacement, prompt: Swift.Optional&lt;SwiftUI.Text&gt;, suggestions: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.hidden() -&gt; some&gt;&gt;.0, KOSIGNStore.ProfileDetailViewVC&gt;, Swift.Optional&lt;KOSIGNStore.Popup&lt;KOSIGNStore.LoginScreen&gt;&gt;)&gt; in KOSIGNStore.HomeVC.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kosign/Desktop/KOSIGNStore/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "1F9BD406-0CE8-4D72-8092-F990E164812F - 2da84ce61fdd9f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.searchable&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(text: SwiftUI.Binding&lt;Swift.String&gt;, placement: SwiftUI.SearchFieldPlacement, prompt: Swift.Optional&lt;SwiftUI.Text&gt;, suggestions: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.hidden() -&gt; some&gt;&gt;.0, KOSIGNStore.ProfileDetailViewVC&gt;, Swift.Optional&lt;KOSIGNStore.Popup&lt;KOSIGNStore.LoginScreen&gt;&gt;)&gt; in KOSIGNStore.HomeVC.body.getter : some"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kosign/Desktop/KOSIGNStore/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/HomeVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1444">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

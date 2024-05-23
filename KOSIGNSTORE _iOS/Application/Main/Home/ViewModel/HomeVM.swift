@@ -14,6 +14,7 @@ class HomeViewModel: ObservableObject {
     @Published var homeContentDataSort          : [HomeContentBody] = []
     @Published var tempHomeContentData          : [HomeContentBody] = []
     @Published var logInVM                      = ViewModel()
+    @Published var listAppVersionData          :  [AppDetailBody.VersionListInfo] = []
     @Published var homePublicApp                : ListAppVersion.Response? = nil
     @Published var listApp                      : ListApp.Response? = nil
     @Published var listStyleValue               = ""
@@ -75,9 +76,6 @@ class HomeViewModel: ObservableObject {
     }
     
 
-    
-    
-    
     // MARK: - Filter Data sort by name App
     func getSortListData(completion: () -> ()) {
         if self.sortListValue == FilterContentBody.RowType.SORT_APP_NAME.rawValue {

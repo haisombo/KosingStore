@@ -46,9 +46,8 @@ class ViewModel  : ObservableObject {
                 case .finished: break
                 }
             }
-            receiveValue: { [weak self] data in
-                
-        //        self?.loginData = data
+    receiveValue: { [weak self] data in
+                self?.loginData = data
         //        guard let data = data else {return}
                 if data.status.booleanValue {
                     Shared.userType = .Login

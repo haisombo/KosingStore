@@ -12,12 +12,12 @@ struct ActivityIndicatorLoading: View {
     @State var isHideLoader         : Bool = true
     
     var body: some View {
-        VStack {
-            LoaderView(tintColor: .black, scaleSize: 2.0).padding(.bottom,50)/*.hidden(isHideLoader)*/
-            
+        VStack  {
+            LoaderView(tintColor: .black, scaleSize: 2.0)/*.padding(.bottom , 50)/*.hidden(isHideLoader)*/*/
         }
     }
 }
+
 struct LoaderView: View {
     var tintColor: Color = .blue
     var scaleSize: CGFloat = 1.0
@@ -36,4 +36,7 @@ extension View {
         case false: self
         }
     }
+}
+#Preview {
+    ActivityIndicatorLoading()
 }

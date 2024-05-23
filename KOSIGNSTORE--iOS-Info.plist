@@ -4,6 +4,17 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs to capture image to show in the app</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.974261284378-gupigemv1dirvbs8rlsptg0pshvi69pm</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Rubik-Italic-VariableFont_wght.ttf
