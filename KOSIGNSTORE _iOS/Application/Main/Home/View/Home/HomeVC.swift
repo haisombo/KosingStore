@@ -42,6 +42,7 @@ struct HomeVC: View {
         ZStack {
             NavigationView {
                 VStack (alignment : .center )  {
+                    
                     // MARK: - ListView
                     List  {
                         //content
@@ -92,7 +93,7 @@ struct HomeVC: View {
 //                    appRootManager.currentRoot = .home
                     self.listApp()
                     self.appHomeList()
-//                    self.logInVM.requestLogin()
+                    
                     self.mgVM.requestMG(){
                         result in
                         switch result {
@@ -110,18 +111,15 @@ struct HomeVC: View {
                         // MARK: - check type profile navigation
                         switch Shared.userType {
                         case .Login :
-//                            isGoProfileDetail = true
+                            isGoProfileDetail = true
                             
-                            // log in
-                            presentPopup = true
                         case .Logout :
-                            // log out
                             presentPopup = true
                         }
                     }
                 }) {
                     // Profile User
-                    WebImage(url: URL(string: Shared.userInfo?.image ?? "")) { image  in
+                    WebImage(url: URL(string: Shared.userInfo.image )) { image  in
                        image
                         
                     } placeholder: {
@@ -135,13 +133,13 @@ struct HomeVC: View {
                     .background(Color("BackGoundColor"))
                 )
                 .navigationBarTitle("My App")
-
             }
             
             // search bar
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic )) {
                 
             }
+            
             NavigationLink(destination: ProfileDetailViewVC(), isActive: $isGoProfileDetail.animation(.smooth)) {
                 Text("")
                     .hidden()
@@ -149,7 +147,7 @@ struct HomeVC: View {
             // MARK: - present Pop up Log in from
             if presentPopup {
                 Popup(isPresented: $presentPopup) {
-                    LoginScreen(isPresented: $presentPopup, dataLogIn: logInUser) // Pass the binding variable to LoginScreen
+                    LoginScreen(isPresented: $presentPopup) // Pass the binding variable to LoginScreen
                 }
             }
         }
@@ -163,21 +161,14 @@ struct HomeVC: View {
     }
     // MARK: - Get Data with ueser type
     func listApp ( ) {
-        self.homeViewModel.fetchListApp(userID: 18 , companyID: 1 , type:  .Private ) { result in
+        self.homeViewModel.fetchListApp(userID: 0 , companyID: 1 , type:  .Public ) { result in
             switch result {
             case .success(let data):
                 self.homeViewModel.listApp   = data
-                print("""
-                             🎉🤩
-                              ===> Fetch Sucess ✅ 👏🥳
-                              🎉🤩
-                          """)
+                print("🎉🤩 ===> Fetch Sucess ✅🤩")
                 
             case .failure(let error):
-               
-                print("""
-                         😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
-                      """)
+                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
             }
         }
     }
@@ -187,42 +178,23 @@ struct HomeVC: View {
             switch result {
             case .success(let data):
                 self.homeViewModel.homePublicApp   = data
-                print("""
-                                🎉🤩
-                                 ===> Fetch Sucess ✅ 👏🥳
-                                 🎉🤩
-                             """)
+                print("🎉🤩 ===> Fetch Sucess ✅🤩")
                 
             case .failure(let error):
-                print("""
-                            😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️
-                         """)
+                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
             }
         }
     }
-    
-    
-    
-
 }
 
-
-
-struct HomeView_Previews: PreviewProvider {
+// Preview Ui
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             HomeVC()
-        } .environmentObject(AppRootManager())
+        }// .environmentObject(AppRootManager())
     }
 }
-
-
-
-
-
-
-
-
 
 
 //struct SearchBarCustomView: View {

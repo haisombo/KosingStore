@@ -15,7 +15,7 @@ struct ProfileDetailViewVC: View {
                     List {
                         Section {
                             NavigationLink (destination : ProfileUpdateUser() )   {
-                                ProfileListCell(fullName: Shared.userInfo?.fullName ?? "")
+                                ProfileListCell(fullName: Shared.userInfo.fullName )
                             }
                         }
                         .listRowBackground(Color("MianColor"))

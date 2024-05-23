@@ -10,11 +10,10 @@ import FittedSheetsSwiftUI
 import SDWebImageSwiftUI
 
 struct ProfileUpdateUser: View {
-    
-    @State private var userInfo  = Shared.userInfo
+    @ObservedObject var profileVM  = ProfileVM()
     @State private var image    : Image? = Image ("") /* = Image("karthick")*/
     @State private var shouldPresentImagePicker     = false
-    @State private var shouldPresentActionScheet    = false
+//    @State private var shouldPresentActionScheet    = false
     @State private var shouldPresentCamera          = false
     @State var showFittedSheet: Bool = false
     
@@ -51,10 +50,8 @@ struct ProfileUpdateUser: View {
                     VStack (alignment : .center ) {
                         ZStack  {
                             Button(action: {
-                                self.showFittedSheet.toggle()
                             }) {
-                                
-                                WebImage(url: URL(string: Shared.userInfo?.image ?? "")) { image  in
+                                WebImage(url: URL(string: Shared.userInfo.image)) { image  in
                                    image
                                 } placeholder: {
                                     Image("defaultIMG")
@@ -62,17 +59,22 @@ struct ProfileUpdateUser: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .modifier(ProfileImageStyle(width: 100, height: 100))
-                            }
-                            .onTapGesture { self.shouldPresentActionScheet = true }
-                            .sheet(isPresented: $shouldPresentImagePicker) {
-                                SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+                                .onTapGesture {
+                                    self.showFittedSheet.toggle()
+                                }
+                                .sheet(isPresented: $shouldPresentImagePicker) {
+                                    SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+                                }
+                                // MARK: - Open Sheet
+                                .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration ){
+                                    RegisterProfile()
+                                }
                             }
                             Image ("camera_ico")
+                                .onTapGesture {
+                                    self.showFittedSheet.toggle()
+                                }
                         }
-                    }
-                    // MARK: - Open Sheet
-                    .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration )  {
-                        RegisterProfile()
                     }
                     .padding(.horizontal , 90)
                     .listRowBackground(Color("BackGoundColor"))
@@ -80,9 +82,9 @@ struct ProfileUpdateUser: View {
                 .listRowSeparator(.hidden)
                 
                 Section{
-                    EntryField(leftIcon: "user", field: userInfo?.username ?? "", height: 45)
-                    EntryField(leftIcon: "mail", field: userInfo?.email ?? "", height: 45)
-                    EntryField(leftIcon: "user", field: userInfo?.fullName ?? "", height: 45)
+                    EntryField(leftIcon: "user", field: $profileVM.profileInfo.username, height: 45)
+                    EntryField(leftIcon: "mail", field: $profileVM.profileInfo.email, height: 45)
+                    EntryField(leftIcon: "user", field: $profileVM.profileInfo.fullName, height: 45)
                 }
                 .listRowSeparator(.hidden)
                 .frame(width: .infinity, height: 40)
@@ -103,7 +105,7 @@ struct ProfileUpdateUser: View {
                         .font(.customFont(font: .Rubik, style: .bold , size: .h4))
                         .foregroundColor(Color.white)
                         .frame(width: 310, height: 45)
-                        .background(Color ("GrayTextColor"))
+                        .background(Color (!self.profileVM.isFieldMatch ? "GrayTextColor" : "MianColor"))
                         .cornerRadius(15)
                 })
                 .buttonStyle(PressableButtonStyle())
@@ -115,7 +117,7 @@ struct ProfileUpdateUser: View {
 
 struct EntryField : View {
     var leftIcon: String
-    @State var field: String
+    @Binding var field: String
     @State var height: CGFloat
     
     var body: some View {
