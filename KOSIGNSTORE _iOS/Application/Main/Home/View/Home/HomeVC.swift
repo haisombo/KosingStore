@@ -30,7 +30,8 @@ struct HomeVC: View {
     @AppStorage("logout") var     islogout              = false
     @State  private var isSearchEmpty                   = false
     
-    
+    @State private var isLoading                        = false  // Loading state property
+
     // change color navigationTitle
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "MianColor") ?? .black]
@@ -66,19 +67,23 @@ struct HomeVC: View {
                         }, footer:  {
                             GeometryReader { geometry in
                                 VStack(alignment: .center) {
-                                    if homeViewModel.searchText.isEmpty /*&& homeViewModel.tempListAppData == nil*/ {
-                                        //footer
-                                        FooterHomeCell()
+                                    // check when no data
+                                    if homeViewModel.listApp?.data.isEmpty ?? true {
+                                        if homeViewModel.searchText.isEmpty {
+                                            NotFoundCell()
+                                                .hidden()
+                                        } else {
+                                            NotFoundCell()
+                                        }
+                                       
                                     } else {
-                                        //empty cell
-                                        NotFoundCell()
+                                        FooterHomeCell()
                                     }
-                                 
-                                }.frame(width: geometry.size.width)
+                        
+                            }.frame(width: geometry.size.width)
                             }
                         })
                     }
-                    
                     .listRowSpacing(15.0)
                     .listStyle(InsetGroupedListStyle())
                 }
@@ -131,7 +136,7 @@ struct HomeVC: View {
             .searchable(text: $homeViewModel.searchText , placement: .navigationBarDrawer(displayMode: .automatic ))
             .onChange(of: homeViewModel.searchText) { _ in
                             homeViewModel.filterApps()
-                        }
+            }
 
             NavigationLink(destination: ProfileDetailViewVC(), isActive: $isGoProfileDetail.animation(.smooth)) {
                 Text("")
@@ -143,19 +148,18 @@ struct HomeVC: View {
                     LoginScreen(isPresented: $presentPopup) // Pass the binding variable to LoginScreen
                 }
             }
+
         }
     }
 
     // MARK: - Get Data with ueser type
     func listApp ( ) {
-        
-         
         if   homeViewModel .isLogin == true {
             guard let userID = homeViewModel.userID, let companyID = homeViewModel.companyID else {
                 print("User ID or Company ID is nil")
                 return
             }
-            self.homeViewModel.fetchListApp(userID: userID  , companyID:  companyID , type: .Private ) { result in
+            self.homeViewModel.fetchListApp(shouldShowLoading: false, userID: userID  , companyID:  companyID , type: .Private ) { result in
                 switch result {
                 case .success(let data):
                     self.homeViewModel.listApp   = data
@@ -166,7 +170,8 @@ struct HomeVC: View {
                 }
             }
         } else {
-            self.homeViewModel.fetchListApp(userID: 18    , companyID:  1 , type: .Private ) { result in
+            self.homeViewModel.fetchListApp(shouldShowLoading: false, userID: 18    , companyID:  1 , type: .Private ) { result in
+
                 switch result {
                 case .success(let data):
                     self.homeViewModel.listApp   = data

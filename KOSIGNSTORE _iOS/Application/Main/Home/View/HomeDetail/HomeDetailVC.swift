@@ -14,8 +14,6 @@ struct HomeDetailVC: View {
     // MARK: - Properties
     @State          var homePublicApp       : ListAppVersion.Response? = nil
     @Environment(\.dismiss) private var dismiss
-    
-//    @State var appVersion
     // MARK: - Body
     var body: some View {
         VStack (alignment: .leading ) {
@@ -72,9 +70,11 @@ struct HomeDetailVC: View {
                 
                 // MARK: - List Version Of App Cell
                     VStack  {
+                        
                         List  {
                             // check data response from api
                             if let versionList = homePublicApp?.data.versionList {
+                             
                                 ForEach(versionList) { data in
                                     AppVersionDetailViewCell(homeVersionApp: data)
                                 }
@@ -89,6 +89,7 @@ struct HomeDetailVC: View {
             }
         }
     }
+    
 }
 
 #Preview {

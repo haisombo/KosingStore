@@ -7,7 +7,8 @@
 
 import Foundation
 import Combine
-
+import UIKit
+//import UIKit
 
 public class NetworkManager : NSObject, URLSessionDelegate {
     
@@ -86,9 +87,11 @@ public class NetworkManager : NSObject, URLSessionDelegate {
         
         if shouldShowLoading {
             DispatchQueue.main.async {
-//                LoadingView.show()
+                Loading.show()
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
             }
         }
+        
         
         let request = self.getURLRequest(baseURL        : baseURL,
                                          endpoint       : endpoint,
@@ -130,7 +133,7 @@ public class NetworkManager : NSObject, URLSessionDelegate {
             
             /// - tryMap : handle data, response and error from Upstream
                 .tryMap { (data, response) -> Data in
-                    
+                  
                     //MARK: - Check Data, Response Error
                     let decodedDataString  = String(data: data, encoding: String.Encoding.utf8)?.removingPercentEncoding
                     guard let responseData = decodedDataString == nil ? data : decodedDataString?.data(using: .utf8) else {
@@ -211,11 +214,15 @@ public class NetworkManager : NSObject, URLSessionDelegate {
                                         """)
                         promise(.failure(error))
                     }
+                    
+                    //ShowLoadingimagView
                     if shouldShowLoading {
                         DispatchQueue.main.async {
-                            /// this block is for custom dismiss loading view
+                            Loading.close()
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
                         }
                     }
+                    
                 }, receiveValue: {
                     Log.s("""
                                     \(request.url!) | \(endpoint.rawValue)

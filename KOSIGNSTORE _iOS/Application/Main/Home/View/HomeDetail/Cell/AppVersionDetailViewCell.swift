@@ -12,7 +12,7 @@ struct AppVersionDetailViewCell: View {
     @State          private var showData         = false
     @State          var homeVersionApp           : ListAppVersion.AppVersionInfo.VersionListInfo? = nil
     @State          var dateFormat               = DateFormatter()
-    
+  
     var body: some View {
         VStack (alignment : .leading ,spacing : 20 )  {
             VStack  (alignment : .leading , spacing: 20 ){

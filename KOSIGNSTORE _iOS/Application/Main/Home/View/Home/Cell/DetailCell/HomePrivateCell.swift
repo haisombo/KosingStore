@@ -20,8 +20,8 @@ struct HomePrivateCell: View {
     @State          var idApp               : Int  = 0
     @State          var viewModel           = HomeViewModel()
     @State          var dateFormat          = DateFormatter()
-    @State var isLoading                    : Bool = false
-    
+    @State private var isLoading            = false  // Loading state property
+
     
     // MARK: - Custom Sheet
     let sheetConfiguration: SheetConfiguration = SheetConfiguration (
@@ -37,22 +37,18 @@ struct HomePrivateCell: View {
             
             // MARK: - Button Action
             Button(action: {
-                
+        
                 // call sheet
                 self.idApp = listApp?.id.intValue ?? 0
-                self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
+                self.homeVM.fetchListPrivateAppVersion(shouldShowLoading : true ,   id: idApp ) { result in
                     switch result {
                     case .success( let data ) :
                         self.homePublicApp = data
                         self.showFittedSheet.toggle()
-                        
-//                        print("data have version selected \(data )")
                     case .failure(let erorr) :
-                        //                        self.viewModel.buttonTapped()
                         print(erorr.localizedDescription)
                     }
                 }
-                
             }, label: {
             })
             // Content
@@ -178,12 +174,12 @@ struct HomePrivateCell: View {
         .fittedSheet(isPresented: $showFittedSheet,  configuration: sheetConfiguration )  {
             HomeDetailVC(homePublicApp : homePublicApp)
         }
-        
+    
     }
     
     
     func appVersion ( ) {
-        self.homeVM.fetchListPrivateAppVersion(id: idApp ) { result in
+        self.homeVM.fetchListPrivateAppVersion(shouldShowLoading : true,  id: idApp ) { result in
             switch result {
             case .success( let data ) :
                 print("data have version selected \(data )")
