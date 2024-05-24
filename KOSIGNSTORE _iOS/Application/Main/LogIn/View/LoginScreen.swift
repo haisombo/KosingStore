@@ -20,6 +20,8 @@ struct LoginScreen: View {
     @Binding            var         isPresented             : Bool // Binding variable to control the presentation of the popup
     @State              private var showAlert               = false
     @State              var dataLogIn                       : Login.Response? = nil
+    @AppStorage("signIn") var isSignIn = false
+
     // Create Alert
     let alert = UIAlertController(title: "Erorr",
                                   message: "Your Ticket will Expire Soon.",
@@ -126,50 +128,23 @@ struct LoginScreen: View {
                     }
                     // MARK: -   Action with Google
                     VStack {
-                        // Action LogIn
-                        GoogleSignInButton()
-                            .frame(width: 300, height: 50)
-                            .background(Color.white)
-                            .cornerRadius(15.0)
-                            .shadow(color: Color.gray.opacity(0.3), radius: 20, x: 3, y: 3)
-                    }
-                        //                         login with apple
-                        //                        Button(action: {
-                        //                            // action
-                        //                            print("log in with apple ")
-                        //                        }
-                        //                        ) {
-                        //                            HStack (spacing : 30) {
-                        //                                Image("apple_icon")
-                        //                                    .resizable()
-                        //                                    .frame(width: 25 , height: 27)
-                        //                                Text("Login with Apple")
-                        //                                    .font(.customFont(font: .Rubik, style: .regular , size: .h3))
-                        //                                    .foregroundColor(.white)
-                        //
-                        //                            }
-                        //                                .padding()
-                        //                                .frame(width: 300, height: 50)
-                        //                                .background(Color.black)
-                        //                                .cornerRadius(15.0)
-                        //                                .shadow(color: Color.gray.opacity(0.3), radius: 20 , x: 3 , y:3)
-                        //
-                        //                        }
-                        
-                        
-                        
-                        //                        }
-                    }
+//                        if isSignIn {
+////                            self.isPresented = false
+//                        } else {
+                            // Action LogIn
+                            GoogleSignInButton()
+                                .frame(width: 300, height: 50)
+                                .background(Color.white)
+                                .cornerRadius(15.0)
+                                .shadow(color: Color.gray.opacity(0.3), radius: 20, x: 3, y: 3)
+//                        }
                 
+                    }
+            
+                    }
             }
         }
         
     }
     
 }
-
-
-//#Preview {
-// 
-//    LoginScreen( )
-//}

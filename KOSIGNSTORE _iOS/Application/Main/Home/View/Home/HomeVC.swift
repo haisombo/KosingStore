@@ -30,6 +30,7 @@ struct HomeVC: View {
     @AppStorage("logout") var     islogout              = false
     @State  private var isSearchEmpty                   = false
     
+    
     // change color navigationTitle
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "MianColor") ?? .black]
@@ -85,8 +86,7 @@ struct HomeVC: View {
                 // MARK: - lifeCyle when open screen
                 .onAppear {
                     self.listApp()
-//                    self.appHomeList()
-                    
+              
                     self.mgVM.requestMG(){
                         result in
                         switch result {
@@ -97,7 +97,7 @@ struct HomeVC: View {
                         }
                     }
                 }
-                
+           
                 // MARK: - Navigation Bar
                 .navigationBarLargeTitleItems(trailing: Button(action: {
                     withAnimation(.easeOut  (duration: 0.3)) {
@@ -118,7 +118,7 @@ struct HomeVC: View {
                         Image("defaultIMG")
                     }
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .modifier(AppImageStyle(width: 40, height: 40, cornerRadius: 40))
                 }
                     .offset(x: -20, y: 8)
@@ -146,38 +146,40 @@ struct HomeVC: View {
         }
     }
 
-    // MARK: - Method for fetch data
-//    func appHomeList () {
-//        self.homeViewModel.getHomeData {
-//            self.homeViewModel.listApp  = homeViewModel.listApp
-//        }
-//    }
     // MARK: - Get Data with ueser type
     func listApp ( ) {
-        self.homeViewModel.fetchListApp(userID: 18 , companyID: 1 , type:  .Private ) { result in
-            switch result {
-            case .success(let data):
-                self.homeViewModel.listApp   = data
-                print("🎉🤩 ===> Fetch Sucess ✅🤩")
-                
-            case .failure(let error):
-                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
+        
+         
+        if   homeViewModel .isLogin == true {
+            guard let userID = homeViewModel.userID, let companyID = homeViewModel.companyID else {
+                print("User ID or Company ID is nil")
+                return
+            }
+            self.homeViewModel.fetchListApp(userID: userID  , companyID:  companyID , type: .Private ) { result in
+                switch result {
+                case .success(let data):
+                    self.homeViewModel.listApp   = data
+                    print("🎉🤩 ===> Fetch Sucess ✅🤩")
+                    
+                case .failure(let error):
+                    print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
+                }
+            }
+        } else {
+            self.homeViewModel.fetchListApp(userID: 18    , companyID:  1 , type: .Private ) { result in
+                switch result {
+                case .success(let data):
+                    self.homeViewModel.listApp   = data
+                    print("🎉🤩 ===> Fetch Sucess ✅🤩")
+                    
+                case .failure(let error):
+                    print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
+                }
             }
         }
+
+
     }
-    // MARK: - Get Data Home --> Public
-//    func getDataHomePublic () {
-//        self.homeViewModel.fetchListPublicAppVersion(id: 308 ) { result in
-//            switch result {
-//            case .success(let data):
-//                self.homeViewModel.homePublicApp   = data
-//                print("🎉🤩 ===> Fetch Sucess ✅🤩"
-//                
-//            case .failure(let error):
-//                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
-//            }
-//        }
-//    }
 }
 
 // Preview Ui
@@ -188,39 +190,3 @@ struct ContentView_Previews: PreviewProvider {
         }.environmentObject(AppRootManager())
     }
 }
-
-
-//struct SearchBarCustomView: View {
-//    @State var searchText = ""
-//
-//    var body: some View {
-//        HStack  {
-//            
-//            VStack {
-//                
-//                TextField(" Search App Name ... ", text: $searchText)
-//                    .font(.headline )
-//                    .padding()
-//                    .frame(width: 275 , height:  39.5 )
-//                    .textFieldStyle(.plain)
-//                    .background(Color.blue)
-//                    .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
-//            }
-//            
-//            // MARK: - Filter Data Search
-//            Button(action: {
-//                print("-----> Button pressed")
-//                
-//            }) {
-//                HStack {
-//                    Image("filter")
-//                        .foregroundColor(.black)
-//                    Text("Filter")
-//                        .font(Font.custom("Rubik-Bold", size: 16.0))
-//                        .foregroundColor(.black)
-//                    
-//                }
-//            }
-//        }
-//    }
-//}

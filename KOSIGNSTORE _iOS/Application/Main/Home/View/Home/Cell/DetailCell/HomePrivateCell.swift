@@ -46,7 +46,7 @@ struct HomePrivateCell: View {
                         self.homePublicApp = data
                         self.showFittedSheet.toggle()
                         
-                        print("data have version selected \(data )")
+//                        print("data have version selected \(data )")
                     case .failure(let erorr) :
                         //                        self.viewModel.buttonTapped()
                         print(erorr.localizedDescription)

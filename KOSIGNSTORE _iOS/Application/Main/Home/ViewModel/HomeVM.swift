@@ -22,8 +22,9 @@ class HomeViewModel: ObservableObject {
     @Published var error                        : Error?
     @Published var userType                     : UserType? = .Logout
     @Published var sortListValue                = ""
-    @Published var userID                       : Int? = 0
-    @Published var companyID                    : Int? = 0
+    @Published var userID                       : Int? = UserDefaults.standard.integer(forKey: "USERID")
+    @Published var companyID                    : Int? = UserDefaults.standard.integer(forKey: "COMPANYID")
+    @Published var isLogin                      :Bool = false
     @Published private   var cancellables       : Set<AnyCancellable> = []
     // MARK: - Property
     @Published var iosMGData                   : MGiOS.Response? = nil
@@ -105,20 +106,25 @@ class HomeViewModel: ObservableObject {
     
     // MARK: - Save Data to UserDefault
     func checkUserDefault(completion: @escaping () -> () = {}) {
-        listStyleValue = (UserDefaults.standard.string(forKey: FilterSection.listStyle.rawValue) == nil ? FilterContentBody.RowType.LIST_APP_DETAIL.rawValue : UserDefaults.standard.string(forKey: FilterSection.listStyle.rawValue))!
-        sortListValue = UserDefaults.standard.string(forKey: FilterSection.sortList.rawValue) == nil ? FilterContentBody.RowType.SORT_DATE.rawValue : UserDefaults.standard.string(forKey: FilterSection.sortList.rawValue)!
-        
-        guard let username = UserDefaults.standard.string(forKey: "USERNAME") else {
-            completion()
-            return
-        }
-        
-        guard let password = UserDefaults.standard.string(forKey: "PASSWORD") else {
-            completion()
-            return
-        }
+  
+//        guard let username = UserDefaults.standard.string(forKey: "USERNAME") else {
+//            completion()
+//            return
+//        }
+//        
+//        guard let password = UserDefaults.standard.string(forKey: "PASSWORD") else {
+//            completion()
+//            return
+//        }
+        guard let username = UserDefaults.standard.string(forKey: "USERNAME"),
+                    let password = UserDefaults.standard.string(forKey: "PASSWORD") else {
+                  completion()
+                  return
+              }
+              
         requestLogin(username: username, password: password) { _ in
             completion()
+            self.isLogin = true
         }
     }
     
@@ -233,6 +239,7 @@ class HomeViewModel: ObservableObject {
                     Shared.userInfo = UserInfo(username: username ?? "", fullName: fullName ?? "", image: image ?? "", email: email ?? "", companyName: companyName)
                     UserDefaults.standard.set(true, forKey: "login")
                     UserDefaults.standard.set(self?.userID, forKey: "USERID")
+                    UserDefaults.standard.set(self?.companyID, forKey: "COMPANYID")
                     UserDefaults.standard.set(username, forKey: "USERNAME")
                     UserDefaults.standard.set(password, forKey: "PASSWORD")
                 } else {

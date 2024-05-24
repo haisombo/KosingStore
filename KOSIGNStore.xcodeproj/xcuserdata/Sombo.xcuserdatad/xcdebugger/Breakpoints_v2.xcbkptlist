@@ -326,8 +326,8 @@
             filePath = "KOSIGNSTORE _iOS/Application/Main/Home/ViewModel/HomeVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "searchText"
             landmarkType = "24">
             <Locations>
@@ -481,6 +481,96 @@
                   endingLineNumber = "0"
                   offsetFromSymbolStart = "24">
                </Location>
+               <Location
+                  uuid = "9C0534C9-90FA-43CD-99BA-1662ED262976 - 473e0bd8757e4b7a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of KOSIGNStore.HomeViewModel.searchText : Swift.String"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  uuid = "9C0534C9-90FA-43CD-99BA-1662ED262976 - 62ebdfecb453a0a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOSIGNStore.HomeViewModel.searchText.getter : Swift.String"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  uuid = "9C0534C9-90FA-43CD-99BA-1662ED262976 - 8ea97f2808bd80e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOSIGNStore.HomeViewModel.searchText.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "17">
+               </Location>
+               <Location
+                  uuid = "9C0534C9-90FA-43CD-99BA-1662ED262976 - 9f46aac841172cdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOSIGNStore.HomeViewModel.$searchText.setter : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  uuid = "9C0534C9-90FA-43CD-99BA-1662ED262976 - dbb22826246713ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOSIGNStore.HomeViewModel.$searchText.modify : Combine.Published&lt;Swift.String&gt;.Publisher"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "9C0534C9-90FA-43CD-99BA-1662ED262976 - d7f28584fc5eb673"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOSIGNStore.HomeViewModel.$searchText.modify : Combine.Published&lt;Swift.String&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -494,8 +584,8 @@
             filePath = "KOSIGNSTORE _iOS/Application/Main/Home/ViewModel/HomeVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "filterApps()"
             landmarkType = "7">
             <Locations>
@@ -574,6 +664,36 @@
                   endingLineNumber = "46"
                   offsetFromSymbolStart = "72">
                </Location>
+               <Location
+                  uuid = "278B15F2-E607-4C06-84B3-6D959AE3903D - 6b07739d754e2cb2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOSIGNStore.HomeViewModel.filterApps() -&gt; ()"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "492">
+               </Location>
+               <Location
+                  uuid = "278B15F2-E607-4C06-84B3-6D959AE3903D - 845f3d5d3d00ed74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (KOSIGNStore.ListApp.AppInfo) -&gt; Swift.Bool in KOSIGNStore.HomeViewModel.filterApps() -&gt; ()"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "95">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -587,8 +707,8 @@
             filePath = "KOSIGNSTORE _iOS/Application/Main/Home/ViewModel/HomeVM.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "filterApps()"
             landmarkType = "7">
             <Locations>
@@ -652,87 +772,134 @@
                   endingLineNumber = "43"
                   offsetFromSymbolStart = "96">
                </Location>
+               <Location
+                  uuid = "5CF62DEA-56B3-4D14-8589-DA9246F28B4C - 6b07739d754e2c74"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KOSIGNStore.HomeViewModel.filterApps() -&gt; ()"
+                  moduleName = "KOSIGNStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "117">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DD63F871-DE37-4BE0-9B86-3245EA29697B"
+            uuid = "2105336E-3ACD-402D-8D86-F8BE9D817C79"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomePrivateCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "requestLogin(username:password:completionHandler:)"
-            landmarkType = "7">
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "16EC4DDB-9BD5-4C2C-BCBF-44DE6B04AE75"
+            uuid = "3CE4AEFF-AD54-46D5-917F-ED06CB2DB969"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomePrivateCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
-            landmarkName = "requestLogin(username:password:completionHandler:)"
-            landmarkType = "7">
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3DA0C8E7-7C18-417A-BF59-4306E73A90AD"
+            uuid = "9480B6EE-9115-4E0B-A8E8-67ECFD0F5FBF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/HomeVC.swift"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomePrivateCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "listApp()"
-            landmarkType = "7">
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "3DA0C8E7-7C18-417A-BF59-4306E73A90AD - 5744364fe83e1733"
+                  uuid = "9480B6EE-9115-4E0B-A8E8-67ECFD0F5FBF - e1f7546d12e1ed16"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "KOSIGNStore.HomeVC.listApp() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewPublic&gt;, KOSIGNStore.ReuseStatusUpdateViewPublic&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;KOSIGNStore.ReuseStatusUpdateViewNew, KOSIGNStore.ReuseStatusUpdateViewNew&gt;, KOSIGNStore.ReuseStatusUpdateViewNew&gt;, SwiftUI._ConditionalContent&lt;Swift.Optional&lt;KOSIGNStore.ReuseStatusUpdateViewUpdate&gt;, KOSIGNStore.ReuseStatusUpdateViewUpdate&gt;)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, KOSIGNStore.AppImageStyle&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomePrivateCell.body.getter : some"
                   moduleName = "KOSIGNStore"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/HomeVC.swift"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomePrivateCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "157"
-                  endingLineNumber = "157"
-                  offsetFromSymbolStart = "304">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "925">
                </Location>
                <Location
-                  uuid = "3DA0C8E7-7C18-417A-BF59-4306E73A90AD - 6feaeb5164a92da9"
+                  uuid = "9480B6EE-9115-4E0B-A8E8-67ECFD0F5FBF - e1f7546d12e1ed16"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListApp.Response&gt;, Swift.Error&gt;) -&gt; () in KOSIGNStore.HomeVC.listApp() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;KOSIGNStore.ListAppVersion.Response&gt;, Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Button&lt;SwiftUI.EmptyView&gt;, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;KOSIGNStore.ReuseStatusUpdateViewPublic, KOSIGNStore.ReuseStatusUpdateViewPublic&gt;, KOSIGNStore.ReuseStatusUpdateViewPublic&gt;, SwiftUI._ConditionalContent&lt;SwiftUI._ConditionalContent&lt;KOSIGNStore.ReuseStatusUpdateViewNew, KOSIGNStore.ReuseStatusUpdateViewNew&gt;, KOSIGNStore.ReuseStatusUpdateViewNew&gt;, SwiftUI._ConditionalContent&lt;Swift.Optional&lt;KOSIGNStore.ReuseStatusUpdateViewUpdate&gt;, KOSIGNStore.ReuseStatusUpdateViewUpdate&gt;)&gt;&gt;)&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.ModifiedContent&lt;&lt;&lt;opaque return type of SwiftUI.View.aspectRatio(_: Swift.Optional&lt;CoreGraphics.CGFloat&gt;, contentMode: SwiftUI.ContentMode) -&gt; some&gt;&gt;.0, KOSIGNStore.AppImageStyle&gt;, SwiftUI.HStack&lt;SwiftUI.Text&gt;, SwiftUI.Spacer, SwiftUI.HStack&lt;SwiftUI.ZStack&lt;SwiftUI.Button&lt;&lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt;&gt;)&gt;&gt;&gt;, SwiftUI.HStack&lt;SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;, SwiftUI.Spacer, SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI._ConditionalContent&lt;SwiftUI.Text, SwiftUI.Text&gt;)&gt;&gt;)&gt;&gt;&gt;)&gt; in KOSIGNStore.HomePrivateCell.body.getter : some"
                   moduleName = "KOSIGNStore"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/HomeVC.swift"
+                  urlString = "file:///Users/Sombo/Desktop/KOSIGNSTORE%20_iOS/KOSIGNSTORE%20_iOS/Application/Main/Home/View/Home/Cell/DetailCell/HomePrivateCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "164">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "453">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6C93F69-26F6-4CCC-8EB6-D83C0941E7A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "fetchListPrivateAppVersion(id:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30283E31-96DA-4E72-9E97-F8A9B1D7B676"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KOSIGNSTORE _iOS/Application/Main/Home/ViewModel/HomeVM.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "checkUserDefault(completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

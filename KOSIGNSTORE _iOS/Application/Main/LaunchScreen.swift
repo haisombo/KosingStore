@@ -10,7 +10,7 @@ import SwiftUI
 struct LaunchScreen: View {
     
     @EnvironmentObject private var appRootManager: AppRootManager
-
+    @StateObject  var homeVM     = HomeViewModel()
     var body: some View {
         List {
             VStack {
@@ -58,6 +58,7 @@ struct LaunchScreen: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 appRootManager.currentRoot = .home
             }
+            self.homeVM.checkUserDefault()
         }
         
     }
