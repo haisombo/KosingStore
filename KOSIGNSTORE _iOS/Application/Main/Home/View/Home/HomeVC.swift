@@ -13,7 +13,7 @@ struct HomeVC: View {
     
     // MARK: - property
     @StateObject    var         homeViewModel           = HomeViewModel()
-    @StateObject    var         logInVM                 = ViewModel()
+    @StateObject    var         logInVM                 = HomeViewModel()
     @State          var         showSheetView           = false
     @State          var         searchText              = ""
     @State          private var presentPopup            = false
@@ -48,18 +48,16 @@ struct HomeVC: View {
                         //content
                         Section (content:  {
                             // map list data from api
-                            
                                 if islogin {
-                                    // type Privite --> logIn
-                                    ForEach (homeViewModel.listApp?.data ?? []  ,  id : \.id ) { dataListApp in
-                                        // cell
-                                        HomePrivateCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
-                                    }
+                                        // type Privite --> logIn
+                                        ForEach (homeViewModel.listApp?.data ?? []  ,  id : \.id ) { dataListApp in
+                                            // cell
+                                            HomePrivateCell(listApp: dataListApp, idApp : dataListApp.id.intValue )
+                                        }
                                 }else {
                                     // type Public --> logOut
                                     HomeCell()
                                 }
-//                            }
                             
                             // header
                         }, header: {
@@ -67,8 +65,14 @@ struct HomeVC: View {
                         }, footer:  {
                             GeometryReader { geometry in
                                 VStack(alignment: .center) {
-                                    //cell
-                                    FooterHomeCell()
+                                    if homeViewModel.searchText.isEmpty /*&& homeViewModel.tempListAppData == nil*/ {
+                                        //footer
+                                        FooterHomeCell()
+                                    } else {
+                                        //empty cell
+                                        NotFoundCell()
+                                    }
+                                 
                                 }.frame(width: geometry.size.width)
                             }
                         })
@@ -80,16 +84,8 @@ struct HomeVC: View {
                 
                 // MARK: - lifeCyle when open screen
                 .onAppear {
-                    self.homeViewModel.search(text: searchText) { result in
-                        if result == true {
-                            print("have data ")
-                        }
-                    }
-                        
-                    
-//                    appRootManager.currentRoot = .home
                     self.listApp()
-                    self.appHomeList()
+//                    self.appHomeList()
                     
                     self.mgVM.requestMG(){
                         result in
@@ -109,7 +105,6 @@ struct HomeVC: View {
                         switch Shared.userType {
                         case .Login :
                             isGoProfileDetail = true
-                            
                         case .Logout :
                             presentPopup = true
                         }
@@ -133,10 +128,11 @@ struct HomeVC: View {
             }
             
             // search bar
-            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic )) {
-                
-            }
-            
+            .searchable(text: $homeViewModel.searchText , placement: .navigationBarDrawer(displayMode: .automatic ))
+            .onChange(of: homeViewModel.searchText) { _ in
+                            homeViewModel.filterApps()
+                        }
+
             NavigationLink(destination: ProfileDetailViewVC(), isActive: $isGoProfileDetail.animation(.smooth)) {
                 Text("")
                     .hidden()
@@ -151,14 +147,14 @@ struct HomeVC: View {
     }
 
     // MARK: - Method for fetch data
-    func appHomeList () {
-        self.homeViewModel.getHomeData {
-            self.homeViewModel.listApp  = homeViewModel.listApp
-        }
-    }
+//    func appHomeList () {
+//        self.homeViewModel.getHomeData {
+//            self.homeViewModel.listApp  = homeViewModel.listApp
+//        }
+//    }
     // MARK: - Get Data with ueser type
     func listApp ( ) {
-        self.homeViewModel.fetchListApp(userID: 0 , companyID: 1 , type:  .Public ) { result in
+        self.homeViewModel.fetchListApp(userID: 18 , companyID: 1 , type:  .Private ) { result in
             switch result {
             case .success(let data):
                 self.homeViewModel.listApp   = data
@@ -170,18 +166,18 @@ struct HomeVC: View {
         }
     }
     // MARK: - Get Data Home --> Public
-    func getDataHomePublic () {
-        self.homeViewModel.fetchListPublicAppVersion(id: 308 ) { result in
-            switch result {
-            case .success(let data):
-                self.homeViewModel.homePublicApp   = data
-                print("🎉🤩 ===> Fetch Sucess ✅🤩")
-                
-            case .failure(let error):
-                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
-            }
-        }
-    }
+//    func getDataHomePublic () {
+//        self.homeViewModel.fetchListPublicAppVersion(id: 308 ) { result in
+//            switch result {
+//            case .success(let data):
+//                self.homeViewModel.homePublicApp   = data
+//                print("🎉🤩 ===> Fetch Sucess ✅🤩"
+//                
+//            case .failure(let error):
+//                print("😵❌ Error is ⚠️ \(error.localizedDescription) ⚠️")
+//            }
+//        }
+//    }
 }
 
 // Preview Ui

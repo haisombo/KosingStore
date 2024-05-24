@@ -18,7 +18,7 @@ struct HomePrivateCell: View {
     @State          var showSheetView       = false
     @State          var showFittedSheet     : Bool = false
     @State          var idApp               : Int  = 0
-    @State          var viewModel           = ViewModel()
+    @State          var viewModel           = HomeViewModel()
     @State          var dateFormat          = DateFormatter()
     @State var isLoading                    : Bool = false
     
@@ -31,6 +31,7 @@ struct HomePrivateCell: View {
         sheetViewControllerOptinos: [],
         shouldDismiss: nil,
         didDismiss: nil)
+    
     var body: some View {
         VStack (alignment: .leading ) {
             

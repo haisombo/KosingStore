@@ -42,7 +42,6 @@ struct HomeCell: View {
                 Text("@ KOSIGN")
                     .font(.customFont(font: .Rubik, style: .bold , size: .h5))
                     .foregroundColor(Color("MianColor"))
-
             }
             
             HStack {
@@ -76,8 +75,6 @@ struct HomeCell: View {
         }
         
     }
-    
-  
 }
 
 #Preview {

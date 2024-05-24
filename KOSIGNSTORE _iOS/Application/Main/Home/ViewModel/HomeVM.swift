@@ -13,9 +13,9 @@ class HomeViewModel: ObservableObject {
     @Published var homeContentData              : [HomeContentBody] = []
     @Published var homeContentDataSort          : [HomeContentBody] = []
     @Published var tempHomeContentData          : [HomeContentBody] = []
-    @Published var logInVM                      = ViewModel()
     @Published var listAppVersionData          :  [AppDetailBody.VersionListInfo] = []
     @Published var homePublicApp                : ListAppVersion.Response? = nil
+    @Published var tempListAppData              : ListApp.Response? = nil
     @Published var listApp                      : ListApp.Response? = nil
     @Published var listStyleValue               = ""
     @Published var isLoading                    : Bool = false
@@ -25,18 +25,32 @@ class HomeViewModel: ObservableObject {
     @Published var userID                       : Int? = 0
     @Published var companyID                    : Int? = 0
     @Published private   var cancellables       : Set<AnyCancellable> = []
-
-    func search(text: String, completion: (Bool) -> ()) {
-        let tempData = tempHomeContentData.filter({($0.appName?.lowercased().contains(text.lowercased())) ?? false})
-        if tempData.isEmpty {
-            completion(false)
+    // MARK: - Property
+    @Published var iosMGData                   : MGiOS.Response? = nil
+    @Published var aosMGData                   : MGAOS.Response? = nil
+    @Published var loginData                   : Login.Response? = nil
+    @Published var userInfo                    = UserInfo()
+    @Published var showAlert                   = false
+    
+    @Published var searchText: String = "" {
+           didSet {
+               filterApps()
+           }
+       }
+    
+    func filterApps() {
+        if searchText.isEmpty {
+            listApp?.data = tempListAppData?.data ?? []
         } else {
-            homeContentData = tempData
-            completion(true)
+            listApp?.data = tempListAppData?.data.filter {
+                ($0.name?.stringValue.lowercased().contains(searchText.lowercased())) ?? false
+            } ?? []
         }
     }
     
-    // MARK: - get data and check type
+
+
+
     func getHomeData (completionHandler: @escaping () -> () = {} ) {
         let type : ListAppType = (userType == .Login) ? .Private : .Public
         fetchListApp(userID: self.userID , companyID: self.companyID , type: type  ) { result  in
@@ -48,22 +62,25 @@ class HomeViewModel: ObservableObject {
                 let res = data
                 if (res.status.booleanValue) {
                     let data = res.data
-                    var versionListInfo : [AppDetailBody.VersionListInfo] = []
-                    
-                    for data in data {
-                        if (data.dev != nil || data.real != nil) {
-                            versionListInfo = [AppDetailBody.VersionListInfo(versionNumber: data.dev != nil ? data.dev?.versionNumber?.stringValue : data.real?.versionNumber?.stringValue, description: data.dev != nil ? data.dev?.description?.stringValue : data.real?.description?.stringValue,
-                                                                             dev: data.dev == nil ? nil : AppDetailBody.VersionListInfo.AppEnvironment(
-                                                                                modifiedDate: data.dev?.modifiedDate?.stringValue, filePath: data.dev?.filePath?.stringValue), real: data.real == nil ? nil : AppDetailBody.VersionListInfo.AppEnvironment(modifiedDate: data.real?.modifiedDate?.stringValue, filePath: data.real?.filePath?.stringValue))]
-                            
-                        }
-                        self.homeContentData.append(HomeContentBody(id: data.id.intValue, companyName: data.appOfCompany?.stringValue, appName: data.name?.stringValue, appImage: data.icon?.stringValue, appVersion: AppDetailBody(id: data.id.intValue, companyName: data.appOfCompany?.stringValue, appName: data.name?.stringValue, appIcon: data.icon?.stringValue, appCreatedDate: data.appCreatedDate?.stringValue, appModifiedDate: data.appModifiedDate?.stringValue, isPublic: data.isPublic?.booleanValue, versionList: versionListInfo)))
-                        
-                        versionListInfo = []
-                    }
+//                    var versionListInfo : [AppDetailBody.VersionListInfo] = []
+                    self.tempListAppData = res
+                    self.listApp = res
+//                    self.homeContentDataSort = self.homeContentData
+//                    for data in data {
+//                        if (data.dev != nil || data.real != nil) {
+//                            versionListInfo = [AppDetailBody.VersionListInfo(versionNumber: data.dev != nil ? data.dev?.versionNumber?.stringValue : data.real?.versionNumber?.stringValue, description: data.dev != nil ? data.dev?.description?.stringValue : data.real?.description?.stringValue,
+//                                                                             dev: data.dev == nil ? nil : AppDetailBody.VersionListInfo.AppEnvironment(
+//                                                                                modifiedDate: data.dev?.modifiedDate?.stringValue, filePath: data.dev?.filePath?.stringValue), real: data.real == nil ? nil : AppDetailBody.VersionListInfo.AppEnvironment(modifiedDate: data.real?.modifiedDate?.stringValue, filePath: data.real?.filePath?.stringValue))]
+//                            
+//                        }
+//                        self.homeContentData.append(HomeContentBody(id: data.id.intValue, companyName: data.appOfCompany?.stringValue, appName: data.name?.stringValue, appImage: data.icon?.stringValue, appVersion: AppDetailBody(id: data.id.intValue, companyName: data.appOfCompany?.stringValue, appName: data.name?.stringValue, appIcon: data.icon?.stringValue, appCreatedDate: data.appCreatedDate?.stringValue, appModifiedDate: data.appModifiedDate?.stringValue, isPublic: data.isPublic?.booleanValue, versionList: versionListInfo)))
+//                        
+//                        versionListInfo = []
+//                    }
                     self.homeContentDataSort = self.homeContentData
                     self.getSortListData() {
-                        self.tempHomeContentData = self.homeContentData
+//                        self.tempHomeContentData = self.homeContent Data
+                        self.tempListAppData    = self.listApp
                         completionHandler()
                     }
                 }
@@ -100,8 +117,7 @@ class HomeViewModel: ObservableObject {
             completion()
             return
         }
-        
-        logInVM.requestLogin(username: username, password: password) { _ in
+        requestLogin(username: username, password: password) { _ in
             completion()
         }
     }
@@ -126,7 +142,8 @@ class HomeViewModel: ObservableObject {
                 }
             }
     receiveValue: { [weak self] data in
-        self?.listApp = data
+        self?.tempListAppData = data
+//        self?.listApp = data
         completionHandler(.success(data))
     }
     .store(in: &cancellables)
@@ -134,24 +151,24 @@ class HomeViewModel: ObservableObject {
     
     
     // MARK: - Public Version by id
-    func  fetchListPublicAppVersion (id : Int ,  completionHandler: @escaping (Swift.Result<ListAppVersion.Response?, Error>) -> Void ) {
-        let body = ListAppVersion.Request(app_id: AnyCodableValue.integer(id), os_type: AnyCodableValue.string("ios"))
-        
-        NetworkManager.shared.request(endpoint:  APIKey.listPublicAppVersion , httpMethod: .POST, body: body, responseType: ListAppVersion.Response.self)
-            
-            .sink { completion in
-                switch completion {
-                case .failure(let error):
-                    completionHandler(.failure(error))
-                case .finished: break
-                }
-            }
-    receiveValue: { [weak self] data in
-        self?.homePublicApp = data
-        completionHandler(.success(data))
-    }
-    .store(in: &cancellables)
-    }
+//    func  fetchListPublicAppVersion (id : Int ,  completionHandler: @escaping (Swift.Result<ListAppVersion.Response?, Error>) -> Void ) {
+//        let body = ListAppVersion.Request(app_id: AnyCodableValue.integer(id), os_type: AnyCodableValue.string("ios"))
+//        
+//        NetworkManager.shared.request(endpoint:  APIKey.listPublicAppVersion , httpMethod: .POST, body: body, responseType: ListAppVersion.Response.self)
+//            
+//            .sink { completion in
+//                switch completion {
+//                case .failure(let error):
+//                    completionHandler(.failure(error))
+//                case .finished: break
+//                }
+//            }
+//    receiveValue: { [weak self] data in
+//        self?.homePublicApp = data
+//        completionHandler(.success(data))
+//    }
+//    .store(in: &cancellables)
+//    }
     
     // MARK: - Private Version by id
     func  fetchListPrivateAppVersion (id : Int ,  completionHandler: @escaping (Swift.Result<ListAppVersion.Response?, Error>) -> Void ) {
@@ -174,4 +191,90 @@ class HomeViewModel: ObservableObject {
     .store(in: &cancellables)
     }
     
+    // MARK: - Requesr iOS MG
+    func requestiOSMG() -> Future<MGiOS.Response, Error> {
+        let pathVariable    = [Shared.share.appId]
+        let urlParam        : Dictionary<String, String> = ["os":"iOS"]
+        return NetworkManager.shared.request(shouldShowLoading: false, baseURL: APIKey.mgURL.rawValue , pathVariable: pathVariable, urlParam: urlParam, endpoint: .mgURL, httpMethod: .GET, responseType: MGiOS.Response.self)
+    }
+    // MARK: - Requesr AOS MG
+    func requestAOSMG() -> Future<MGAOS.Response, Error> {
+        let pathVariable    = [Shared.share.appId]
+        let urlParam        : Dictionary<String, String> = ["os":"AOS"]
+        return NetworkManager.shared.request(shouldShowLoading: false, baseURL: APIKey.mgURL.rawValue , pathVariable: pathVariable, urlParam: urlParam, endpoint: .mgURL  , httpMethod: .GET, responseType: MGAOS.Response.self)
+    }
+    
+    // MARK: - Request Login
+    func requestLogin(username: String, password: String, completionHandler: @escaping (Swift.Result<Login.Response?, Error>) -> Void) {
+        let body = Login.Request(username: AnyCodableValue.string(username), password: AnyCodableValue.string(password))
+        NetworkManager.shared.request(endpoint: .login, httpMethod: .POST, body: body, responseType: Login.Response.self)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    completionHandler(.failure(error))
+                case .finished: break
+                }
+            }
+    receiveValue: { [weak self] data in
+                self?.loginData = data
+        //        guard let data = data else {return}
+                if data.status.booleanValue {
+                    Shared.userType = .Login
+                    self?.userID = data.data?.id?.intValue
+                    self?.companyID = data.data?.listCompany?.first?.id?.intValue
+                    let username = data.data?.username?.stringValue
+                    let fullName = data.data?.fullName?.stringValue
+                    let email = data.data?.email?.stringValue
+                    let image = data.data?.profile?.stringValue
+                    let companyName = data.data?.listCompany?.first?.name?.stringValue
+                    let token = data.data?.token?.stringValue
+                    Shared.share.token = token
+//                    self.userInfo = UserInfo(username: username, fullName: fullName, image: image, email: email, companyName: companyName)
+                    Shared.userInfo = UserInfo(username: username ?? "", fullName: fullName ?? "", image: image ?? "", email: email ?? "", companyName: companyName)
+                    UserDefaults.standard.set(true, forKey: "login")
+                    UserDefaults.standard.set(self?.userID, forKey: "USERID")
+                    UserDefaults.standard.set(username, forKey: "USERNAME")
+                    UserDefaults.standard.set(password, forKey: "PASSWORD")
+                } else {
+                    Shared.userType = .Logout
+                    UserDefaults.standard.set(true, forKey: "logout")
+                    UserDefaults.standard.removeObject(forKey: "USERID")
+                    UserDefaults.standard.removeObject(forKey: "USERNAME")
+                    UserDefaults.standard.removeObject(forKey: "PASSWORD")
+                }
+        completionHandler(.success(data))
+    }
+    .store(in: &cancellables)
+    }
+    
+    // MARK: - Request Both Version
+    func requestiOSAndiOSMG() {
+        Publishers.Zip(requestiOSMG(), requestAOSMG())
+            .receive(on: RunLoop.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let err):
+                    
+                    print("""
+                                   😵❌ Error is ⚠️ \(err.localizedDescription) ⚠️
+                                   """)
+                    
+                case .finished:
+                    print("""
+                                🎉🤩
+                                ===> Fetch Sucess ✅ 👏🥳
+                                🎉🤩
+                      """)
+                }
+            }
+    receiveValue: { [weak self] data in
+        self?.iosMGData = data.0
+        self?.aosMGData = data.1
+    }
+    .store(in: &cancellables)
+    }
+    // MARK: - Handle request and then set to true to show the alert
+    func buttonTapped() {
+            self.showAlert = true
+    }
 }

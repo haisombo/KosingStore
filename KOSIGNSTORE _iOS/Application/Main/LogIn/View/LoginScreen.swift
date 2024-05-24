@@ -13,7 +13,7 @@ import Firebase
 struct LoginScreen: View {
  
     // MARK: - Propertiers
-    @StateObject        var         viewModel               = ViewModel()
+    @StateObject        var         viewModel               = HomeViewModel()
     @State              private var email                   = ""
     @State              private var password                = ""
     @FocusState         private var isFocused               : Bool
